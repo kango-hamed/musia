@@ -1,7 +1,7 @@
 # Web framework
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
-python-multipart==0.0.6
+python-multipart==0.0.18
 
 # APIs externes
 openai==1.3.7
@@ -17,7 +17,7 @@ redis==5.0.1
 # Utilities
 python-dotenv==1.0.0
 pydantic==2.5.2
-aiohttp==3.9.1
+aiohttp==3.12.14
 
 # Logging
 loguru==0.7.2
