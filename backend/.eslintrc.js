@@ -4,21 +4,28 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: [
-    'eslint:recommended',
-    'prettier'
-  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
+  plugins: ['@typescript-eslint', 'import'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'prettier'
+  ],
   rules: {
-    'no-console': 'warn',
-    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-    'no-var': 'error',
-    'prefer-const': 'error',
-    'eqeqeq': ['error', 'always'],
-    'curly': ['error', 'all'],
-    'brace-style': ['error', '1tbs']
+    'import/order': [
+      'warn',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        'newlines-between': 'always'
+      }
+    ],
+    '@typescript-eslint/no-misused-promises': 'off'
   }
 };

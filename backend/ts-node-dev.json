@@ -1,0 +1,9 @@
+{
+  "watch": ["src", "prisma"],
+  "ignore": ["node_modules", "generated", "dist", "**/*.test.ts", "**/*.spec.ts"],
+  "ext": "ts,json,prisma",
+  "exec": "ts-node src/server.ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
