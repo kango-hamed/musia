@@ -1,0 +1,23 @@
+# Web framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.18
+
+# APIs externes
+openai==1.3.7
+anthropic==0.7.7
+
+# Audio processing
+pydub==0.25.1
+
+# Database
+psycopg2-binary==2.9.9
+redis==5.0.1
+
+# Utilities
+python-dotenv==1.0.0
+pydantic==2.5.2
+aiohttp==3.12.14
+
+# Logging
+loguru==0.7.2
