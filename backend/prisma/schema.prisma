@@ -1,7 +1,4 @@
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// Prisma Schema - Museum Guide Robot
 
 generator client {
   provider = "prisma-client"
@@ -12,22 +9,326 @@ datasource db {
   provider = "postgresql"
 }
 
-model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  posts     Post[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+// ============================================
+// PHASE 1: FONDATIONS - Œuvres et Contenus
+// ============================================
+
+/// Œuvre d'art dans le musée
+model Artwork {
+  id          String   @id @default(cuid())
+  code        String   @unique // Code interne musée
+  title       String
+  artist      String?
+  description String?  @db.Text
+  
+  // Classification
+  period      String? // Ex: "Renaissance", "Art Moderne"
+  style       String? // Ex: "Impressionnisme", "Cubisme"
+  collection  String? // Ex: "Permanent", "Temporaire"
+  
+  // Localisation dans le musée
+  positionX   Float?
+  positionY   Float?
+  floor       Int      @default(0)
+  room        String?
+  orientation Float?   @default(0) // Orientation en degrés
+  
+  // Médias
+  imageUrl    String?
+  
+  // Relations
+  narrativeContents NarrativeContent[]
+  trajectorySteps   TrajectoryStep[]
+  faqCache          FAQCache[]
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([positionX, positionY])
+  @@map("artworks")
 }
 
-model Post {
+/// Contenu narratif pour la présentation d'une œuvre
+model NarrativeContent {
   id        String   @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  String
+  
+  // Relation avec l'œuvre
+  artworkId String
+  artwork   Artwork  @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+  
+  // Version du contenu
+  version   String   @default("standard") // "short", "detailed", "kids"
+  language  String   @default("fr")
+  
+  // Contenu
+  textContent String  @db.Text
+  audioUrl    String? // URL du fichier audio pré-généré
+  duration    Int?    // Durée en secondes
+  
+  // Relations
+  trajectorySteps TrajectoryStep[]
+  
+  // Timestamps
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  
+  @@index([artworkId])
+  @@index([artworkId, language])
+  @@map("narrative_contents")
+}
+
+// ============================================
+// PHASE 2: TRAJETS ET VISITES
+// ============================================
+
+/// Trajet de visite guidée
+model Trajectory {
+  id                String   @id @default(cuid())
+  name              String
+  description       String?  @db.Text
+  theme             String? // Ex: "Renaissance", "Art Moderne"
+  
+  // Configuration
+  estimatedDuration Int      // Durée estimée en minutes
+  difficultyLevel   String   @default("all") // "kids", "all", "expert"
+  maxVisitors       Int      @default(10)
+  
+  // État
+  isActive          Boolean  @default(true)
+  isDefault         Boolean  @default(false)
+  
+  // Relations
+  steps             TrajectoryStep[]
+  scheduledVisits   ScheduledVisit[]
+  
+  // Timestamps
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  @@map("trajectories")
+}
+
+/// Étape d'un trajet (œuvre à visiter)
+model TrajectoryStep {
+  id                  String   @id @default(cuid())
+  
+  // Relations
+  trajectoryId        String
+  trajectory          Trajectory @relation(fields: [trajectoryId], references: [id], onDelete: Cascade)
+  
+  artworkId           String
+  artwork             Artwork    @relation(fields: [artworkId], references: [id])
+  
+  narrativeContentId  String?
+  narrativeContent    NarrativeContent? @relation(fields: [narrativeContentId], references: [id])
+  
+  // Configuration de l'étape
+  stepOrder           Int      // Ordre dans le trajet
+  stopDuration        Int      // Durée d'arrêt en minutes
+  
+  // Position robot pour cette étape
+  positionX           Float?
+  positionY           Float?
+  
+  notes               String?  @db.Text
+  
+  // Timestamps
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  
+  @@unique([trajectoryId, stepOrder])
+  @@index([trajectoryId])
+  @@map("trajectory_steps")
+}
+
+/// Visite programmée
+model ScheduledVisit {
+  id             String   @id @default(cuid())
+  
+  // Relation
+  trajectoryId   String
+  trajectory     Trajectory @relation(fields: [trajectoryId], references: [id])
+  
+  // Programmation
+  scheduledDate  DateTime @db.Date
+  startTime      DateTime @db.Time
+  recurrenceRule String? // Format iCal RRULE pour récurrence
+  
+  // État
+  status         String   @default("scheduled") // "scheduled", "in_progress", "completed", "cancelled"
+  
+  // Relations
+  activityLogs   RobotActivityLog[]
+  interactions   VisitorInteraction[]
+  
+  // Timestamps
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  
+  @@index([scheduledDate, startTime])
+  @@map("scheduled_visits")
+}
+
+// ============================================
+// PHASE 3: CARTOGRAPHIE
+// ============================================
+
+/// Carte du musée
+model MuseumMap {
+  id        String   @id @default(cuid())
+  version   String   @unique
+  
+  // Données de la carte
+  mapData   Json     // Occupancy grid, obstacles
+  scale     Float    @default(1.0) // Échelle de la carte
+  
+  // État
+  isActive  Boolean  @default(false)
+  
+  // Relations
+  zones     Zone[]
+  
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("museum_maps")
+}
+
+/// Zone dans la carte (public, interdit, etc.)
+model Zone {
+  id          String   @id @default(cuid())
+  
+  // Relation
+  mapId       String
+  map         MuseumMap @relation(fields: [mapId], references: [id], onDelete: Cascade)
+  
+  // Configuration
+  name        String
+  type        String   // "public", "restricted", "forbidden", "charging"
+  geometry    Json     // Polygone définissant la zone
+  accessRules Json?    // Règles d'accès (horaires, conditions)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([mapId])
+  @@index([type])
+  @@map("zones")
+}
+
+// ============================================
+// PHASE 4: LOGS ET ANALYTICS
+// ============================================
+
+/// Log d'activité du robot
+model RobotActivityLog {
+  id        String   @id @default(cuid())
+  
+  // Relation
+  visitId   String?
+  visit     ScheduledVisit? @relation(fields: [visitId], references: [id])
+  
+  // Événement
+  eventType String   // "visit_start", "artwork_presented", "navigation", etc.
+  eventData Json?    // Données spécifiques à l'événement
+  
+  timestamp DateTime @default(now())
+  
+  @@index([visitId])
+  @@index([timestamp])
+  @@map("robot_activity_logs")
+}
+
+/// Interaction avec un visiteur (NLP)
+model VisitorInteraction {
+  id                String   @id @default(cuid())
+  
+  // Relation
+  visitId           String?
+  visit             ScheduledVisit? @relation(fields: [visitId], references: [id])
+  
+  // Question
+  interactionType   String   // "question", "feedback", "command"
+  questionText      String?  @db.Text
+  detectedIntent    String?
+  intentConfidence  Float?
+  
+  // Réponse
+  responseText      String?  @db.Text
+  responseSource    String?  // "faq", "llm_generated", "fallback"
+  
+  language          String   @default("fr")
+  
+  // Métriques de performance
+  sttLatencyMs      Int?
+  nlpLatencyMs      Int?
+  ttsLatencyMs      Int?
+  totalLatencyMs    Int?
+  
+  // Résultat
+  wasSuccessful     Boolean  @default(true)
+  errorOccurred     Boolean  @default(false)
+  
+  timestamp         DateTime @default(now())
+  
+  @@index([visitId])
+  @@index([timestamp])
+  @@map("visitor_interactions")
+}
+
+/// Métriques quotidiennes agrégées
+model DailyMetric {
+  id                  String   @id @default(cuid())
+  date                DateTime @unique @db.Date
+  
+  // Métriques de visite
+  totalVisits         Int      @default(0)
+  totalVisitors       Int      @default(0)
+  avgVisitDuration    Float?
+  
+  // Métriques d'interaction
+  totalInteractions   Int      @default(0)
+  avgSttLatencyMs     Float?
+  avgNlpLatencyMs     Float?
+  successRate         Float?
+  
+  // Données analytiques
+  mostViewedArtworks  Json?    // Top 10 œuvres
+  
+  createdAt           DateTime @default(now())
+  
+  @@index([date])
+  @@map("daily_metrics")
+}
+
+// ============================================
+// PHASE 5: OPTIMISATIONS
+// ============================================
+
+/// Cache des réponses FAQ fréquentes
+model FAQCache {
+  id               String   @id @default(cuid())
+  
+  // Relation
+  artworkId        String?
+  artwork          Artwork? @relation(fields: [artworkId], references: [id])
+  
+  // Question et réponse
+  questionVariants String[] // Variantes de la question
+  answerText       String   @db.Text
+  answerAudioUrl   String?  // Audio pré-généré
+  
+  // Statistiques d'utilisation
+  usageCount       Int      @default(0)
+  lastUsed         DateTime?
+  
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  
+  @@index([artworkId])
+  @@index([usageCount, lastUsed])
+  @@map("faq_cache")
 }
