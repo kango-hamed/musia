@@ -16,10 +16,29 @@ export class ArtworkService {
     });
   }
 
-  async findAll() {
-    return prisma.artwork.findMany({
-      orderBy: { createdAt: 'desc' }
-    });
+  async findAll(page: number = 1, limit: number = 20) {
+    const skip = (page - 1) * limit;
+
+    const [artworks, total] = await Promise.all([
+      prisma.artwork.findMany({
+        skip,
+        take: limit,
+        orderBy: { createdAt: 'desc' }
+      }),
+      prisma.artwork.count()
+    ]);
+
+    return {
+      data: artworks,
+      pagination: {
+        page,
+        limit,
+        total,
+        totalPages: Math.ceil(total / limit),
+        hasNext: page * limit < total,
+        hasPrev: page > 1
+      }
+    };
   }
 
   async findOne(id: string) {
@@ -58,6 +77,16 @@ export class ArtworkService {
     await this.findOne(id); // Ensure exists
     return prisma.artwork.delete({
       where: { id }
+    });
+  }
+
+  async uploadImage(id: string, file: Express.Multer.File) {
+    await this.findOne(id); // Ensure exists
+    const imageUrl = `/uploads/images/${file.filename}`;
+
+    return prisma.artwork.update({
+      where: { id },
+      data: { imageUrl }
     });
   }
 }
