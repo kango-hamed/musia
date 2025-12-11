@@ -42,6 +42,7 @@ app.get('/', (_req, res) => {
     endpoints: {
       health: '/health',
       auth: '/api/auth',
+      artworks: '/api/artworks'
     }
   });
 });
