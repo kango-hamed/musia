@@ -1,12 +1,13 @@
-import type { Config } from 'jest';
-
-const config: Config = {
+export default {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  roots: ['<rootDir>/tests'],
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
-  moduleFileExtensions: ['js', 'ts', 'json'],
-  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts']
+  testMatch: ['**/**/*.test.ts'],
+  verbose: true,
+  forceExit: true,
+  clearMocks: true,
+  resetMocks: true,
+  restoreMocks: true,
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1'
+  }
 };
-
-export default config;

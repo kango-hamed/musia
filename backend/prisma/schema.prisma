@@ -10,6 +10,25 @@ datasource db {
 }
 
 // ============================================
+// PHASE 0: UTILISATEURS ET SÉCURITÉ
+// ============================================
+
+/// Utilisateur du système d'administration
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String   // Hashed password
+  role      String   @default("admin") // "admin", "manager", "operator", "viewer"
+  
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("users")
+}
+
+// ============================================
 // PHASE 1: FONDATIONS - Œuvres et Contenus
 // ============================================
 

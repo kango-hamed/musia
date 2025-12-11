@@ -41,8 +41,7 @@ app.get('/', (_req, res) => {
     documentation: '/api-docs',
     endpoints: {
       health: '/health',
-      users: '/api/users',
-      posts: '/api/posts'
+      auth: '/api/auth',
     }
   });
 });
