@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  museum-guide-bot:
+    build: .
+    container_name: museum-guide-bot
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount data directories to persist uploads and cache
+      - ./data/uploads:/app/data/uploads
+      - ./data/tts_cache:/app/data/tts_cache
+      # Mount artworks.json to allow editing without rebuilding
+      - ./data/artworks.json:/app/data/artworks.json
+      # Persist AI Models (avoid redownloading)
+      - ./data/cache/whisper:/root/.cache/whisper
+      - ./data/cache/huggingface:/root/.cache/huggingface
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - DEBUG=true
+      # Important: Pass Groq API Key
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    restart: unless-stopped

@@ -16,7 +16,7 @@ git commit -m "feat(module): description"
 ```
 
 3. Push et créer PR
-```bash
+```bashk21
 git push origin feature/123-ma-fonctionnalité
 # Créer PR sur GitHub vers develop
 ```

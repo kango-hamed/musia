@@ -1,0 +1,30 @@
+# Backend Framework - No compilation needed
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+websockets==13.1
+
+# Audio Processing - Using simpler alternatives
+# faster-whisper requires av which needs compilation
+# edge-tts works fine
+edge-tts==6.1.12
+pydub==0.25.1
+
+# NLP - Install without strict versions to get compatible wheels
+sentence-transformers
+nltk
+
+# Database
+sqlalchemy==2.0.36
+aiosqlite==0.20.0
+
+# Utilities
+python-dotenv==1.0.1
+pydantic==2.10.3
+pydantic-settings==2.6.1
+aiofiles==24.1.0
+
+# Development
+pytest==8.3.4
+pytest-asyncio==0.24.0
+httpx==0.28.1

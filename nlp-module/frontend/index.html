@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Guide Bot - Test Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .sidebar {
+            border-right: 2px solid #eee;
+            padding-right: 20px;
+        }
+
+        .artwork-list {
+            list-style: none;
+        }
+
+        .artwork-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .artwork-item:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .artwork-item.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .artwork-item h3 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .artwork-item p {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .chat-area {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.bot {
+            background: #667eea;
+            color: white;
+            margin-right: auto;
+        }
+
+        .message.user {
+            background: #764ba2;
+            color: white;
+            margin-left: auto;
+        }
+
+        .message .label {
+            font-size: 0.8em;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .message .text {
+            line-height: 1.5;
+        }
+
+        .message .audio-player {
+            margin-top: 10px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+
+        .input-area input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .status {
+            padding: 10px;
+            background: #fff3cd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Museum Guide Bot</h1>
+            <p>Interface de test - Prototype Hackathon</p>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <h2 style="margin-bottom: 15px;">Œuvres</h2>
+                <ul class="artwork-list" id="artworkList">
+                    <li class="loading active">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 10px;">Chargement...</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="chat-area">
+                <div class="controls">
+                    <button class="btn btn-secondary" id="startBtn" disabled>
+                        Démarrer la visite
+                    </button>
+                    <button class="btn btn-secondary" id="resetBtn">
+                        Réinitialiser
+                    </button>
+                </div>
+
+                <div id="status"></div>
+
+                <div class="messages" id="messages">
+                    <div class="message bot">
+                        <div class="label">Bot</div>
+                        <div class="text">
+                            Bonjour ! Sélectionnez une œuvre pour commencer la visite guidée.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="Posez une question sur l'œuvre..." 
+                        disabled
+                    >
+                    <button class="btn btn-primary" id="sendBtn" disabled>
+                        Envoyer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000';
+        let currentSession = null;
+        let selectedArtwork = null;
+
+        // Éléments DOM
+        const artworkList = document.getElementById('artworkList');
+        const messages = document.getElementById('messages');
+        const messageInput = document.getElementById('messageInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const statusDiv = document.getElementById('status');
+
+        // Charger les œuvres
+        async function loadArtworks() {
+            try {
+                const response = await fetch(`${API_URL}/artworks`);
+                const artworks = await response.json();
+                
+                artworkList.innerHTML = '';
+                artworks.forEach(artwork => {
+                    const li = document.createElement('li');
+                    li.className = 'artwork-item';
+                    li.innerHTML = `
+                        <h3>${artwork.title}</h3>
+                        <p>${artwork.artist} • ${artwork.year}</p>
+                    `;
+                    li.onclick = () => selectArtwork(artwork);
+                    artworkList.appendChild(li);
+                });
+            } catch (error) {
+                showStatus('Erreur de connexion au serveur', 'error');
+                console.error(error);
+            }
+        }
+
+        // Sélectionner une œuvre
+        function selectArtwork(artwork) {
+            selectedArtwork = artwork;
+            
+            // UI
+            document.querySelectorAll('.artwork-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            event.target.closest('.artwork-item').classList.add('active');
+            
+            startBtn.disabled = false;
+            showStatus(`Œuvre sélectionnée: ${artwork.title}`, 'success');
+        }
+
+        // Démarrer la conversation
+        startBtn.onclick = async () => {
+            if (!selectedArtwork) return;
+            
+            startBtn.disabled = true;
+            showStatus('Démarrage de la visite...', '');
+            
+            try {
+                const response = await fetch(`${API_URL}/conversation/start?artwork_id=${selectedArtwork.id}`, {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                
+                currentSession = data.session_id;
+                
+                addMessage('bot', data.message, data.audio_url);
+                
+                messageInput.disabled = false;
+                sendBtn.disabled = false;
+                messageInput.focus();
+                
+                showStatus('Conversation active - Posez vos questions !', 'success');
+                
+            } catch (error) {
+                showStatus('Erreur lors du démarrage', 'error');
+                console.error(error);
+            }
+        };
+
+        // Envoyer un message
+        sendBtn.onclick = sendMessage;
+        messageInput.onkeypress = (e) => {
+            if (e.key === 'Enter') sendMessage();
+        };
+
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message || !currentSession) return;
+            
+            messageInput.value = '';
+            sendBtn.disabled = true;
+            
+            // Afficher message utilisateur
+            addMessage('user', message);
+            
+            showStatus('Réflexion...', '');
+            
+            try {
+                const response = await fetch(`${API_URL}/conversation/text`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        session_id: currentSession,
+                        message: message
+                    })
+                });
+                
+                const data = await response.json();
+                
+                // Afficher réponse bot
+                addMessage('bot', data.response, data.audio_url, data.intent);
+                
+                showStatus('', '');
+                
+            } catch (error) {
+                showStatus('Erreur lors de la réponse', 'error');
+                console.error(error);
+            } finally {
+                sendBtn.disabled = false;
+                messageInput.focus();
+            }
+        }
+
+        // Ajouter un message
+        function addMessage(sender, text, audioUrl = null, intent = null) {
+            const div = document.createElement('div');
+            div.className = `message ${sender}`;
+            
+            let html = `
+                <div class="label">${sender === 'bot' ? 'Bot' : 'Vous'}</div>
+                <div class="text">${text}</div>
+            `;
+            
+            if (intent) {
+                html += `<div style="font-size: 0.8em; opacity: 0.7; margin-top: 5px;">Intent: ${intent}</div>`;
+            }
+            
+            if (audioUrl) {
+                html += `
+                    <audio controls class="audio-player" style="margin-top: 10px; width: 100%;">
+                        <source src="${API_URL}${audioUrl}" type="audio/mpeg">
+                    </audio>
+                `;
+            }
+            
+            div.innerHTML = html;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        // Afficher statut
+        function showStatus(message, type = '') {
+            if (!message) {
+                statusDiv.innerHTML = '';
+                return;
+            }
+            
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        // Réinitialiser
+        resetBtn.onclick = () => {
+            currentSession = null;
+            selectedArtwork = null;
+            messages.innerHTML = `
+                <div class="message bot">
+                    <div class="label">Bot</div>
+                    <div class="text">
+                        Bonjour ! Sélectionnez une œuvre pour commencer la visite guidée.
+                    </div>
+                </div>
+            `;
+            messageInput.value = '';
+            messageInput.disabled = true;
+            sendBtn.disabled = true;
+            startBtn.disabled = true;
+            document.querySelectorAll('.artwork-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            showStatus('Conversation réinitialisée', 'success');
+        };
+
+        // Initialisation
+        loadArtworks();
+    </script>
+</body>
+</html>

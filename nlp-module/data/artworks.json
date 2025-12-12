@@ -1,0 +1,78 @@
+{
+    "artworks": [
+        {
+            "id": "mona_lisa",
+            "title": "La Joconde",
+            "artist": "Léonard de Vinci",
+            "year": "1503-1506",
+            "museum": "Musée du Louvre, Paris",
+            "description": "Le portrait de Lisa Gherardini, épouse de Francesco del Giocondo, est sans doute le tableau le plus célèbre au monde.",
+            "narratives": {
+                "short": "Vous contemplez la Joconde, peinte par Léonard de Vinci au début du 16ème siècle. Ce chef-d'œuvre de la Renaissance fascine par son sourire énigmatique et le regard de Mona Lisa qui semble vous suivre partout.",
+                "long": "La Joconde, ou Portrait de Mona Lisa, est une huile sur panneau de bois de peuplier réalisée par Léonard de Vinci entre 1503 et 1506. L'œuvre représente Lisa Gherardini, épouse de Francesco del Giocondo. La technique du sfumato utilisée par Léonard donne au tableau cette atmosphère vaporeuse caractéristique, particulièrement visible dans les coins des yeux et de la bouche, créant ce sourire insaisissable qui a fait la renommée mondiale de l'œuvre. L'arrière-plan imaginaire, avec ses chemins sinueux et ses montagnes brumeuses, témoigne de la maîtrise de la perspective atmosphérique par l'artiste."
+            },
+            "faq": [
+                {
+                    "question": "Qui a peint ce tableau ?",
+                    "answer": "C'est Léonard de Vinci qui a peint La Joconde entre 1503 et 1506."
+                },
+                {
+                    "question": "Pourquoi sourit-elle ?",
+                    "answer": "Le sourire de la Joconde est célèbre pour son ambiguïté. Léonard de Vinci a utilisé la technique du 'sfumato' pour flouter les contours de la bouche, rendant l'expression changeante selon l'angle de vue. Certains y voient de la sérénité, d'autres de la mélancolie."
+                },
+                {
+                    "question": "Est-ce le vrai tableau ?",
+                    "answer": "Oui, il s'agit bien de l'original exposé au Musée du Louvre à Paris, protégé derrière une vitrine blindée."
+                }
+            ]
+        },
+        {
+            "id": "starry_night",
+            "title": "La Nuit étoilée",
+            "artist": "Vincent van Gogh",
+            "year": "1889",
+            "museum": "MoMA, New York",
+            "description": "Une représentation tourmentée et onirique de la vue depuis la chambre de l'asile de Van Gogh à Saint-Rémy-de-Provence.",
+            "narratives": {
+                "short": "La Nuit étoilée de Van Gogh est une explosion de couleurs et de mouvements. Peinte en 1889, elle montre un ciel nocturne tourbillonnant au-dessus d'un village endormi, dominé par un grand cyprès sombre au premier plan.",
+                "long": "Peinte en juin 1889, La Nuit étoilée représente la vue depuis la fenêtre de la chambre de l'artiste à l'asile de Saint-Rémy-de-Provence, juste avant le lever du soleil. Contrairement à la plupart de ses œuvres, celle-ci a été peinte de mémoire et non d'après nature. Les tourbillons dans le ciel reflètent l'état émotionnel tourmenté de Van Gogh, tandis que le village paisible en bas, avec sa petite église, apporte un contraste saisissant. Le cyprès au premier plan, symbole de deuil, relie la terre au ciel tumultueux."
+            },
+            "faq": [
+                {
+                    "question": "Quand a été peint ce tableau ?",
+                    "answer": "Van Gogh a peint La Nuit étoilée en juin 1889, alors qu'il séjournait à l'asile de Saint-Rémy-de-Provence."
+                },
+                {
+                    "question": "Où se trouve ce tableau ?",
+                    "answer": "Le tableau est conservé au Museum of Modern Art (MoMA) à New York."
+                },
+                {
+                    "question": "Que représentent les tourbillons ?",
+                    "answer": "Les tourbillons célestes sont souvent interprétés comme une représentation de l'état mental agité de l'artiste, mais certains scientifiques y ont aussi vu une représentation étonnamment précise des turbulences fluides."
+                }
+            ]
+        },
+        {
+            "id": "libery_leading",
+            "title": "La Liberté guidant le peuple",
+            "artist": "Eugène Delacroix",
+            "year": "1830",
+            "museum": "Musée du Louvre, Paris",
+            "description": "Scène emblématique commémorant la Révolution de Juillet 1830.",
+            "narratives": {
+                "short": "Symbole de la République française, cette toile monumentale d'Eugène Delacroix célèbre la Révolution de 1830. Au centre, la Liberté, incarnée par une femme sein nu brandissant le drapeau tricolore, mène le peuple parisien au combat.",
+                "long": "Réalisée en 1830, cette huile sur toile commémore les Trois Glorieuses. La composition pyramidale culmine avec la figure allégorique de la Liberté. À ses côtés, on peut voir différents représentants du peuple : un gamin de Paris (qui inspirera Gavroche à Victor Hugo), un ouvrier, un bourgeois en haut-de-forme (peut-être un autoportrait de Delacroix). C'est une œuvre romantique par excellence, mêlant le réalisme cru des cadavres au premier plan à l'héroïsme épique de l'assaut."
+            },
+            "faq": [
+                {
+                    "question": "Qui est la femme au centre ?",
+                    "answer": "C'est une allégorie de la Liberté, qui sera plus tard associée à Marianne, symbole de la République française."
+                },
+                {
+                    "question": "Que représente le garçon avec les pistolets ?",
+                    "answer": "Le gamin de Paris à droite de la Liberté représente la jeunesse révoltée. Il a inspiré le personnage de Gavroche dans Les Misérables de Victor Hugo."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+export const artworksMock = [
+  {
+    id: 'art-1',
+    code: 'ART-2024-001',
+    title: 'La Joconde',
+    artist: 'Léonard de Vinci',
+    period: 'Renaissance',
+    collection: 'Permanente',
+    room: 'Salle 6',
+    status: 'En exposition',
+    updatedAt: '12/11/2024',
+    thumbnail: '🎨',
+  },
+  {
+    id: 'art-2',
+    code: 'ART-2024-014',
+    title: 'Le Radeau de la Méduse',
+    artist: 'Théodore Géricault',
+    period: 'Romantisme',
+    collection: 'Temporaires',
+    room: 'Salle 12',
+    status: 'En exposition',
+    updatedAt: '09/11/2024',
+    thumbnail: '🖼️',
+  },
+  {
+    id: 'art-3',
+    code: 'ART-2024-026',
+    title: 'La Jeune Fille à la perle',
+    artist: 'Johannes Vermeer',
+    period: 'Baroque',
+    collection: 'Prêt',
+    room: 'Salle 8',
+    status: 'En exposition',
+    updatedAt: '07/11/2024',
+    thumbnail: '🧵',
+  },
+  {
+    id: 'art-4',
+    code: 'ART-2024-031',
+    title: 'Les Nymphéas',
+    artist: 'Claude Monet',
+    period: 'Impressionnisme',
+    collection: 'Permanente',
+    room: 'Galerie Orangerie',
+    status: 'Maintenance',
+    updatedAt: '01/11/2024',
+    thumbnail: '🌸',
+  },
+  {
+    id: 'art-5',
+    code: 'ART-2024-042',
+    title: 'Guernica',
+    artist: 'Pablo Picasso',
+    period: 'Moderne',
+    collection: 'Prêt',
+    room: 'Salle 4',
+    status: 'En réserve',
+    updatedAt: '28/10/2024',
+    thumbnail: '🕊️',
+  },
+]
+
+export const collectionFilters = ['Permanente', 'Temporaires', 'Prêt']
+export const periodFilters = ['Renaissance', 'Baroque', 'Romantisme', 'Impressionnisme', 'Moderne']
+export const roomFilters = ['Salle 1', 'Salle 4', 'Salle 6', 'Salle 8', 'Salle 12', 'Galerie Orangerie']
+export const statusFilters = ['En exposition', 'En réserve', 'Maintenance']
