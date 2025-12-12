@@ -31,8 +31,10 @@ class Settings(BaseSettings):
     
     # LLM
     groq_api_key: str = os.getenv("GROQ_API_KEY")
-    
     llm_model: str = "llama-3.1-8b-instant"
+    
+    # Musia Backend Integration
+    musia_backend_url: str = os.getenv("MUSIA_BACKEND_URL", "http://localhost:3000/api")
     
     class Config:
         env_file = (".env", "../.env")
