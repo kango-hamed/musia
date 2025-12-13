@@ -12,13 +12,14 @@ interface SceneProps {
 
 export function Scene({ className }: SceneProps) {
   return (
-    <div className={`w-full h-full ${className || ""}`}>
-      <Canvas
-        camera={{ position: [0, 2, 8], fov: 60 }}
-        shadows
-        gl={{ antialias: true }}
-        dpr={[1, 2]}
-      >
+    <Canvas
+      className={className}
+      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+      camera={{ position: [0, 2, 8], fov: 60 }}
+      shadows
+      gl={{ antialias: true }}
+      dpr={[1, 2]}
+    >
         <Suspense fallback={null}>
           {/* Lighting */}
           <Lighting />
@@ -34,7 +35,6 @@ export function Scene({ className }: SceneProps) {
           {/* Camera Controls */}
           <CameraController />
         </Suspense>
-      </Canvas>
-    </div>
+    </Canvas>
   );
 }

@@ -4,8 +4,8 @@
  */
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { AudioPlayer, createAudioContext, unlockAudio } from '@/utils';
-import { AUDIO_CONFIG } from '@/constants/museum';
+import { AudioPlayer, createAudioContext, unlockAudio } from '@utils/audio';
+import { AUDIO_CONFIG } from '@constants/museum';
 
 interface AudioTrack {
   id: string;

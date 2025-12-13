@@ -1,4 +1,11 @@
-import { useCallback, useState } from "react";
+/**
+ * Voice Button Component
+ * Voice interaction using Web Speech API + NLP service
+ */
+
+import { useCallback } from "react";
+import { useChatStore } from "@/stores";
+import { useVoiceChat } from "@/hooks/useVoiceChat";
 
 interface VoiceButtonProps {
   onTranscript?: (text: string) => void;
@@ -6,114 +13,78 @@ interface VoiceButtonProps {
 }
 
 export function VoiceButton({ onTranscript, onResponse }: VoiceButtonProps) {
-  const [isListening, setIsListening] = useState(false);
-  const [isProcessing, setIsProcessing] = useState(false);
+  const { sessionId } = useChatStore();
+  const { isRecording, isProcessing, startRecording, stopRecording } =
+    useVoiceChat({ sessionId });
 
-  const NLP_BASE = import.meta.env.VITE_NLP_API_URL || "http://localhost:8000";
-
-  const startListening = useCallback(() => {
-    // Check for Web Speech API support
-    const SpeechRecognition =
-      (window as any).webkitSpeechRecognition ||
-      (window as any).SpeechRecognition;
-
-    if (!SpeechRecognition) {
-      console.warn("Speech Recognition not supported");
-      return;
-    }
-
-    const recognition = new SpeechRecognition();
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    recognition.lang = "fr-FR";
-
-    recognition.onstart = () => {
-      setIsListening(true);
-    };
-
-    recognition.onresult = async (event: any) => {
-      const transcript = event.results[0][0].transcript;
-      setIsListening(false);
-      setIsProcessing(true);
-
-      onTranscript?.(transcript);
-
-      try {
-        // Send to NLP API
-        const response = await fetch(`${NLP_BASE}/conversation/text`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            session_id: sessionStorage.getItem("session_id") || "demo",
-            message: transcript,
-          }),
-        });
-
-        const data = await response.json();
-        onResponse?.(data);
-
-        // Play audio response if available
-        if (data.audio_url) {
-          const audio = new Audio(`${NLP_BASE}${data.audio_url}`);
-          audio.play();
-        }
-      } catch (error) {
-        console.error("NLP Error:", error);
-      } finally {
-        setIsProcessing(false);
+  const handleClick = useCallback(async () => {
+    if (isRecording) {
+      // Stop recording and process
+      const response = await stopRecording();
+      if (response) {
+        onResponse?.(response);
       }
-    };
-
-    recognition.onerror = (event: any) => {
-      console.error("Speech Recognition Error:", event.error);
-      setIsListening(false);
-    };
-
-    recognition.onend = () => {
-      setIsListening(false);
-    };
-
-    recognition.start();
-  }, [NLP_BASE, onTranscript, onResponse]);
+    } else {
+      // Start recording
+      const started = await startRecording();
+      if (started && onTranscript) {
+        // Callback will be triggered when recording completes
+      }
+    }
+  }, [isRecording, startRecording, stopRecording, onTranscript, onResponse]);
 
   const getButtonState = () => {
     if (isProcessing) return "processing";
-    if (isListening) return "listening";
+    if (isRecording) return "recording";
     return "idle";
   };
 
   const buttonClasses = {
-    idle: "bg-blue-500 hover:bg-blue-600",
-    listening: "bg-red-500 animate-pulse",
-    processing: "bg-yellow-500",
+    idle: "bg-blue-500 hover:bg-blue-600 active:scale-95",
+    recording: "bg-red-500 animate-pulse scale-110",
+    processing: "bg-yellow-500 cursor-wait",
   };
 
   const icons = {
     idle: "🎤",
-    listening: "🔴",
+    recording: "⏹",
     processing: "⏳",
+  };
+
+  const labels = {
+    idle: "Cliquez pour parler",
+    recording: "Cliquez pour arrêter",
+    processing: "Traitement en cours...",
   };
 
   const state = getButtonState();
 
   return (
-    <button
-      onClick={startListening}
-      disabled={isProcessing}
-      className={`
-        fixed bottom-8 left-1/2 -translate-x-1/2
-        w-16 h-16 rounded-full
-        ${buttonClasses[state]}
-        text-white text-2xl
-        shadow-lg hover:shadow-xl
-        transition-all duration-300
-        flex items-center justify-center
-        z-50
-        disabled:opacity-50
-      `}
-      aria-label={isListening ? "Listening..." : "Click to speak"}
-    >
-      {icons[state]}
-    </button>
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2">
+      <button
+        onClick={handleClick}
+        disabled={isProcessing}
+        className={`
+          w-16 h-16 rounded-full
+          ${buttonClasses[state]}
+          text-white text-2xl
+          shadow-lg hover:shadow-xl
+          transition-all duration-300
+          flex items-center justify-center
+          disabled:opacity-50 disabled:cursor-not-allowed
+        `}
+        aria-label={labels[state]}
+        title={labels[state]}
+      >
+        {icons[state]}
+      </button>
+
+      {/* Status Label */}
+      {(isRecording || isProcessing) && (
+        <div className="bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium animate-fade-in">
+          {labels[state]}
+        </div>
+      )}
+    </div>
   );
 }

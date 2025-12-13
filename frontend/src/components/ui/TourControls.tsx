@@ -1,46 +1,71 @@
-import { useTourStore } from "../../lib/stores";
+/**
+ * Tour Controls Component
+ * Playback controls for guided tours
+ */
+
+import { useTourStore, useMuseumStore } from "@/stores";
 
 export function TourControls() {
   const {
     currentTour,
     currentStepIndex,
+    waypoints,
     isPlaying,
-    togglePlayPause,
+    isPaused,
+    play,
+    pause,
     nextStep,
     previousStep,
-    exitTour,
+    stop,
   } = useTourStore();
+
+  const { artworks } = useMuseumStore();
 
   if (!currentTour) return null;
 
-  const currentStep = currentTour.steps[currentStepIndex];
-  const totalSteps = currentTour.steps.length;
+  const totalSteps = waypoints.length;
+  const currentWaypoint = waypoints[currentStepIndex];
+  const currentArtwork = currentWaypoint
+    ? artworks.find((a) => a.id === currentWaypoint.artworkId)
+    : null;
+
+  const togglePlayPause = () => {
+    if (isPlaying && !isPaused) {
+      pause();
+    } else {
+      play();
+    }
+  };
 
   return (
     <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-xl z-40">
-      <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 mx-4 text-white">
+      <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 mx-4 text-white shadow-2xl">
         {/* Tour Header */}
         <div className="flex justify-between items-center mb-3">
-          <h3 className="font-semibold text-lg">
-            {currentTour.trajectory.name}
-          </h3>
+          <h3 className="font-semibold text-lg">{currentTour.name}</h3>
           <button
-            onClick={exitTour}
-            className="text-gray-400 hover:text-white transition-colors"
+            onClick={stop}
+            className="text-gray-400 hover:text-white transition-colors text-xl"
+            title="Quitter le parcours"
           >
             ✕
           </button>
         </div>
 
         {/* Current Artwork Info */}
-        <div className="mb-3">
-          <p className="text-blue-300 font-medium">
-            {currentStep?.artwork.title}
-          </p>
-          <p className="text-sm text-gray-400 line-clamp-2">
-            {currentStep?.narrative.text.substring(0, 100)}...
-          </p>
-        </div>
+        {currentArtwork && (
+          <div className="mb-3">
+            <p className="text-blue-300 font-medium">{currentArtwork.title}</p>
+            {currentArtwork.artist && (
+              <p className="text-sm text-gray-400">{currentArtwork.artist}</p>
+            )}
+            {currentWaypoint.description && (
+              <p className="text-xs text-gray-500 line-clamp-2 mt-1">
+                {currentWaypoint.description}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Progress Bar */}
         <div className="flex items-center gap-2 mb-3">
@@ -62,24 +87,27 @@ export function TourControls() {
           <button
             onClick={previousStep}
             disabled={currentStepIndex === 0}
-            className="p-2 text-2xl disabled:opacity-30 hover:scale-110 transition-transform"
+            className="p-2 text-2xl disabled:opacity-30 hover:scale-110 transition-transform disabled:cursor-not-allowed"
+            title="Étape précédente"
           >
             ⏮
           </button>
 
           <button
             onClick={togglePlayPause}
-            className="w-14 h-14 rounded-full bg-blue-500 hover:bg-blue-600 
+            className="w-14 h-14 rounded-full bg-blue-500 hover:bg-blue-600
                        flex items-center justify-center text-2xl
-                       transition-colors shadow-lg"
+                       transition-all shadow-lg hover:shadow-xl active:scale-95"
+            title={isPlaying && !isPaused ? "Pause" : "Lecture"}
           >
-            {isPlaying ? "⏸" : "▶"}
+            {isPlaying && !isPaused ? "⏸" : "▶"}
           </button>
 
           <button
             onClick={nextStep}
             disabled={currentStepIndex === totalSteps - 1}
-            className="p-2 text-2xl disabled:opacity-30 hover:scale-110 transition-transform"
+            className="p-2 text-2xl disabled:opacity-30 hover:scale-110 transition-transform disabled:cursor-not-allowed"
+            title="Étape suivante"
           >
             ⏭
           </button>

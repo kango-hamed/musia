@@ -4,6 +4,7 @@
  */
 
 import { Vector3, Euler, Quaternion, Matrix4, Box3, Sphere } from 'three';
+import * as THREE from 'three';
 import type { Artwork, Orientation } from '@/types';
 import { ORIENTATION_ANGLES, WALL_OFFSETS, CAMERA_DISTANCES } from '@/constants/museum';
 
