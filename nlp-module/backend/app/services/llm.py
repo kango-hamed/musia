@@ -28,31 +28,28 @@ class LLMService:
         prompt: str, 
         system_prompt: str = "Tu es un guide de musée expert et passionné."
     ) -> str:
-        """Génère une réponse via Groq"""
-        if not self.client:
-            self.initialize()
-            if not self.client:
-                return "Désolé, mon module de génération de langage n'est pas disponible."
+        """Génère une réponse via ChatGroq (LangChain)"""
+        if not settings.groq_api_key:
+            return "Clé API non configurée."
 
         try:
-            chat_completion = self.client.chat.completions.create(
-                messages=[
-                    {
-                        "role": "system",
-                        "content": system_prompt
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                model=self.model,
-                temperature=0.7,
-                max_tokens=800,
+            from langchain_groq import ChatGroq
+            from langchain_core.messages import SystemMessage, HumanMessage
+            
+            chat = ChatGroq(
+                temperature=0.7, 
+                model_name=self.model, 
+                groq_api_key=settings.groq_api_key
             )
             
-            return chat_completion.choices[0].message.content
+            messages = [
+                SystemMessage(content=system_prompt),
+                HumanMessage(content=prompt),
+            ]
+            
+            response = await chat.ainvoke(messages)
+            return response.content
             
         except Exception as e:
-            logger.error(f"LLM Generation Error: {e}")
-            return "Désolé, j'ai rencontré une erreur en réfléchissant à votre question."
+            logger.error(f"LangChain Generation Error: {e}")
+            return "Désolé, une erreur est survenue lors de la génération de la réponse."

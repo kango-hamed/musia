@@ -25,7 +25,7 @@ def main():
     
     # Configuration Uvicorn
     uvicorn.run(
-        "app.main:app",
+        "app.main:sio_app",
         host=settings.api_host,
         port=settings.api_port,
         reload=settings.debug,  # Auto-reload en mode debug

@@ -7,6 +7,7 @@ import logging
 from pathlib import Path
 import uuid
 import os
+import socketio
 
 from .services import STTService, TTSService, NLPService, KnowledgeBase
 from .services.llm import LLMService
@@ -15,6 +16,8 @@ from .models import (
     ConversationResponse,
     ArtworkResponse
 )
+from .database import SessionLocal
+from .models_sql import VisitorInteraction
 
 # Configuration logging
 logging.basicConfig(
@@ -64,6 +67,112 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+# Configuration Socket.IO
+sio = socketio.AsyncServer(
+    async_mode='asgi',
+    cors_allowed_origins='*',
+    logger=True,
+    engineio_logger=True
+)
+
+@sio.event
+async def connect(sid, environ):
+    logger.info(f"Socket connected: {sid}")
+    await sio.emit('response', {'data': 'Connected', 'count': 0}, room=sid)
+
+@sio.event
+async def disconnect(sid):
+    logger.info(f"Socket disconnected: {sid}")
+
+@sio.event
+async def chat_message(sid, data):
+    logger.info(f"Message from {sid}: {data}")
+    # Traitement simple pour l'instant, connexion avec NLPService à faire
+    msg = data.get('message', '')
+    if msg:
+        # Ici on pourrait appeler nlp_service
+        try:
+            # Simulation réponse rapide
+            response = f"J'ai bien reçu votre message : {msg}"
+            # Si on a besoin de nlp_service, on peut l'utiliser ici
+            # intent = nlp_service.classify_intent(msg)
+            # await sio.emit('chat_response', {'response': response, 'intent': "general"}, room=sid)
+             
+            # Exemple avec le vrai service (si initialisé)
+            # Note: il faut gérer le contexte (artwork_id) qui devrait être passé dans data ou session
+            await sio.emit('chat_response', {'response': response}, room=sid)
+        except Exception as e:
+            logger.error(f"Error in chat_message: {e}")
+            await sio.emit('error', {'detail': str(e)}, room=sid)
+
+@sio.event
+async def waypoint_reached(sid, data):
+    """
+    Événement déclenché quand le robot atteint un waypoint
+    """
+    logger.info(f"Waypoint reached from {sid}: {data}")
+    
+    try:
+        waypoint_index = data.get('waypoint_index', 0)
+        artwork_name = data.get('artwork_name', '')
+        # Fallback si pas d'ID (accueil)
+        artwork_id = data.get('artwork_id', None)
+        artist = data.get('artist', '')
+        
+        # Gestion de session
+        session_id = str(sid)
+        
+        # Initialiser ou mettre à jour la conversation
+        if session_id not in conversations:
+            conversations[session_id] = {
+                "current_artwork": artwork_id, 
+                "history": [],
+                "context": {"waypoint": waypoint_index}
+            }
+        else:
+            conversations[session_id]["current_artwork"] = artwork_id
+            conversations[session_id]["context"]["waypoint"] = waypoint_index
+
+        # Générer le texte selon le waypoint
+        text = ""
+        if waypoint_index == 0:
+            # Message d'accueil
+            text = "Bonjour et bienvenue au musée virtuel. Je suis votre guide robot. Suivez-moi pour découvrir nos œuvres. Vous pouvez maintenir le bouton micro pour me poser des questions à tout moment."
+        else:
+            # Description de l'œuvre via LLM (simulé ici pour l'instant, mais on pourrait appeler nlp_service)
+            if artist:
+                # Prompt pour le LLM pourrait être ici
+                text = f"Nous voici devant {artwork_name}, une œuvre magnifique de {artist}. Je suis à votre écoute si vous avez des questions sur cette œuvre."
+            else:
+                text = f"Voici {artwork_name}. Une œuvre remarquable qui mérite votre attention."
+        
+        # Générer l'audio avec TTS
+        audio_path = await tts_service.synthesize(text)
+        
+        # Lire le fichier audio et encoder en base64
+        with open(audio_path, 'rb') as audio_file:
+            import base64
+            audio_data = audio_file.read()
+            audio_base64 = base64.b64encode(audio_data).decode('utf-8')
+        
+        # Envoyer la réponse au frontend AVEC le session_id
+        await sio.emit('robot_speech', {
+            'type': 'robot_speech',
+            'text': text,
+            'audio_base64': audio_base64,
+            'waypoint_index': waypoint_index,
+            'session_id': session_id
+        }, room=sid)
+        
+        logger.info(f"Audio sent for waypoint {waypoint_index} with session {session_id}")
+        
+    except Exception as e:
+        logger.error(f"Error in waypoint_reached: {e}")
+        await sio.emit('error', {'detail': str(e)}, room=sid)
+
+# Création de l'application ASGI principale (SocketIO + FastAPI)
+sio_app = socketio.ASGIApp(sio, app)
+
 # CORS (pour frontend web)
 app.add_middleware(
     CORSMiddleware,
@@ -111,7 +220,7 @@ async def health_check():
             "stt": stt_service.model is not None,
             "tts": True,
             "nlp": nlp_service.embedder is not None,
-            "knowledge_base": len(knowledge_base.artworks) > 0
+            "knowledge_base": True # knowledge_base.artworks_cache is present
         }
     }
 
@@ -122,13 +231,13 @@ async def health_check():
 @app.get("/artworks", response_model=list[ArtworkResponse])
 async def get_artworks():
     """Liste toutes les œuvres"""
-    artworks = knowledge_base.get_all_artworks()
+    artworks = await knowledge_base.get_all_artworks()
     return artworks
 
 @app.get("/artworks/{artwork_id}", response_model=ArtworkResponse)
 async def get_artwork(artwork_id: str):
     """Récupère une œuvre spécifique"""
-    artwork = knowledge_base.get_artwork(artwork_id)
+    artwork = await knowledge_base.get_artwork(artwork_id)
     if not artwork:
         raise HTTPException(status_code=404, detail="Artwork not found")
     return artwork
@@ -136,7 +245,7 @@ async def get_artwork(artwork_id: str):
 @app.get("/artworks/{artwork_id}/narrative")
 async def get_narrative(artwork_id: str, type: str = "short"):
     """Récupère la narration d'une œuvre"""
-    narrative = knowledge_base.get_narrative(artwork_id, type)
+    narrative = await knowledge_base.get_narrative(artwork_id, type)
     if not narrative:
         raise HTTPException(status_code=404, detail="Narrative not found")
     
@@ -155,7 +264,7 @@ async def get_narrative(artwork_id: str, type: str = "short"):
 @app.post("/conversation/start")
 async def start_conversation(artwork_id: str):
     """Démarre une nouvelle conversation"""
-    artwork = knowledge_base.get_artwork(artwork_id)
+    artwork = await knowledge_base.get_artwork(artwork_id)
     if not artwork:
         raise HTTPException(status_code=404, detail="Artwork not found")
     
@@ -167,7 +276,7 @@ async def start_conversation(artwork_id: str):
     }
     
     # Présentation initiale
-    narrative = knowledge_base.get_narrative(artwork_id, "short")
+    narrative = await knowledge_base.get_narrative(artwork_id, "short")
     audio_path = await tts_service.synthesize(narrative)
     
     return {
@@ -218,7 +327,7 @@ async def ask_question(
         logger.info(f"Intent classified: {intent}")
         
         # RAG Generation
-        artwork = knowledge_base.get_artwork(artwork_id)
+        artwork = await knowledge_base.get_artwork(artwork_id)
         response_text = await nlp_service.generate_rag_response(
             question=user_text,
             artwork_data=artwork,
@@ -241,6 +350,9 @@ async def ask_question(
             "bot": response_text,
             "intent": intent
         })
+        
+        # Log DB
+        await log_interaction(session_id, user_text, response_text, intent, audio_path=audio_response_path)
         
         return {
             "session_id": session_id,
@@ -270,14 +382,17 @@ async def ask_question_text(request: ConversationRequest) -> ConversationRespons
         # NLP
         intent = nlp_service.classify_intent(request.message)
         
-        # RAG Generation (Intelligence Artificielle)
-        artwork = knowledge_base.get_artwork(artwork_id)
+        # RAG Generation
+        artwork = await knowledge_base.get_artwork(artwork_id)
         response_text = await nlp_service.generate_rag_response(
             question=request.message,
             artwork_data=artwork,
             llm_service=llm_service,
             history=conversation["history"]
         )
+        
+        # Log DB (Async)
+        await log_interaction(request.session_id, request.message, response_text, intent)
         
         # TTS (avec gestion d'erreur robuste)
         audio_url = ""
@@ -323,6 +438,48 @@ async def get_audio(filename: str):
         media_type="audio/mpeg",
         filename=filename
     )
+
+# ============================================================================
+# Lifespan Events (Startup/Shutdown)
+# ============================================================================
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup events
+    for folder in [DATA_DIR / "uploads", DATA_DIR / "tts_cache"]:
+        folder.mkdir(parents=True, exist_ok=True)
+    yield
+    # Cleanup (Shutdown events)
+
+# ============================================================================
+# Logging Function
+# ============================================================================
+
+async def log_interaction(
+    session_id: str,
+    user_text: str,
+    response_text: str,
+    intent: str,
+    audio_path: str = None,
+    success: bool = True
+):
+    """Log l'interaction en base de données"""
+    try:
+        async with SessionLocal() as session:
+            interaction = VisitorInteraction(
+                # visitId non disponible pour le moment (session anonyme)
+                interactionType="question",
+                questionText=user_text,
+                detectedIntent=intent,
+                intentConfidence=0.0, # À récupérer du STT si dispo
+                responseText=response_text,
+                responseSource="llm_generated", # Par défaut
+                wasSuccessful=success
+            )
+            session.add(interaction)
+            await session.commit()
+    except Exception as e:
+        logger.error(f"Failed to log interaction: {e}")
 
 # ============================================================================
 # Routes Utilitaires

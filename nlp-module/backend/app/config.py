@@ -31,8 +31,19 @@ class Settings(BaseSettings):
     
     # LLM
     groq_api_key: str = os.getenv("GROQ_API_KEY")
-    
     llm_model: str = "llama-3.1-8b-instant"
+
+    # Database (Neon)
+    database_url: str = os.getenv("DATABASE_URL")
+    
+    # WebSocket / Redis
+    redis_url: str = os.getenv("REDIS_URL", "redis://localhost:6379")
+
+    # Storage (S3/MinIO)
+    s3_endpoint: str = os.getenv("S3_ENDPOINT", "http://localhost:9000")
+    s3_access_key: str = os.getenv("S3_ACCESS_KEY", "minioadmin")
+    s3_secret_key: str = os.getenv("S3_SECRET_KEY", "minioadmin")
+    s3_bucket: str = "museum-assets"
     
     class Config:
         env_file = (".env", "../.env")

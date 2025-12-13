@@ -124,40 +124,46 @@ class NLPService:
         llm_service,
         history: List[Dict] = None
     ) -> str:
-        """Génère une réponse intelligente (RAG) via LLM"""
+        """Génère une réponse intelligente (RAG) via LangChain"""
         
-        # 1. Construire le contexte de l'œuvre
-        context_text = f"""
-        TITRE: {artwork_data['title']}
-        ARTISTE: {artwork_data['artist']}
-        DATE: {artwork_data.get('year', 'Inconnue')}
-        DESCRIPTION: {artwork_data.get('description', '')}
-        NARRATION: {artwork_data.get('narratives', {}).get('long', '')}
-        """
+        from langchain_core.prompts import ChatPromptTemplate
         
-        # Ajouter les FAQs pertinentes comme connaissances de base
-        context_text += "\nFAITS CONNUS:\n"
+        # 1. Construire le contexte
+        context_text = f"TITRE: {artwork_data['title']}\n"
+        context_text += f"ARTISTE: {artwork_data['artist']}\n"
+        context_text += f"DATE: {artwork_data.get('year', 'Inconnue')}\n"
+        context_text += f"DESCRIPTION: {artwork_data.get('description', '')}\n"
+        context_text += f"DETAILS: {artwork_data.get('narratives', {}).get('long', '')}\n"
+        
         for faq in artwork_data.get('faq', []):
             context_text += f"- Q: {faq['question']} | R: {faq['answer']}\n"
 
-        # 2. Construire le prompt système
-        system_prompt = """Tu es Musia, un guide de musée virtuel expert, passionné et amical.
-        Tes réponses doivent être :
-        - Précises (basées UNIQUEMENT sur le contexte fourni)
-        - Courtes et conversationnelles (idéal pour la synthèse vocale)
-        - Engageantes (n'hésite pas à poser une question ouverte à la fin parfois)
-        Si tu ne trouves pas la réponse dans le contexte, dis poliment que tu ne sais pas mais propose de parler de ce que tu sais sur l'œuvre."""
-
-        # 3. Prompt utilisateur
-        user_prompt = f"""
-        CONTEXTE SUR L'ŒUVRE :
-        {context_text}
-
-        QUESTION DU VISITEUR : {question}
-        """
-
-        return await llm_service.generate_response(user_prompt, system_prompt)
-
-    def generate_fallback_response(self, intent: str, context: Dict) -> str:
-        # (Ancienne méthode gardée en secours ou simplifiée)
-        return "Je réfléchis... mais je n'arrive pas à formuler une réponse. Demandez-moi autre chose ?"
+        # 2. Template LangChain
+        template = ChatPromptTemplate.from_messages([
+            ("system", """Tu es Musia, un guide de musée virtuel expert.
+            Réponds aux questions des visiteurs sur l'œuvre présentée.
+            Utilise le contexte suivant pour répondre:
+            {context}
+            
+            Si la réponse n'est pas dans le contexte, dis-le poliment et propose une information intéressante sur l'œuvre."""),
+            ("human", "{question}"),
+        ])
+        
+        # 3. Génération via LLMService (qui utilise maintenant ChatGroq)
+        # Note: On passe le prompt formaté à llm_service.generate_response qui attend un string pour l'instant
+        # Idéalement, on refactoriserait pour que llm_service expose le modèle LangChain directement.
+        # Pour l'instant, on formate nous-même.
+        
+        formatted_prompt = await template.ainvoke({
+            "context": context_text,
+            "question": question
+        })
+        
+        # On extrait le contenu du message humain/système combiné ou on envoie juste le string
+        # Ici l'adaptation est un peu hybride car llm_service.generate_response fait son propre ChatGroq call.
+        # Pour faire simple et propre avec LangChain:
+        
+        return await llm_service.generate_response(
+            prompt=question, 
+            system_prompt=template.format_messages(context=context_text, question=question)[0].content
+        )
