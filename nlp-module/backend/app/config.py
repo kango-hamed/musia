@@ -45,6 +45,9 @@ class Settings(BaseSettings):
     s3_secret_key: str = os.getenv("S3_SECRET_KEY", "minioadmin")
     s3_bucket: str = "museum-assets"
     
+    # Musia Backend Integration
+    musia_backend_url: str = os.getenv("MUSIA_BACKEND_URL", "http://localhost:3000/api")
+    
     class Config:
         env_file = (".env", "../.env")
         extra = "ignore"

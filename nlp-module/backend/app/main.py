@@ -53,6 +53,7 @@ async def lifespan(app: FastAPI):
     # Initialiser les services
     await stt_service.initialize()
     await nlp_service.initialize()
+    await knowledge_base.initialize()  # NEW: Fetch from Musia Backend
     llm_service.initialize()
     
     logger.info("✅ All services initialized")
@@ -255,6 +256,76 @@ async def get_narrative(artwork_id: str, type: str = "short"):
     return {
         "text": narrative,
         "audio_url": f"/audio/{Path(audio_path).name}"
+    }
+
+# ============================================================================
+# Routes Trajectories (Audio Tours) - NEW
+# ============================================================================
+
+@app.get("/trajectories")
+async def get_trajectories():
+    """Liste tous les parcours disponibles"""
+    trajectories = knowledge_base.get_all_trajectories()
+    return trajectories
+
+@app.get("/trajectories/{trajectory_id}")
+async def get_trajectory(trajectory_id: str):
+    """Récupère les détails d'un parcours"""
+    trajectory = await knowledge_base.get_trajectory_details(trajectory_id)
+    if not trajectory:
+        raise HTTPException(status_code=404, detail="Trajectory not found")
+    return trajectory
+
+@app.get("/trajectories/{trajectory_id}/preload")
+async def preload_trajectory(trajectory_id: str):
+    """
+    Précharge toutes les données d'un parcours pour une visite guidée.
+    Retourne une structure optimisée avec tous les artworks et narratives.
+    """
+    preloaded = await knowledge_base.preload_trajectory(trajectory_id)
+    if not preloaded:
+        raise HTTPException(status_code=404, detail="Trajectory not found")
+    return preloaded
+
+@app.post("/trajectories/{trajectory_id}/start")
+async def start_trajectory_visit(trajectory_id: str):
+    """
+    Démarre une visite guidée basée sur un parcours.
+    Crée une session et retourne la première étape.
+    """
+    preloaded = await knowledge_base.preload_trajectory(trajectory_id)
+    if not preloaded:
+        raise HTTPException(status_code=404, detail="Trajectory not found")
+    
+    session_id = str(uuid.uuid4())
+    conversations[session_id] = {
+        "current_artwork": preloaded["steps"][0]["artwork"]["id"] if preloaded["steps"] else None,
+        "trajectory": preloaded["trajectory"],
+        "current_step": 0,
+        "total_steps": len(preloaded["steps"]),
+        "history": [],
+        "context": {}
+    }
+    
+    first_step = preloaded["steps"][0] if preloaded["steps"] else None
+    
+    # Generate audio for first narrative if needed
+    audio_url = ""
+    if first_step and first_step["narrative"]["text"]:
+        try:
+            audio_path = await tts_service.synthesize(first_step["narrative"]["text"])
+            audio_url = f"/audio/{Path(audio_path).name}"
+        except Exception as e:
+            logger.error(f"TTS Error: {e}")
+    
+    return {
+        "session_id": session_id,
+        "trajectory": preloaded["trajectory"],
+        "current_step": 1,
+        "total_steps": len(preloaded["steps"]),
+        "artwork": first_step["artwork"] if first_step else None,
+        "narrative_text": first_step["narrative"]["text"] if first_step else "",
+        "audio_url": audio_url or (first_step["narrative"]["audioUrl"] if first_step else "")
     }
 
 # ============================================================================
