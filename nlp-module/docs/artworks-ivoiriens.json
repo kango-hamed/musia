@@ -1,0 +1,156 @@
+{
+  "artworks": [
+    {
+      "id": "masque_baoule",
+      "title": "Masque Baoulé",
+      "artist": "Artisan Baoulé traditionnel",
+      "year": "XIXe siècle",
+      "period": "Art traditionnel ivoirien",
+      "style": "Sculpture rituelle Baoulé",
+      "collection": "Arts de Côte d'Ivoire",
+      "description": "Ce magnifique masque Baoulé représente l'idéal de beauté et de sérénité du peuple Baoulé, l'un des plus grands groupes ethniques de Côte d'Ivoire. Le masque se distingue par ses traits délicats, son front bombé et sa coiffure élaborée en crête.",
+      "imageUrl": "/images/masque_baoule.jpg",
+      "position": { "x": -7.74, "y": 1.8, "z": -3.5 },
+      "rotation": { "y": 90 },
+      "stopPosition": { "x": -5.5, "y": 0, "z": -3.5 },
+      "colors": { "primary": "#8B4513", "accent": "#D2691E" },
+      "narratives": {
+        "standard": "Le masque Baoulé que vous admirez incarne la beauté idéale selon ce peuple akan de Côte d'Ivoire. Les Baoulé, descendants de la reine Abla Pokou qui fonda le royaume au 18e siècle, utilisent ces masques lors de cérémonies de réjouissance appelées 'goli'. Remarquez la finesse des traits : le front haut symbolise l'intelligence, les yeux mi-clos la sagesse, et la bouche fine la discrétion. La coiffure sophistiquée en crête évoque les coiffures traditionnelles des femmes Baoulé. Ces masques ne représentent pas des ancêtres mais plutôt un idéal esthétique et moral.",
+        "short": "Ce masque Baoulé aux traits délicats symbolise l'idéal de beauté du peuple Baoulé de Côte d'Ivoire. Utilisé dans les danses goli, il représente la sérénité et la sagesse.",
+        "detailed": "Le masque Baoulé, ou 'mblo', est l'une des productions artistiques les plus raffinées de Côte d'Ivoire. Le peuple Baoulé, installé au centre du pays, forme le groupe akan le plus important avec environ 4 millions de personnes. Leur histoire commence avec la reine Abla Pokou qui, fuyant les guerres ashanti au Ghana au 18e siècle, sacrifia son fils unique pour traverser le fleuve Comoé. Le nom 'Baoulé' signifie d'ailleurs 'l'enfant est mort' en akan. Ces masques-portraits, sculptés dans du bois dur, célèbrent des personnes réelles admirées pour leur beauté ou leur caractère. Le front bombé représente la connaissance, les yeux en amande la perspicacité, la petite bouche la retenue dans la parole. Les scarifications sur les tempes et les joues sont des marques identitaires. La patine sombre provient d'huiles et de fumée appliquées durant des décennies. Lors des danses goli, quatre types de masques apparaissent dans un ordre précis, le mblo étant le dernier et le plus prestigieux.",
+        "kids": "Ce masque en bois s'appelle un masque Baoulé. Il vient du peuple Baoulé qui vit au centre de la Côte d'Ivoire. Regarde comme il est beau ! Il a un grand front qui veut dire qu'il est intelligent, des yeux fermés car il est sage, et une petite bouche car il ne parle pas trop. Les gens portent ce masque pour danser lors de grandes fêtes. C'est comme un déguisement magique qui rend les danses encore plus belles !"
+      },
+      "faq": [
+        {
+          "question": "Pourquoi le masque a-t-il les yeux fermés ?",
+          "answer": "Les yeux mi-clos ou fermés symbolisent la sagesse, la contemplation intérieure et la sérénité. C'est une caractéristique typique de l'esthétique Baoulé qui valorise le calme et la réflexion.",
+          "keywords": ["yeux", "fermés", "mi-clos", "symbolisme"]
+        },
+        {
+          "question": "Qui étaient les Baoulé ?",
+          "answer": "Les Baoulé forment le plus grand groupe akan de Côte d'Ivoire, environ 4 millions de personnes. Ils sont arrivés du Ghana actuel au 18e siècle sous la conduite de la reine Abla Pokou. Ils vivent principalement au centre du pays et sont réputés pour leur agriculture (cacao, café) et leur art raffiné.",
+          "keywords": ["Baoulé", "peuple", "origine", "histoire", "Ghana"]
+        },
+        {
+          "question": "À quoi servait ce masque ?",
+          "answer": "Ce masque-portrait, appelé 'mblo', était porté lors des danses goli, des cérémonies de réjouissance. Il célèbre une personne réelle admirée de la communauté. Le danseur masqué incarnait les qualités morales et esthétiques de cette personne.",
+          "keywords": ["fonction", "utilisation", "danse", "goli", "cérémonie"]
+        },
+        {
+          "question": "Comment est-il fabriqué ?",
+          "answer": "Le masque est sculpté dans un bois dur local par des sculpteurs spécialisés. Après le façonnage, il est poli, parfois décoré de scarifications, puis patiné avec des huiles et de la fumée pour obtenir cette couleur sombre brillante. La fabrication peut prendre plusieurs semaines.",
+          "keywords": ["fabrication", "bois", "sculpture", "technique", "matériaux"]
+        },
+        {
+          "question": "Que signifie la coiffure en crête ?",
+          "answer": "La coiffure élaborée en crête s'inspire des coiffures traditionnelles des femmes Baoulé. Elle représente le raffinement, le statut social élevé et le soin apporté à l'apparence. Chaque détail de la coiffure a une signification esthétique et sociale.",
+          "keywords": ["coiffure", "crête", "cheveux", "signification"]
+        }
+      ]
+    },
+    {
+      "id": "statue_senoufo",
+      "title": "Statue Senoufo Porpianong",
+      "artist": "Sculpteur Senoufo",
+      "year": "Début XXe siècle",
+      "period": "Art traditionnel ivoirien",
+      "style": "Sculpture funéraire Senoufo",
+      "collection": "Arts de Côte d'Ivoire",
+      "description": "Cette impressionnante statue Senoufo appelée 'Porpianong' est une figure funéraire qui honore les défunts importants. Les Senoufo, peuple du nord de la Côte d'Ivoire, sont célèbres pour leurs sculptures monumentales aux formes stylisées et puissantes.",
+      "imageUrl": "/images/statue_senoufo.jpg",
+      "position": { "x": 0, "y": 1.8, "z": -9.74 },
+      "rotation": { "y": 0 },
+      "stopPosition": { "x": 0, "y": 0, "z": -7.5 },
+      "colors": { "primary": "#654321", "accent": "#8B7355" },
+      "narratives": {
+        "standard": "Voici une statue Porpianong, créée par les Senoufo du nord de la Côte d'Ivoire. Les Senoufo forment un peuple agricole d'environ 2,5 millions de personnes, répartis entre la Côte d'Ivoire, le Mali et le Burkina Faso. Cette sculpture funéraire monumentale était placée sur la tombe d'un chef ou d'un notable pour perpétuer sa mémoire. Observez la stylisation géométrique du corps : la tête imposante, les seins coniques, les jambes courtes et massives. Cette esthétique puissante reflète la force et l'autorité du défunt. Les Senoufo excellent dans la sculpture sur bois et sont également connus pour leur société secrète du Poro qui structure la vie sociale.",
+        "short": "Cette statue Senoufo Porpianong est une sculpture funéraire monumentale placée sur les tombes des chefs. Sa stylisation géométrique et sa puissance témoignent de l'art sculptural senoufo du nord ivoirien.",
+        "detailed": "Le Porpianong représente l'apogée de l'art sculptural Senoufo. Les Senoufo occupent une vaste région au nord de la Côte d'Ivoire, autour des villes de Korhogo et Boundiali. Agriculteurs et éleveurs, ils sont organisés en matrilignages et leur vie sociale est régie par la société initiatique du Poro, une institution qui forme les jeunes hommes pendant 21 ans à travers trois cycles de sept ans. Ces statues, pouvant atteindre 1,5 mètre, sont appelées 'Porpianong' ou 'Pombibele' selon les régions. Elles sont sculptées à la mort d'un chef ou d'un ancien important et placées sur sa tombe dans le bois sacré. La stylisation extrême n'est pas une maladresse mais un choix esthétique délibéré : la tête volumineuse symbolise la sagesse, les seins pointus la fertilité et la continuité du lignage, les bras collés au corps la dignité, les jambes courtes l'ancrage dans la terre ancestrale. Certaines statues portent des scarifications tribales ou des ornements. Le bois utilisé est généralement du fromager ou de l'iroko, patiné avec du beurre de karité et de la bière de mil.",
+        "kids": "Cette grande statue en bois vient du peuple Senoufo qui vit au nord de la Côte d'Ivoire. Elle s'appelle un Porpianong et elle était placée sur la tombe d'un chef important, comme un roi du village. Regarde comme elle a une grosse tête - c'est pour montrer qu'elle était très intelligente ! Ses bras sont collés à son corps car elle est très sage et calme. Les Senoufo sont très forts pour sculpter le bois, et ils font des statues comme celle-ci pour se souvenir de leurs chefs."
+      },
+      "faq": [
+        {
+          "question": "Qui sont les Senoufo ?",
+          "answer": "Les Senoufo sont un peuple voltaïque d'environ 2,5 millions de personnes vivant au nord de la Côte d'Ivoire, au sud du Mali et à l'ouest du Burkina Faso. Ils sont agriculteurs (mil, igname, coton) et éleveurs. Leur centre culturel est Korhogo en Côte d'Ivoire.",
+          "keywords": ["Senoufo", "peuple", "origine", "localisation", "Korhogo"]
+        },
+        {
+          "question": "Qu'est-ce que le Poro ?",
+          "answer": "Le Poro est la société secrète initiatique masculine des Senoufo. Elle structure toute la vie sociale et religieuse. Les jeunes hommes y entrent vers 7 ans et suivent trois cycles de sept ans d'enseignement : travaux agricoles, histoire, rites, sculpture, danse. C'est une véritable université traditionnelle.",
+          "keywords": ["Poro", "société secrète", "initiation", "rites"]
+        },
+        {
+          "question": "Pourquoi la statue a-t-elle cette forme géométrique ?",
+          "answer": "La stylisation géométrique est un choix esthétique délibéré de l'art Senoufo. La tête volumineuse symbolise la sagesse, les seins coniques la fertilité du lignage, les bras le long du corps la dignité, et les jambes courtes l'enracinement dans la terre ancestrale. Chaque proportion a une signification.",
+          "keywords": ["forme", "géométrie", "stylisation", "symbolisme", "proportions"]
+        },
+        {
+          "question": "Comment était utilisée cette statue ?",
+          "answer": "Le Porpianong était sculpté à la mort d'un chef ou d'un ancien respecté. La statue était portée lors des funérailles puis érigée sur la tombe dans le bois sacré. Elle perpétuait la mémoire du défunt et servait de lien entre les vivants et les ancêtres.",
+          "keywords": ["fonction", "funérailles", "tombe", "mémoire", "ancêtres"]
+        },
+        {
+          "question": "Quel bois est utilisé ?",
+          "answer": "Les sculpteurs Senoufo utilisent principalement le bois de fromager (Ceiba pentandra) ou d'iroko (Milicia excelsa), deux essences locales dures et durables. Après sculpture, le bois est patiné avec du beurre de karité et de la bière de mil pour le protéger et lui donner cette patine sombre.",
+          "keywords": ["bois", "matériaux", "fromager", "iroko", "patine"]
+        }
+      ]
+    },
+    {
+      "id": "tambour_akan",
+      "title": "Tambour royal Akan",
+      "artist": "Maître tambourinaire Akan",
+      "year": "XIXe siècle",
+      "period": "Art de cour akan",
+      "style": "Instrument cérémoniel",
+      "collection": "Arts de Côte d'Ivoire",
+      "description": "Ce tambour richement décoré provient des cours royales akan de Côte d'Ivoire. Instrument à la fois musical et politique, il servait à transmettre des messages complexes grâce au 'langage tambouriné', véritable écriture sonore capable de reproduire les tons de la langue akan.",
+      "imageUrl": "/images/tambour_akan.jpg",
+      "position": { "x": 7.74, "y": 1.8, "z": -3.5 },
+      "rotation": { "y": -90 },
+      "stopPosition": { "x": 5.5, "y": 0, "z": -3.5 },
+      "colors": { "primary": "#8B6914", "accent": "#DAA520" },
+      "narratives": {
+        "standard": "Ce tambour royal akan, appelé 'atumpan' en langue twi, est bien plus qu'un instrument de musique. Les peuples akan de Côte d'Ivoire - Baoulé, Agni, Abron - ont développé un système sophistiqué de communication par tambour. Chaque tambour reproduit les tons hauts et bas de la langue akan, permettant de 'parler' sur de longues distances. Ce tambour était réservé aux cours royales et joué uniquement lors d'occasions importantes : intronisation de chefs, funérailles de nobles, annonces de guerre ou de paix. Observez les sculptures qui ornent le fût : motifs géométriques, figures d'animaux totémiques, et parfois des proverbes gravés. Le tambour était considéré comme sacré et son tambourinaire jouissait d'un statut élevé.",
+        "short": "Ce tambour akan royal était utilisé dans les cours pour transmettre des messages grâce au langage tambouriné. Ses décorations symboliques reflètent le pouvoir et la sophistication des royaumes akan de Côte d'Ivoire.",
+        "detailed": "Le tambour atumpan incarne la sophistication des civilisations akan. Les peuples akan - Baoulé, Agni, Abron, Ehotilé - partagent une langue tonale où le sens des mots change selon la hauteur du ton. Les tambourinaires royaux, formés pendant des années, utilisaient des paires de tambours de tailles différentes (l'un 'mâle' grave, l'autre 'femelle' aigu) pour reproduire exactement ces variations tonales. Ainsi, ils pouvaient transmettre des messages complets, réciter des généalogies royales, ou psalmodier des proverbes. Par exemple, pour annoncer la mort d'un roi, le tambour 'disait' : 'Le grand arbre fromager est tombé, la forêt est dans le silence'. Ces tambours étaient sculptés dans un tronc évidé de wawa ou de cèdre. La peau provenait d'animaux spécifiques - éléphant pour les plus prestigieux, antilope ou buffle pour les autres. Les clous dorés qui fixent la peau formaient parfois des motifs géométriques symbolisant l'unité du royaume. Les sculptures représentent des animaux totémiques (léopard, éléphant, crocodile) ou des symboles de pouvoir (trône, épée, couronne). Lors des cérémonies, le tambourinaire commençait toujours par saluer les ancêtres puis le roi avec des formules codifiées.",
+        "kids": "Ce tambour spécial s'appelle un atumpan. Il vient des royaumes akan de Côte d'Ivoire. Ce qui est magique, c'est qu'il ne sert pas seulement à faire de la musique - il peut parler ! La langue akan utilise des sons hauts et bas, et le tambour copie ces sons. Comme ça, le tambourinaire peut envoyer des messages à tout le village sans crier. C'était comme le téléphone d'autrefois ! Seuls les tambourinaires du roi avaient le droit de jouer de ce tambour. Regarde les belles décorations : il y a des dessins d'animaux forts comme l'éléphant et le léopard."
+      },
+      "faq": [
+        {
+          "question": "Comment le tambour peut-il 'parler' ?",
+          "answer": "Les langues akan sont tonales : le même mot prononcé sur un ton haut ou bas a des significations différentes. Le tambour reproduit ces variations de hauteur grâce à deux tambours de tailles différentes. Le tambourinaire combine les sons pour former des 'phrases' compréhensibles par tous les locuteurs akan.",
+          "keywords": ["langage tambouriné", "tons", "communication", "parler"]
+        },
+        {
+          "question": "Qui sont les Akan ?",
+          "answer": "Les Akan forment une famille de peuples parlant des langues apparentées : Baoulé, Agni, Abron en Côte d'Ivoire, Ashanti au Ghana. Ils représentent environ 42% de la population ivoirienne. Leur origine remonte au royaume médiéval de Bonoman (actuel Ghana). Ils sont réputés pour leurs structures politiques sophistiquées et leur art de cour.",
+          "keywords": ["Akan", "peuple", "Baoulé", "Agni", "origine"]
+        },
+        {
+          "question": "À quelles occasions utilisait-on ce tambour ?",
+          "answer": "L'atumpan était joué uniquement lors d'événements majeurs de la cour royale : intronisation ou funérailles de chefs, déclarations de guerre ou de paix, grandes cérémonies religieuses, festivals annuels (fête de l'igname). Son utilisation quotidienne était interdite sous peine de punition sévère.",
+          "keywords": ["cérémonies", "occasions", "utilisation", "fêtes"]
+        },
+        {
+          "question": "Que représentent les sculptures sur le tambour ?",
+          "answer": "Les motifs sculptés ont des significations symboliques profondes. Les animaux (léopard, éléphant) représentent le pouvoir royal. Les motifs géométriques évoquent l'unité du royaume. Certains tambours portent des proverbes gravés, comme 'Le feu ne détruit pas le métal précieux' (la vérité résiste aux épreuves).",
+          "keywords": ["sculptures", "motifs", "symboles", "décorations"]
+        },
+        {
+          "question": "Comment devenait-on tambourinaire royal ?",
+          "answer": "Le métier se transmettait généralement de père en fils dans certaines familles. L'apprentissage durait de 10 à 15 ans : mémorisation de centaines de messages codifiés, maîtrise rythmique parfaite, connaissance des protocoles de cour. Le tambourinaire devenait un dignitaire royal avec des privilèges importants.",
+          "keywords": ["tambourinaire", "apprentissage", "formation", "métier"]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "collection_name": "Trésors de la Culture Ivoirienne",
+    "description": "Cette collection présente trois chefs-d'œuvre de l'art traditionnel ivoirien, témoignant de la richesse culturelle des peuples Baoulé, Senoufo et Akan. Chaque œuvre révèle l'ingéniosité artistique, les croyances spirituelles et l'organisation sociale de ces civilisations ancestrales.",
+    "themes": ["art traditionnel", "culture ivoirienne", "sculpture africaine", "instruments rituels", "peuples akan"],
+    "language": "fr",
+    "country": "Côte d'Ivoire",
+    "curator": "Musée des Civilisations de Côte d'Ivoire"
+  }
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "1",
+    "code": "AFR001",
+    "title": "La Plaque en Bronze du Bénin",
+    "artist": "Artisans Edo",
+    "description": "Une magnifique plaque en bronze du Royaume du Bénin, représentant des scènes de cour royale et des guerriers. Ces plaques ornaient les murs du palais royal et représentent certains des plus beaux travaux de métallurgie de l'histoire de l'art africain.",
+    "period": "16ème-17ème siècle",
+    "style": "Bronze du Bénin",
+    "collection": "Art d'Afrique de l'Ouest",
+    "country": "Nigeria"
+  },
+  {
+    "id": "2",
+    "code": "AFR002",
+    "title": "Tête en Terre Cuite Nok",
+    "artist": "Artisans de la Culture Nok",
+    "description": "Une ancienne sculpture en terre cuite de la culture Nok, l'une des plus anciennes sculptures connues d'Afrique subsaharienne. Les traits stylisés distinctifs et la coiffure élaborée sont caractéristiques de l'art Nok.",
+    "period": "500 av. J.-C. - 200 ap. J.-C.",
+    "style": "Terre Cuite Nok",
+    "collection": "Art Africain Ancien",
+    "country": "Nigeria"
+  },
+  {
+    "id": "3",
+    "code": "AFR003",
+    "title": "Masque Corporel Makonde",
+    "artist": "Maîtres Sculpteurs Makonde",
+    "description": "Un masque corporel en bois saisissant utilisé dans les cérémonies d'initiation traditionnelles Makonde. La sculpture complexe et les motifs symboliques représentent la connexion entre les mondes physique et spirituel.",
+    "period": "19ème-20ème siècle",
+    "style": "Sculpture sur Bois Makonde",
+    "collection": "Art d'Afrique de l'Est",
+    "country": "Tanzanie/Mozambique"
+  },
+  {
+    "id": "4",
+    "code": "AFR004",
+    "title": "Poids à Or Ashanti",
+    "artist": "Orfèvres Ashanti",
+    "description": "Une sculpture miniature en laiton utilisée comme poids pour mesurer la poudre d'or, présentant des motifs géométriques et figuratifs. Ces poids servaient également de proverbes et de symboles de la sagesse et de la culture Ashanti.",
+    "period": "18ème-19ème siècle",
+    "style": "Travail du Laiton Ashanti",
+    "collection": "Art d'Afrique de l'Ouest",
+    "country": "Ghana"
+  },
+  {
+    "id": "5",
+    "code": "AFR005",
+    "title": "Oiseau du Grand Zimbabwe",
+    "artist": "Sculpteurs sur Pierre Shona",
+    "description": "Une sculpture d'oiseau en pierre à savon provenant de l'ancienne cité du Grand Zimbabwe. Ces oiseaux iconiques ont été trouvés au sommet de monolithes de pierre et sont considérés comme des messagers entre les royaumes terrestres et spirituels.",
+    "period": "13ème-15ème siècle",
+    "style": "Sculpture sur Pierre du Zimbabwe",
+    "collection": "Art d'Afrique Australe",
+    "country": "Zimbabwe"
+  },
+  {
+    "id": "6",
+    "code": "AFR006",
+    "title": "Masque Royal Kuba",
+    "artist": "Artisans du Royaume Kuba",
+    "description": "Un masque cérémoniel élaboré orné de perles, de coquillages et de raphia. Utilisé lors de cérémonies royales et de rites d'initiation, ce masque représente l'autorité divine du roi Kuba et la connexion avec les esprits ancestraux.",
+    "period": "19ème-20ème siècle",
+    "style": "Art Cérémoniel Kuba",
+    "collection": "Art d'Afrique Centrale",
+    "country": "République Démocratique du Congo"
+  }
+]

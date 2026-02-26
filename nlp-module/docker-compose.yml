@@ -1,26 +1,81 @@
-version: "3.8"
+version: "3.9"
 
 services:
-  museum-guide-bot:
-    build: .
-    container_name: museum-guide-bot
+  # ──────────────────────────────────────────────────
+  # Service principal : NLP API
+  # ──────────────────────────────────────────────────
+  nlp-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: musia-nlp-api
     ports:
       - "8000:8000"
     volumes:
-      # Mount data directories to persist uploads and cache
+      # Persistance des données générées
       - ./data/uploads:/app/data/uploads
       - ./data/tts_cache:/app/data/tts_cache
-      # Mount artworks.json to allow editing without rebuilding
       - ./data/artworks.json:/app/data/artworks.json
-      # Persist AI Models (avoid redownloading)
-      - ./data/cache/whisper:/root/.cache/whisper
-      - ./data/cache/huggingface:/root/.cache/huggingface
+      # Cache des modèles AI (Whisper + HuggingFace)
+      - whisper_cache:/root/.cache/whisper
+      - huggingface_cache:/root/.cache/huggingface
     environment:
       - API_HOST=0.0.0.0
       - API_PORT=8000
-      - DEBUG=true
-      # Important: Pass Groq API Key
+      - DEBUG=${DEBUG:-false}
       - GROQ_API_KEY=${GROQ_API_KEY}
-      # Musia Backend Integration (NEW)
       - MUSIA_BACKEND_URL=${MUSIA_BACKEND_URL:-http://host.docker.internal:3000/api}
+      - REDIS_URL=redis://redis:6379
+      - DATABASE_URL=${DATABASE_URL:-sqlite+aiosqlite:///./data/musia.db}
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
     restart: unless-stopped
+    networks:
+      - musia-network
+
+  # ──────────────────────────────────────────────────
+  # Service Redis : Sessions persistantes
+  # ──────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: musia-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - musia-network
+
+# ──────────────────────────────────────────────────
+# Volumes nommés (persistance entre redémarrages)
+# ──────────────────────────────────────────────────
+volumes:
+  redis_data:
+    driver: local
+  whisper_cache:
+    driver: local
+  huggingface_cache:
+    driver: local
+
+# ──────────────────────────────────────────────────
+# Réseau interne
+# ──────────────────────────────────────────────────
+networks:
+  musia-network:
+    driver: bridge

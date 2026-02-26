@@ -44,6 +44,8 @@ model Artwork {
   period      String? // Ex: "Renaissance", "Art Moderne"
   style       String? // Ex: "Impressionnisme", "Cubisme"
   collection  String? // Ex: "Permanent", "Temporaire"
+  year        Int?    // Ex: 1503
+  technique   String? // Ex: "Oil on canvas"
   
   // Localisation dans le musée
   positionX   Float?

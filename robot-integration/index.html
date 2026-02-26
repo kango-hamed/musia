@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interface Admin - Robot Autonome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .status {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.2);
+      font-size: 14px;
+    }
+    
+    .status.connected {
+      background: #10b981;
+    }
+    
+    .status.disconnected {
+      background: #ef4444;
+    }
+    
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding: 30px;
+    }
+    
+    .section {
+      background: #f9fafb;
+      padding: 25px;
+      border-radius: 15px;
+      border: 2px solid #e5e7eb;
+    }
+    
+    .section h2 {
+      color: #1f2937;
+      margin-bottom: 20px;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section h2::before {
+      content: '🤖';
+      font-size: 24px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #374151;
+    }
+    
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    
+    .form-group select:focus,
+    .form-group input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 10px;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .btn-success {
+      background: #10b981;
+      color: white;
+    }
+    
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+    
+    .btn-secondary {
+      background: #6b7280;
+      color: white;
+    }
+    
+    .btn-outline {
+      background: white;
+      border: 2px solid #667eea;
+      color: #667eea;
+    }
+    
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .trajet-preview {
+      background: white;
+      border: 2px dashed #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 300px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .trajet-preview:empty::before {
+      content: '📍 Aucune commande ajoutée';
+      color: #9ca3af;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 260px;
+      font-size: 18px;
+    }
+    
+    .commande-item {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: slideIn 0.3s ease;
+    }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .commande-item .numero {
+      background: #667eea;
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+    .commande-item .details {
+      flex: 1;
+      margin: 0 15px;
+    }
+    
+    .commande-item .action {
+      font-weight: 600;
+      color: #1f2937;
+      font-size: 16px;
+    }
+    
+    .commande-item .valeur {
+      color: #6b7280;
+      font-size: 14px;
+    }
+    
+    .commande-item .btn-delete {
+      background: #ef4444;
+      color: white;
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    
+    .commande-item .btn-delete:hover {
+      background: #dc2626;
+      transform: rotate(90deg);
+    }
+    
+    .trajets-predefined {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .trajets-predefined .btn {
+      margin-bottom: 0;
+    }
+    
+    .bluetooth-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .console {
+      background: #1f2937;
+      color: #10b981;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      max-height: 200px;
+      overflow-y: auto;
+      margin-top: 20px;
+    }
+    
+    .console-line {
+      margin-bottom: 5px;
+      padding: 2px 0;
+    }
+    
+    .console-line.error {
+      color: #ef4444;
+    }
+    
+    .console-line.success {
+      color: #10b981;
+    }
+    
+    .console-line.info {
+      color: #3b82f6;
+    }
+    
+    .saved-trajets {
+      margin-top: 20px;
+    }
+    
+    .saved-trajet-item {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid #e5e7eb;
+    }
+    
+    .saved-trajet-item .info {
+      flex: 1;
+    }
+    
+    .saved-trajet-item .name {
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 5px;
+    }
+    
+    .saved-trajet-item .date {
+      font-size: 12px;
+      color: #6b7280;
+    }
+    
+    .saved-trajet-item .actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .saved-trajet-item .actions button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    
+    .saved-trajet-item .btn-load {
+      background: #667eea;
+      color: white;
+    }
+    
+    .saved-trajet-item .btn-delete-saved {
+      background: #ef4444;
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .trajets-predefined {
+        grid-template-columns: 1fr;
+      }
+      
+      .bluetooth-controls {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- En-tête -->
+    <div class="header">
+      <h1>🤖 Interface Admin - Robot Autonome</h1>
+      <div id="status" class="status disconnected">
+        ⚠️ Non connecté
+      </div>
+    </div>
+    
+    <!-- Contenu principal -->
+    <div class="main-content">
+      <!-- Panneau gauche : Configuration du trajet -->
+      <div>
+        <div class="section">
+          <h2>Configuration Bluetooth</h2>
+          
+          <div class="bluetooth-controls">
+            <button class="btn btn-primary" onclick="connecterBluetooth()">
+              📡 Connecter
+            </button>
+            <button class="btn btn-danger" onclick="deconnecterBluetooth()">
+              🔌 Déconnecter
+            </button>
+          </div>
+          
+          <div class="form-group">
+            <label>Action à ajouter</label>
+            <select id="action">
+              <option value="A">⬆️ Avancer (cm)</option>
+              <option value="R">⬇️ Reculer (cm)</option>
+              <option value="G">↪️ Tourner gauche (°)</option>
+              <option value="D">↩️ Tourner droite (°)</option>
+              <option value="P">⏸️ Pause (ms)</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Valeur</label>
+            <input type="number" id="valeur" value="50" min="0" max="500">
+          </div>
+          
+          <button class="btn btn-primary" onclick="ajouterCommande()">
+            ➕ Ajouter Commande
+          </button>
+          
+          <button class="btn btn-secondary" onclick="viderTrajet()">
+            🗑️ Vider le Trajet
+          </button>
+        </div>
+        
+        <div class="section">
+          <h2>Trajets Prédéfinis</h2>
+          <div class="trajets-predefined">
+            <button class="btn btn-outline" onclick="chargerTrajetCarre()">
+              ⬜ Carré 50x50
+            </button>
+            <button class="btn btn-outline" onclick="chargerTrajetRectangle()">
+              ▭ Rectangle
+            </button>
+            <button class="btn btn-outline" onclick="chargerTrajetS()">
+              🔀 Trajet en S
+            </button>
+            <button class="btn btn-outline" onclick="chargerTrajetTriangle()">
+              🔺 Triangle
+            </button>
+            <button class="btn btn-outline" onclick="chargerTrajetZigzag()">
+              ⚡ Zigzag
+            </button>
+            <button class="btn btn-outline" onclick="chargerTrajetEtoile()">
+              ⭐ Étoile
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Panneau droite : Aperçu et contrôles -->
+      <div>
+        <div class="section">
+          <h2>Aperçu du Trajet</h2>
+          <div id="trajet-preview" class="trajet-preview"></div>
+          
+          <button class="btn btn-success" onclick="envoyerTrajet()" style="margin-top: 15px;">
+            🚀 Envoyer au Robot
+          </button>
+          
+          <button class="btn btn-danger" onclick="arreterRobot()">
+            ⛔ Arrêter le Robot
+          </button>
+          
+          <button class="btn btn-outline" onclick="sauvegarderTrajet()">
+            💾 Sauvegarder ce Trajet
+          </button>
+        </div>
+        
+        <div class="section">
+          <h2>Trajets Sauvegardés</h2>
+          <div id="saved-trajets" class="saved-trajets"></div>
+        </div>
+        
+        <div class="section">
+          <h2>Console</h2>
+          <div id="console" class="console"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // GESTION BLUETOOTH WEB
+    // ============================================
+    
+    let bluetoothDevice = null;
+    let bluetoothCharacteristic = null;
+    let trajetActuel = [];
+    
+    // UUIDs Bluetooth standard pour HC-05/HC-06
+    const UART_SERVICE_UUID = "0000ffe0-0000-1000-8000-00805f9b34fb";
+    const UART_CHARACTERISTIC_UUID = "0000ffe1-0000-1000-8000-00805f9b34fb";
+    
+    // Connexion Bluetooth
+    async function connecterBluetooth() {
+      try {
+        logConsole('Recherche du robot...', 'info');
+        
+        // Demander la sélection du device
+        bluetoothDevice = await navigator.bluetooth.requestDevice({
+          filters: [
+            { namePrefix: 'HC-' },  // HC-05, HC-06
+            { namePrefix: 'BT-' },
+            { services: [UART_SERVICE_UUID] }
+          ],
+          optionalServices: [UART_SERVICE_UUID]
+        });
+        
+        logConsole(`Robot trouvé: ${bluetoothDevice.name}`, 'success');
+        
+        // Connexion au GATT server
+        const server = await bluetoothDevice.gatt.connect();
+        logConsole('Connexion GATT établie', 'success');
+        
+        // Obtenir le service
+        const service = await server.getPrimaryService(UART_SERVICE_UUID);
+        
+        // Obtenir la caractéristique
+        bluetoothCharacteristic = await service.getCharacteristic(UART_CHARACTERISTIC_UUID);
+        
+        logConsole('✅ Connexion réussie!', 'success');
+        updateStatus(true);
+        
+        // Écouter les déconnexions
+        bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
+        
+      } catch (error) {
+        logConsole(`❌ Erreur: ${error}`, 'error');
+        updateStatus(false);
+      }
+    }
+    
+    // Déconnexion
+    function deconnecterBluetooth() {
+      if (bluetoothDevice && bluetoothDevice.gatt.connected) {
+        bluetoothDevice.gatt.disconnect();
+        logConsole('Déconnecté du robot', 'info');
+      }
+      updateStatus(false);
+    }
+    
+    // Callback déconnexion
+    function onDisconnected() {
+      logConsole('⚠️ Robot déconnecté', 'error');
+      updateStatus(false);
+      bluetoothCharacteristic = null;
+    }
+    
+    // Envoyer des données via Bluetooth
+    async function envoyerBluetooth(data) {
+      if (!bluetoothCharacteristic) {
+        logConsole('❌ Robot non connecté!', 'error');
+        alert('Veuillez connecter le robot d\'abord!');
+        return false;
+      }
+      
+      try {
+        // Convertir la chaîne en ArrayBuffer
+        const encoder = new TextEncoder();
+        const dataBuffer = encoder.encode(data);
+        
+        await bluetoothCharacteristic.writeValue(dataBuffer);
+        logConsole(`📤 Envoyé: ${data}`, 'success');
+        return true;
+      } catch (error) {
+        logConsole(`❌ Erreur d'envoi: ${error}`, 'error');
+        return false;
+      }
+    }
+    
+    // Mise à jour du statut de connexion
+    function updateStatus(connected) {
+      const statusEl = document.getElementById('status');
+      if (connected) {
+        statusEl.className = 'status connected';
+        statusEl.textContent = '✅ Connecté';
+      } else {
+        statusEl.className = 'status disconnected';
+        statusEl.textContent = '⚠️ Non connecté';
+      }
+    }
+    
+    // ============================================
+    // GESTION DES TRAJETS
+    // ============================================
+    
+    function ajouterCommande() {
+      const action = document.getElementById('action').value;
+      const valeur = parseInt(document.getElementById('valeur').value);
+      
+      if (isNaN(valeur) || valeur < 0) {
+        alert('Valeur invalide!');
+        return;
+      }
+      
+      trajetActuel.push({ action, valeur });
+      afficherTrajet();
+      logConsole(`Commande ajoutée: ${getNomAction(action)} ${valeur}`, 'info');
+    }
+    
+    function supprimerCommande(index) {
+      trajetActuel.splice(index, 1);
+      afficherTrajet();
+      logConsole(`Commande ${index + 1} supprimée`, 'info');
+    }
+    
+    function viderTrajet() {
+      if (trajetActuel.length > 0 && !confirm('Vider le trajet actuel?')) {
+        return;
+      }
+      trajetActuel = [];
+      afficherTrajet();
+      logConsole('Trajet vidé', 'info');
+    }
+    
+    function afficherTrajet() {
+      const container = document.getElementById('trajet-preview');
+      container.innerHTML = '';
+      
+      trajetActuel.forEach((cmd, index) => {
+        const div = document.createElement('div');
+        div.className = 'commande-item';
+        div.innerHTML = `
+          <div class="numero">${index + 1}</div>
+          <div class="details">
+            <div class="action">${getIconeAction(cmd.action)} ${getNomAction(cmd.action)}</div>
+            <div class="valeur">${cmd.valeur} ${getUnite(cmd.action)}</div>
+          </div>
+          <button class="btn-delete" onclick="supprimerCommande(${index})">×</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+    
+    function getNomAction(action) {
+      const noms = {
+        'A': 'Avancer',
+        'R': 'Reculer',
+        'G': 'Tourner gauche',
+        'D': 'Tourner droite',
+        'P': 'Pause'
+      };
+      return noms[action] || action;
+    }
+    
+    function getIconeAction(action) {
+      const icones = {
+        'A': '⬆️',
+        'R': '⬇️',
+        'G': '↪️',
+        'D': '↩️',
+        'P': '⏸️'
+      };
+      return icones[action] || '❓';
+    }
+    
+    function getUnite(action) {
+      if (action === 'P') return 'ms';
+      if (action === 'G' || action === 'D') return '°';
+      return 'cm';
+    }
+    
+    // ============================================
+    // ENVOI DU TRAJET AU ROBOT
+    // ============================================
+    
+    async function envoyerTrajet() {
+      if (trajetActuel.length === 0) {
+        alert('Aucune commande dans le trajet!');
+        return;
+      }
+      
+      if (!bluetoothCharacteristic) {
+        alert('Robot non connecté! Connectez-vous d\'abord.');
+        return;
+      }
+      
+      // Construire la chaîne de commandes
+      let commandesBT = '[';
+      trajetActuel.forEach(cmd => {
+        commandesBT += cmd.action + cmd.valeur + ';';
+      });
+      commandesBT += ']';
+      
+      logConsole('🚀 Envoi du trajet au robot...', 'info');
+      logConsole(`Commande: ${commandesBT}`, 'info');
+      
+      // Envoyer le trajet
+      const success = await envoyerBluetooth(commandesBT);
+      
+      if (success) {
+        // Attendre un peu puis envoyer commande d'exécution
+        await delay(1000);
+        await envoyerBluetooth('T');
+        
+        logConsole('✅ Trajet envoyé et lancé!', 'success');
+        alert('Trajet envoyé au robot!');
+      }
+    }
+    
+    async function arreterRobot() {
+      if (!bluetoothCharacteristic) {
+        alert('Robot non connecté!');
+        return;
+      }
+      
+      await envoyerBluetooth('S');
+      logConsole('⛔ Commande d\'arrêt envoyée', 'info');
+    }
+    
+    // ============================================
+    // TRAJETS PRÉDÉFINIS
+    // ============================================
+    
+    function chargerTrajetCarre() {
+      viderTrajet();
+      trajetActuel = [
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 90}
+      ];
+      afficherTrajet();
+      logConsole('Trajet Carré chargé', 'success');
+    }
+    
+    function chargerTrajetRectangle() {
+      viderTrajet();
+      trajetActuel = [
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 15},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 15},
+        {action: 'G', valeur: 90}
+      ];
+      afficherTrajet();
+      logConsole('Trajet Rectangle chargé', 'success');
+    }
+    
+    function chargerTrajetS() {
+      viderTrajet();
+      trajetActuel = [
+        {action: 'A', valeur: 10},
+        {action: 'D', valeur: 90},
+        {action: 'A', valeur: 15},
+        {action: 'D', valeur: 90},
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 30},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 30}
+      ];
+      afficherTrajet();
+      logConsole('Trajet en S chargé', 'success');
+    }
+    
+    function chargerTrajetTriangle() {
+      viderTrajet();
+      trajetActuel = [
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 120},
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 120},
+        {action: 'A', valeur: 10},
+        {action: 'G', valeur: 120}
+      ];
+      afficherTrajet();
+      logConsole('Trajet Triangle chargé', 'success');
+    }
+    
+    function chargerTrajetZigzag() {
+      viderTrajet();
+      trajetActuel = [
+        {action: 'A', valeur: 40},
+        {action: 'D', valeur: 45},
+        {action: 'A', valeur: 30},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 30},
+        {action: 'D', valeur: 90},
+        {action: 'A', valeur: 30},
+        {action: 'G', valeur: 90},
+        {action: 'A', valeur: 30},
+        {action: 'D', valeur: 45},
+        {action: 'A', valeur: 40}
+      ];
+      afficherTrajet();
+      logConsole('Trajet Zigzag chargé', 'success');
+    }
+    
+    function chargerTrajetEtoile() {
+      viderTrajet();
+      trajetActuel = [
+        {action: 'A', valeur: 40},
+        {action: 'D', valeur: 144},
+        {action: 'A', valeur: 40},
+        {action: 'D', valeur: 144},
+        {action: 'A', valeur: 40},
+        {action: 'D', valeur: 144},
+        {action: 'A', valeur: 40},
+        {action: 'D', valeur: 144},
+        {action: 'A', valeur: 40},
+        {action: 'D', valeur: 144}
+      ];
+      afficherTrajet();
+      logConsole('Trajet Étoile chargé', 'success');
+    }
+    
+    // ============================================
+    // SAUVEGARDE ET CHARGEMENT DE TRAJETS
+    // ============================================
+    
+    function sauvegarderTrajet() {
+      if (trajetActuel.length === 0) {
+        alert('Aucun trajet à sauvegarder!');
+        return;
+      }
+      
+      const nom = prompt('Nom du trajet:');
+      if (!nom) return;
+      
+      const trajet = {
+        nom: nom,
+        date: new Date().toISOString(),
+        commandes: trajetActuel
+      };
+      
+      const trajets = getTrajets();
+      trajets.push(trajet);
+      localStorage.setItem('trajets_robot', JSON.stringify(trajets));
+      
+      afficherTrajetsSauvegardes();
+      logConsole(`💾 Trajet "${nom}" sauvegardé`, 'success');
+      alert(`Trajet "${nom}" sauvegardé!`);
+    }
+    
+    function chargerTrajetSauvegarde(nom) {
+      const trajets = getTrajets();
+      const trajet = trajets.find(t => t.nom === nom);
+      
+      if (trajet) {
+        trajetActuel = trajet.commandes;
+        afficherTrajet();
+        logConsole(`📂 Trajet "${nom}" chargé`, 'success');
+      }
+    }
+    
+    function supprimerTrajetSauvegarde(nom) {
+      if (!confirm(`Supprimer le trajet "${nom}"?`)) return;
+      
+      let trajets = getTrajets();
+      trajets = trajets.filter(t => t.nom !== nom);
+      localStorage.setItem('trajets_robot', JSON.stringify(trajets));
+      
+      afficherTrajetsSauvegardes();
+      logConsole(`🗑️ Trajet "${nom}" supprimé`, 'info');
+    }
+    
+    function getTrajets() {
+      const data = localStorage.getItem('trajets_robot');
+      return data ? JSON.parse(data) : [];
+    }
+    
+    function afficherTrajetsSauvegardes() {
+      const container = document.getElementById('saved-trajets');
+      const trajets = getTrajets();
+      
+      if (trajets.length === 0) {
+        container.innerHTML = '<p style="color: #9ca3af; text-align: center; padding: 20px;">Aucun trajet sauvegardé</p>';
+        return;
+      }
+      
+      container.innerHTML = '';
+      
+      trajets.forEach(trajet => {
+        const div = document.createElement('div');
+        div.className = 'saved-trajet-item';
+        
+        const date = new Date(trajet.date);
+        const dateStr = date.toLocaleDateString('fr-FR', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        
+        div.innerHTML = `
+          <div class="info">
+            <div class="name">📁 ${trajet.nom}</div>
+            <div class="date">${dateStr} • ${trajet.commandes.length} commandes</div>
+          </div>
+          <div class="actions">
+            <button class="btn-load" onclick="chargerTrajetSauvegarde('${trajet.nom}')">
+              Charger
+            </button>
+            <button class="btn-delete-saved" onclick="supprimerTrajetSauvegarde('${trajet.nom}')">
+              Supprimer
+            </button>
+          </div>
+        `;
+        
+        container.appendChild(div);
+      });
+    }
+    
+    // ============================================
+    // CONSOLE DE LOG
+    // ============================================
+    
+    function logConsole(message, type = 'info') {
+      const console = document.getElementById('console');
+      const line = document.createElement('div');
+      line.className = `console-line ${type}`;
+      
+      const time = new Date().toLocaleTimeString('fr-FR');
+      line.textContent = `[${time}] ${message}`;
+      
+      console.appendChild(line);
+      console.scrollTop = console.scrollHeight;
+      
+      // Garder seulement les 50 dernières lignes
+      while (console.children.length > 50) {
+        console.removeChild(console.firstChild);
+      }
+    }
+    
+    // ============================================
+    // UTILITAIRES
+    // ============================================
+    
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
+    // ============================================
+    // INITIALISATION
+    // ============================================
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      logConsole('Interface chargée', 'success');
+      logConsole('Cliquez sur "Connecter" pour commencer', 'info');
+      afficherTrajetsSauvegardes();
+      
+      // Vérifier le support Bluetooth
+      if (!navigator.bluetooth) {
+        logConsole('❌ Web Bluetooth non supporté par ce navigateur', 'error');
+        alert('Votre navigateur ne supporte pas le Web Bluetooth. Utilisez Chrome, Edge ou Opera.');
+      }
+    });
+  </script>
+</body>
+</html>

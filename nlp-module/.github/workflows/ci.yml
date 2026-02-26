@@ -1,0 +1,126 @@
+name: CI — Tests & Lint
+
+on:
+  push:
+    branches: [main, develop, "feature/**"]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────────────
+  lint:
+    name: 🔍 Lint & Format
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install lint dependencies
+        run: pip install flake8 black isort
+
+      - name: Check import sorting (isort)
+        run: isort --check-only --diff backend-app/app/
+
+      - name: Check formatting (black)
+        run: black --check --diff backend-app/app/ backend-app/test/
+
+      - name: Lint (flake8)
+        run: |
+          flake8 backend-app/app/ backend-app/test/ \
+            --max-line-length=120 \
+            --extend-ignore=E203,E501 \
+            --statistics
+
+  # ─────────────────────────────────────────────────────────────────────────
+  test:
+    name: 🧪 Tests & Coverage
+    runs-on: ubuntu-latest
+    needs: lint
+
+    services:
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      REDIS_URL: redis://localhost:6379
+      DATABASE_URL: sqlite+aiosqlite:///./test.db
+      MUSIA_BACKEND_URL: http://localhost:3000/api
+      DEBUG: "false"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests with coverage
+        working-directory: backend-app
+        run: |
+          python -m pytest test/ \
+            -v \
+            --cov=app \
+            --cov-report=xml \
+            --cov-report=term-missing \
+            --cov-fail-under=70 \
+            --tb=short \
+            -x
+
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          file: backend-app/coverage.xml
+          flags: unittests
+          name: musia-nlp-coverage
+
+  # ─────────────────────────────────────────────────────────────────────────
+  docker-build:
+    name: 🐳 Docker Build Check
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image (no push)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: musia-nlp:ci-check

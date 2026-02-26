@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musia — Robot Guide 3D Enhanced (V6 - Timeout)</title>
+    <style>
+      /* ==================== ROOT VARIABLES ==================== */
+      :root {
+        color-scheme: dark;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        --accent: #8fd3ff;
+        --bg: #05070d;
+        --panel: rgba(6, 10, 18, 0.88);
+      }
+
+      /* ==================== BASE STYLES ==================== */
+      body {
+        margin: 0;
+        background: var(--bg);
+        overflow: hidden;
+      }
+
+      /* ==================== UI PANEL (TOP LEFT) ==================== */
+      .ui-panel {
+        position: fixed;
+        top: 1.5rem;
+        left: 1.5rem;
+        max-width: 380px;
+        padding: 1.4rem 1.7rem;
+        border-radius: 1rem;
+        background: var(--panel);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(143, 211, 255, 0.3);
+        box-shadow: 0 15px 60px rgba(0, 0, 0, 0.6);
+        transition: transform 0.3s ease;
+        z-index: 100;
+      }
+
+      .ui-panel:hover {
+        transform: translateY(-2px);
+      }
+
+      .ui-panel h1 {
+        margin: 0 0 0.6rem;
+        font-size: 1.6rem;
+        background: linear-gradient(135deg, #8fd3ff, #b8e6ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .ui-panel p {
+        margin: 0 0 1.2rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #d2e4ff;
+      }
+
+      /* ==================== START BUTTON ==================== */
+      #startTour {
+        appearance: none;
+        border: none;
+        border-radius: 999px;
+        font-weight: 600;
+        padding: 0.85rem 1.8rem;
+        font-size: 1rem;
+        color: #04111e;
+        background: linear-gradient(135deg, var(--accent), #b8e6ff);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        box-shadow: 0 12px 30px rgba(143, 211, 255, 0.5);
+        width: 100%;
+      }
+
+      #startTour:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      #startTour:not(:disabled):hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 16px 40px rgba(143, 211, 255, 0.65);
+      }
+
+      /* ==================== STATUS LINE (BOTTOM LEFT) ==================== */
+      #statusLine {
+        position: fixed;
+        left: 1.5rem;
+        bottom: 1.5rem;
+        padding: 0.7rem 1.2rem;
+        border-radius: 999px;
+        background: rgba(6, 10, 18, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(143, 211, 255, 0.3);
+        font-size: 0.9rem;
+        letter-spacing: 0.02em;
+        min-width: 280px;
+        transition: all 0.3s ease;
+        z-index: 100;
+        color: #d2e4ff;
+      }
+
+      /* ==================== NARRATION BOX (BOTTOM RIGHT) ==================== */
+      #narrationBox {
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        width: min(420px, calc(100vw - 3rem));
+        max-height: 70vh;
+        overflow-y: auto;
+        padding: 1.2rem 1.5rem;
+        border-radius: 1rem;
+        background: var(--panel);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+        z-index: 100;
+      }
+
+      #narrationBox.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #narrationBox h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.05rem;
+        color: #9ed5ff;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      #narrationText {
+        margin: 0 0 1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #f6fbff;
+      }
+
+      /* ==================== CHAT QUESTIONS BUTTONS ==================== */
+      #chatQuestions {
+        display: none;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(143, 211, 255, 0.2);
+      }
+
+      #chatQuestions.active {
+        display: flex;
+      }
+
+      .chat-question-btn {
+        appearance: none;
+        border: 1px solid rgba(143, 211, 255, 0.3);
+        border-radius: 0.6rem;
+        background: rgba(143, 211, 255, 0.08);
+        color: #b8e6ff;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .chat-question-btn:hover:not(:disabled) {
+        background: rgba(143, 211, 255, 0.18);
+        border-color: rgba(143, 211, 255, 0.5);
+        transform: translateX(4px);
+      }
+
+      .chat-question-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .chat-question-btn.asked {
+        opacity: 0.5;
+        cursor: default;
+      }
+
+      /* ==================== RESPONSIVE DESIGN ==================== */
+      @media (max-width: 640px) {
+        .ui-panel {
+          right: 1.5rem;
+          max-width: calc(100vw - 3rem);
+        }
+        #statusLine {
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: auto;
+        }
+        #narrationBox {
+          left: 1.5rem;
+          right: 1.5rem;
+          bottom: 5.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ui-panel">
+      <h1>Musia — Robot Guide</h1>
+      <p>
+        Découvrez trois œuvres d'art avec votre guide autonome. Posez des
+        questions à chaque arrêt pour en savoir plus.
+      </p>
+      <button id="startTour">Démarrer la visite guidée</button>
+    </div>
+
+    <div id="statusLine">Musia est prêt pour la visite.</div>
+
+    <div id="narrationBox">
+      <h2>Narration</h2>
+      <p id="narrationText">En attente du lancement de la visite.</p>
+      <div id="chatQuestions"></div>
+    </div>
+
+    <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+
+    <script>
+      // ============================================================
+      // CONSTANTES GLOBALES
+      // ============================================================
+      const SPEED_METERS_PER_SECOND = 1.0;
+
+      // TIMEOUT SYSTEM
+      let inactivityTimer = null;
+      let inactivityInterval = null;
+      let inactivityStatusLabel = "";
+      let inactivityDeadline = 0;
+      const INACTIVITY_TIMEOUT_MS = 7000; // 7 secondes
+
+      // ============================================================
+      // ARTWORK DATA (V5 - Positionnement corrigé)
+      // ============================================================
+      const ARTWORKS_DATA = {
+        artworks: [
+          {
+            id: "mona_lisa",
+            title: "Œuvre I: La Joconde",
+            artist: "Leonardo da Vinci (Réinterprétation Numérique)",
+            year: 2024,
+            // POSITION CORRIGÉE: 7.74 est la face intérieure du mur à x=-8 (épaisseur 0.5)
+            position: { x: -7.74, y: 1.8, z: -3.5 },
+            rotation: { y: 90 },
+            colors: { primary: "#c4a382", accent: "#75502a" },
+            description:
+              "Musia vous présente 'La Joconde'. Dans cette réinterprétation, l'accent est mis sur le mystère de son sourire et les techniques de sfumato de la perspective numérique.",
+            stopPosition: { x: -5.5, y: 0, z: -3.5 },
+            questions: [
+              {
+                q: "Quel est le secret de son sourire ?",
+                a: "L'effet est créé par la technique du 'sfumato', qui est l'application de couches fines de couleur pour estomper les contours. Votre cerveau remplit les détails, créant l'illusion que le sourire change quand vous le regardez.",
+              },
+              {
+                q: "Quel est l'arrière-plan ?",
+                a: "L'arrière-plan représente un paysage montagneux et un pont, souvent interprété comme un mélange de réalité et d'imagination, typique des paysages fantastiques de la Renaissance.",
+              },
+            ],
+          },
+          {
+            id: "night_sky",
+            title: "Œuvre II: La Nuit Étoilée",
+            artist: "Vincent van Gogh (Hommage Algorithmée)",
+            year: 2024,
+            // POSITION CORRIGÉE: -9.74 est la face intérieure du mur à z=-10 (épaisseur 0.5)
+            position: { x: 0, y: 1.8, z: -9.74 },
+            rotation: { y: 0 },
+            colors: { primary: "#2c3e50", accent: "#f1c40f" },
+            description:
+              "Nous admirons ici un hommage vibrant à 'La Nuit Étoilée'. Observez la force émotionnelle des coups de pinceau simulés et le dynamisme du ciel tourbillonnant.",
+            stopPosition: { x: 0, y: 0, z: -7.5 },
+            questions: [
+              {
+                q: "Où a-t-il peint cette toile ?",
+                a: "Van Gogh l'a peinte en 1889 depuis l'asile de Saint-Paul-de-Mausole, en Provence. La vue réelle était limitée, mais le ciel a été imaginé, reflétant son état émotionnel intense.",
+              },
+              {
+                q: "Quelle est la signification de l'énergie dans le tableau ?",
+                a: "Les spirales et les halos de lumière ne sont pas astronomiquement précis ; ils expriment la perception psychologique de l'artiste face à l'univers. C'est l'émotion brute transformée en matière picturale.",
+              },
+            ],
+          },
+          {
+            id: "creation_adam",
+            title: "Œuvre III: La Création d'Adam",
+            artist: "Michel-Ange (Synthèse Architecturale)",
+            year: 2024,
+            // POSITION CORRIGÉE: 7.74 est la face intérieure du mur à x=8 (épaisseur 0.5)
+            position: { x: 7.74, y: 1.8, z: -3.5 },
+            rotation: { y: -90 },
+            colors: { primary: "#e67e22", accent: "#d35400" },
+            description:
+              "Musia vous invite à contempler l'un des moments les plus emblématiques de l'art, 'La Création d'Adam'. Le point de contact manqué est le cœur de la composition, symbolisant le don de la vie et de la conscience.",
+            stopPosition: { x: 5.5, y: 0, z: -3.5 },
+            questions: [
+              {
+                q: "Que représente le contour rouge autour de Dieu ?",
+                a: "De nombreux historiens de l'art suggèrent que le contour rouge et vert autour de Dieu est une représentation anatomique du cerveau humain, un symbole subtil du don de l'intellect à Adam.",
+              },
+              {
+                q: "Pourquoi les doigts ne se touchent-ils pas ?",
+                a: "Cette distance symbolise l'étincelle divine qui n'est pas encore totalement transmise. C'est le moment de potentiel pur, où le terrestre et le céleste sont sur le point d'interagir.",
+              },
+            ],
+          },
+        ],
+      };
+
+      // ============================================================
+      // DOM ELEMENTS & NARRATION SYSTEM (AJOUT DU CLEAR/START TIMER)
+      // ============================================================
+      const startButton = document.getElementById("startTour");
+      const statusLine = document.getElementById("statusLine");
+      const narrationBox = document.getElementById("narrationBox");
+      const narrationText = document.getElementById("narrationText");
+      const chatQuestions = document.getElementById("chatQuestions");
+
+      const setStatus = (text) => (statusLine.textContent = text);
+
+      const setNarration = (text, showQuestions = false) => {
+        narrationText.textContent = text;
+        narrationBox.classList.add("active");
+
+        if (showQuestions) {
+          chatQuestions.classList.add("active");
+        } else {
+          chatQuestions.classList.remove("active");
+        }
+      };
+
+      const hideNarration = () => {
+        narrationBox.classList.remove("active");
+        chatQuestions.classList.remove("active");
+      };
+
+      const speechSupport =
+        "speechSynthesis" in window ? window.speechSynthesis : null;
+      let activeUtterance = null;
+
+      function speak(text, onComplete) {
+        clearInactivityTimer(); // Arrêter le minuteur si une parole commence
+
+        if (!speechSupport) {
+          const simulatedDuration = Math.max(text.length * 60, 3000);
+          setTimeout(onComplete, simulatedDuration);
+          return;
+        }
+        if (activeUtterance) speechSupport.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = "fr-FR";
+        utterance.rate = 0.95;
+        utterance.pitch = 1.05;
+        utterance.onend = () => onComplete();
+        utterance.onerror = () => onComplete();
+        activeUtterance = utterance;
+        speechSupport.speak(utterance);
+      }
+
+      // ============================================================
+      // INACTIVITY TIMER FUNCTIONS (NOUVEAU)
+      // ============================================================
+
+      function startInactivityTimer(baseStatus = "Musia attend vos questions") {
+        clearInactivityTimer();
+        inactivityStatusLabel = baseStatus;
+        inactivityDeadline = performance.now() + INACTIVITY_TIMEOUT_MS;
+
+        function updateCountdown() {
+          const remaining = Math.max(0, inactivityDeadline - performance.now());
+          const seconds = Math.ceil(remaining / 1000);
+          setStatus(`${inactivityStatusLabel} — passage auto dans ${seconds}s`);
+        }
+
+        updateCountdown();
+
+        inactivityInterval = setInterval(updateCountdown, 250);
+
+        inactivityTimer = setTimeout(() => {
+          clearInactivityTimer();
+          setStatus("Minuteur expiré. Reprise automatique...");
+          sequenceIndex += 1;
+          advanceSequence();
+        }, INACTIVITY_TIMEOUT_MS);
+      }
+
+      function clearInactivityTimer() {
+        if (inactivityTimer) {
+          clearTimeout(inactivityTimer);
+          inactivityTimer = null;
+        }
+        if (inactivityInterval) {
+          clearInterval(inactivityInterval);
+          inactivityInterval = null;
+        }
+        inactivityDeadline = 0;
+      }
+
+      // ============================================================
+      // CHAT SYSTEM - QUESTION HANDLING (AJOUT DU CLEAR TIMER)
+      // ============================================================
+      let currentArtwork = null;
+
+      function displayChatQuestions(artwork) {
+        chatQuestions.innerHTML = "";
+        currentArtwork = artwork;
+
+        if (!artwork || !artwork.questions || artwork.questions.length === 0)
+          return;
+
+        artwork.questions.forEach((qItem, index) => {
+          const btn = document.createElement("button");
+          btn.className = "chat-question-btn";
+          btn.textContent = qItem.q;
+          btn.dataset.index = index;
+
+          btn.addEventListener("click", () => handleQuestionClick(qItem, btn));
+          chatQuestions.appendChild(btn);
+        });
+
+        const continueBtn = createContinueButton();
+        chatQuestions.appendChild(continueBtn);
+      }
+
+      function handleQuestionClick(qItem, btn) {
+        clearInactivityTimer(); // Réinitialiser le minuteur lors d'une interaction
+
+        const allBtns = chatQuestions.querySelectorAll(".chat-question-btn");
+        allBtns.forEach((b) => {
+          if (b.id !== "continueBtn") {
+            b.disabled = true;
+          }
+        });
+
+        btn.classList.add("asked");
+
+        setNarration(qItem.a, true);
+
+        speak(qItem.a, () => {
+          allBtns.forEach((b) => {
+            if (b.id !== "continueBtn" && !b.classList.contains("asked")) {
+              b.disabled = false;
+            }
+          });
+          startInactivityTimer(
+            inactivityStatusLabel || "Musia attend vos questions"
+          );
+        });
+      }
+
+      // ============================================================
+      // THREE.JS - SCENE SETUP (Reste identique...)
+      // ============================================================
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x05070d);
+      scene.fog = new THREE.Fog(0x05070d, 16, 38);
+
+      // CAMERA SETUP
+      const camera = new THREE.PerspectiveCamera(
+        60,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        100
+      );
+      camera.position.set(8, 7, 14);
+      camera.lookAt(0, 1, -4);
+
+      // RENDERER SETUP
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      document.body.appendChild(renderer.domElement);
+
+      // LIGHTING
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(8, 12, 6);
+      dirLight.castShadow = true;
+      dirLight.shadow.mapSize.width = 2048;
+      dirLight.shadow.mapSize.height = 2048;
+      dirLight.shadow.camera.near = 0.5;
+      dirLight.shadow.camera.far = 30;
+      dirLight.shadow.camera.left = -15;
+      dirLight.shadow.camera.right = 15;
+      dirLight.shadow.camera.top = 15;
+      dirLight.shadow.camera.bottom = -15;
+      scene.add(dirLight);
+
+      ARTWORKS_DATA.artworks.forEach((art) => {
+        const spotLight = new THREE.SpotLight(art.colors.primary, 0.6);
+        spotLight.position.set(
+          art.position.x * 0.7,
+          3.5,
+          art.position.z * 0.7 + 1
+        );
+        spotLight.angle = Math.PI / 6;
+        spotLight.penumbra = 0.5;
+        spotLight.decay = 2;
+        spotLight.distance = 10;
+        scene.add(spotLight);
+      });
+
+      // FLOOR & GRID
+      const floor = new THREE.Mesh(
+        new THREE.PlaneGeometry(40, 40),
+        new THREE.MeshStandardMaterial({
+          color: 0x0d1421,
+          roughness: 0.9,
+          metalness: 0.1,
+        })
+      );
+      floor.rotation.x = -Math.PI / 2;
+      floor.receiveShadow = true;
+      scene.add(floor);
+
+      const grid = new THREE.GridHelper(28, 28, 0x2f4d73, 0x1a2a3f);
+      grid.position.y = 0.01;
+      scene.add(grid);
+
+      // WALLS
+      function createWall(x, z, rotationY, color, length, depth = 0.5) {
+        const wall = new THREE.Mesh(
+          new THREE.BoxGeometry(length, 5, depth),
+          new THREE.MeshStandardMaterial({
+            color,
+            roughness: 0.7,
+            metalness: 0.05,
+          })
+        );
+        wall.position.set(x, 2.5, z);
+        wall.rotation.y = rotationY;
+        wall.castShadow = true;
+        wall.receiveShadow = true;
+        scene.add(wall);
+        return wall;
+      }
+
+      function buildMuseumRoom() {
+        // Mur de Fond (Horizontal, Z=-10) - Épaisseur 0.5
+        createWall(0, -10, 0, 0x1c2735, 16);
+        // Mur Gauche (Vertical, X=-8) - Épaisseur 0.5
+        createWall(-8, -5, Math.PI / 2, 0x1c2735, 10);
+        // Mur Droit (Vertical, X=8) - Épaisseur 0.5
+        createWall(8, -5, -Math.PI / 2, 0x212a33, 10);
+      }
+      buildMuseumRoom();
+
+      // ARTWORK TEXTURE GENERATOR
+      function createArtworkTexture(primary, accent, label) {
+        const size = 512;
+        const canvas = document.createElement("canvas");
+        canvas.width = canvas.height = size;
+        const ctx = canvas.getContext("2d");
+
+        const grad = ctx.createLinearGradient(0, 0, size, size);
+        grad.addColorStop(0, primary);
+        grad.addColorStop(0.5, accent);
+        grad.addColorStop(1, primary);
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, size, size);
+
+        ctx.fillStyle = "rgba(255,255,255,0.12)";
+        for (let i = 0; i < 8; i++) {
+          ctx.fillRect(i * 64, 0, 16, size);
+        }
+
+        ctx.fillStyle = "rgba(255,255,255,0.08)";
+        for (let i = 0; i < 5; i++) {
+          ctx.beginPath();
+          ctx.arc(
+            Math.random() * size,
+            Math.random() * size,
+            20 + Math.random() * 40,
+            0,
+            Math.PI * 2
+          );
+          ctx.fill();
+        }
+
+        ctx.fillStyle = "#fefefe";
+        ctx.font = "bold 42px 'Segoe UI'";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.shadowColor = "rgba(0,0,0,0.5)";
+        ctx.shadowBlur = 8;
+        ctx.fillText(label, size / 2, size / 2);
+
+        return new THREE.CanvasTexture(canvas);
+      }
+
+      // ARTWORK FRAME BUILDER
+      function createArtFrame(artData) {
+        const frame = new THREE.Group();
+
+        const border = new THREE.Mesh(
+          new THREE.BoxGeometry(2.5, 1.9, 0.1),
+          new THREE.MeshStandardMaterial({
+            color: 0x3e2815,
+            metalness: 0.3,
+            roughness: 0.6,
+          })
+        );
+        border.castShadow = true;
+
+        const artwork = new THREE.Mesh(
+          new THREE.PlaneGeometry(2.2, 1.6),
+          new THREE.MeshStandardMaterial({
+            map: createArtworkTexture(
+              artData.colors.primary,
+              artData.colors.accent,
+              artData.title.split(":")[0]
+            ),
+          })
+        );
+        artwork.position.z = 0.055;
+
+        frame.add(border, artwork);
+        frame.position.set(
+          artData.position.x,
+          artData.position.y,
+          artData.position.z
+        );
+        frame.rotation.y = (artData.rotation.y * Math.PI) / 180;
+        scene.add(frame);
+
+        return frame;
+      }
+
+      const artworkFrames = ARTWORKS_DATA.artworks.map(createArtFrame);
+
+      // ROBOT MUSIA - CONSTRUCTOR
+      function buildMusia() {
+        const group = new THREE.Group();
+
+        const body = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.5, 0.62, 1.2, 32),
+          new THREE.MeshStandardMaterial({
+            color: 0x8fd3ff,
+            metalness: 0.5,
+            roughness: 0.3,
+          })
+        );
+        body.position.y = 0.65;
+        body.castShadow = true;
+
+        const headGroup = new THREE.Group();
+        headGroup.position.y = 1.5;
+        headGroup.name = "headGroup";
+
+        const head = new THREE.Mesh(
+          new THREE.SphereGeometry(0.4, 28, 20),
+          new THREE.MeshStandardMaterial({
+            color: 0xffffff,
+            metalness: 0.2,
+            roughness: 0.4,
+          })
+        );
+        head.castShadow = true;
+
+        const visor = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.32, 0.32, 0.16, 32, 1, true),
+          new THREE.MeshStandardMaterial({
+            color: 0x0a1628,
+            emissive: 0x1565c0,
+            emissiveIntensity: 0.8,
+            side: THREE.DoubleSide,
+          })
+        );
+        visor.rotation.x = Math.PI / 2;
+        visor.position.set(0, -0.08, -0.22);
+
+        headGroup.add(head, visor);
+
+        const frontArrow = new THREE.Mesh(
+          new THREE.BoxGeometry(0.1, 0.25, 1),
+          new THREE.MeshStandardMaterial({
+            color: 0xfff9c4,
+            emissive: 0x9e7e22,
+            emissiveIntensity: 0.4,
+          })
+        );
+        frontArrow.position.set(0, 0.28, -0.5);
+
+        const wheelGroup = new THREE.Group();
+        wheelGroup.position.y = 0.18;
+        wheelGroup.name = "wheelGroup";
+
+        const wheel = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.38, 0.38, 0.28, 40),
+          new THREE.MeshStandardMaterial({
+            color: 0x0d0d0d,
+            metalness: 0.1,
+            roughness: 0.8,
+          })
+        );
+        wheel.rotation.z = Math.PI / 2;
+        wheel.castShadow = true;
+        wheelGroup.add(wheel);
+
+        group.add(body, headGroup, frontArrow, wheelGroup);
+        group.name = "Musia";
+        return group;
+      }
+
+      const musia = buildMusia();
+      musia.castShadow = true;
+      scene.add(musia);
+
+      // ============================================================
+      // PATH TRAJECTORY - WAYPOINTS
+      // ============================================================
+      const START = new THREE.Vector3(0, 0, 0);
+
+      const pathPoints = [
+        START.clone(),
+        new THREE.Vector3(-3.5, 0, -1.8),
+        new THREE.Vector3(
+          ARTWORKS_DATA.artworks[0].stopPosition.x,
+          0,
+          ARTWORKS_DATA.artworks[0].stopPosition.z
+        ),
+        new THREE.Vector3(-1.8, 0, -6),
+        new THREE.Vector3(
+          ARTWORKS_DATA.artworks[1].stopPosition.x,
+          0,
+          ARTWORKS_DATA.artworks[1].stopPosition.z
+        ),
+        new THREE.Vector3(1.8, 0, -6),
+        new THREE.Vector3(
+          ARTWORKS_DATA.artworks[2].stopPosition.x,
+          0,
+          ARTWORKS_DATA.artworks[2].stopPosition.z
+        ),
+        new THREE.Vector3(3.5, 0, -1.8),
+        START.clone(),
+      ];
+
+      // ============================================================
+      // PATH TRAJECTORY - CATMULL-ROM SPLINE
+      // ============================================================
+      const visitCurve = new THREE.CatmullRomCurve3(
+        pathPoints,
+        false,
+        "centripetal"
+      );
+
+      const curveGeometry = new THREE.BufferGeometry().setFromPoints(
+        visitCurve.getPoints(300)
+      );
+      const curveLine = new THREE.Line(
+        curveGeometry,
+        new THREE.LineDashedMaterial({
+          color: 0x5bb5ee,
+          dashSize: 0.5,
+          gapSize: 0.25,
+          linewidth: 2,
+        })
+      );
+      curveLine.computeLineDistances();
+      curveLine.position.y = 0.03;
+      scene.add(curveLine);
+
+      // ============================================================
+      // PATH TRAJECTORY - POSITION FINDER
+      // ============================================================
+      function findParamForPosition(target) {
+        const divisions = 1000;
+        let closestU = 0;
+        let min = Infinity;
+        const target2D = new THREE.Vector2(target.x, target.z);
+
+        for (let i = 0; i <= divisions; i++) {
+          const u = i / divisions;
+          const point = visitCurve.getPointAt(u);
+          const point2D = new THREE.Vector2(point.x, point.z);
+          const dist = point2D.distanceToSquared(target2D);
+          if (dist < min) {
+            min = dist;
+            closestU = u;
+          }
+        }
+        return closestU;
+      }
+
+      // ============================================================
+      // TOUR STOPS - BUILD FROM JSON DATA & CALCULATE U PARAMETER
+      // ============================================================
+      const stops = [
+        {
+          id: "start",
+          label: "Point central",
+          position: START,
+          narration:
+            "Bienvenue au musée. Je suis Musia, votre guide autonome pour cette visite immersive de trois œuvres majeures de l'histoire de l'art.",
+          u: 0,
+        },
+      ];
+
+      ARTWORKS_DATA.artworks.forEach((art) => {
+        const stopPos = new THREE.Vector3(
+          art.stopPosition.x,
+          art.stopPosition.y,
+          art.stopPosition.z
+        );
+        stops.push({
+          id: art.id,
+          label: art.title,
+          position: stopPos,
+          focus: new THREE.Vector3(
+            art.position.x,
+            art.position.y - 0.3,
+            art.position.z
+          ),
+          u: findParamForPosition(stopPos),
+          narration: art.description,
+          artwork: art,
+        });
+      });
+
+      const returnPos = START.clone();
+      returnPos.x = -0.01;
+      stops.push({
+        id: "return",
+        label: "Retour",
+        position: START,
+        u: findParamForPosition(START) || 1,
+        narration:
+          "Merci d'avoir suivi cette visite guidée des grands classiques. Musia se tient prêt pour approfondir chaque collection lors de votre prochaine venue.",
+      });
+
+      // ============================================================
+      // PATH CONTROL - UTILITIES
+      // ============================================================
+      const curveLengthCache = {};
+
+      function getSegmentLength(startU, endU) {
+        const cacheKey = `${startU}-${endU}`;
+        if (curveLengthCache[cacheKey]) return curveLengthCache[cacheKey];
+
+        const divisions = 100;
+        let length = 0;
+        let previousPoint = visitCurve.getPointAt(startU);
+
+        const uRange = endU - startU;
+
+        for (let i = 1; i <= divisions; i++) {
+          const currentU = startU + (uRange * i) / divisions;
+          const currentPoint = visitCurve.getPointAt(currentU);
+          length += previousPoint.distanceTo(currentPoint);
+          previousPoint = currentPoint;
+        }
+
+        curveLengthCache[cacheKey] = length;
+        return length;
+      }
+
+      // ============================================================
+      // SEQUENCE BUILDER - DYNAMIC FROM STOPS
+      // ============================================================
+      const sequence = [];
+      for (let i = 0; i < stops.length - 1; i++) {
+        const fromStop = stops[i];
+        const toStop = stops[i + 1];
+
+        const segmentLength = getSegmentLength(fromStop.u, toStop.u);
+        const moveDuration = segmentLength / SPEED_METERS_PER_SECOND;
+
+        sequence.push({
+          type: "MOVE",
+          from: fromStop,
+          to: toStop,
+          label: `Musia se dirige vers ${toStop.label} (${segmentLength.toFixed(
+            1
+          )}m)`,
+          state: i === stops.length - 2 ? "RETURNING" : "MOVING",
+          duration: moveDuration,
+        });
+
+        sequence.push({
+          type: "NARRATE",
+          stop: toStop,
+          label: `Présentation: ${toStop.label}`,
+        });
+      }
+
+      // ============================================================
+      // STATE MACHINE - TOUR STATES
+      // ============================================================
+      const State = {
+        IDLE: "IDLE",
+        MOVING: "MOVING",
+        NARRATING: "NARRATING",
+        RETURNING: "RETURNING",
+      };
+
+      let currentState = State.IDLE;
+      let sequenceIndex = 0;
+      let activeMove = null;
+      let uProgress = 0;
+      let focusTarget = null;
+
+      const baseForward = new THREE.Vector3(0, 0, -1);
+      const tmpQuaternion = new THREE.Quaternion();
+      const headGroup = musia.getObjectByName("headGroup");
+      const wheelGroup = musia.getObjectByName("wheelGroup");
+
+      // ============================================================
+      // ROBOT ANIMATION - POSE SETTER
+      // ============================================================
+      function setRobotPose(u, animate = true) {
+        const point = visitCurve.getPointAt(u);
+        const tangent = visitCurve.getTangentAt(u).normalize();
+
+        musia.position.set(point.x, 0, point.z);
+
+        tmpQuaternion.setFromUnitVectors(baseForward, tangent);
+
+        if (animate) {
+          musia.quaternion.slerp(tmpQuaternion, 0.15);
+        } else {
+          musia.quaternion.copy(tmpQuaternion);
+        }
+
+        if (currentState === State.MOVING || currentState === State.RETURNING) {
+          wheelGroup.rotation.x += (SPEED_METERS_PER_SECOND / 0.38) * 0.005;
+        }
+      }
+
+      // ============================================================
+      // CAMERA SYSTEM - DYNAMIC FOLLOWING
+      // ============================================================
+      const cameraTarget = new THREE.Vector3();
+      const cameraOffset = new THREE.Vector3(4, 5, 8);
+
+      function updateCamera() {
+        const targetPos = musia.position.clone();
+
+        if (focusTarget && currentState === State.NARRATING) {
+          const midPoint = targetPos.clone().lerp(focusTarget, 0.6);
+          cameraTarget.lerp(midPoint, 0.05);
+
+          const lookTarget = focusTarget.clone();
+          lookTarget.y += 0.5;
+          camera.lookAt(lookTarget);
+
+          headGroup.lookAt(focusTarget);
+          headGroup.rotation.x = 0;
+        } else {
+          targetPos.y = 1;
+          cameraTarget.lerp(targetPos, 0.08);
+          camera.lookAt(cameraTarget);
+
+          headGroup.rotation.set(0, 0, 0);
+        }
+
+        const desiredPos = targetPos.clone().add(cameraOffset);
+        camera.position.lerp(desiredPos, 0.06);
+      }
+
+      // ============================================================
+      // SEQUENCE CONTROL - MOVE LAUNCHER
+      // ============================================================
+      function launchMove(segment) {
+        clearInactivityTimer(); // Assurez-vous que le minuteur est arrêté lors du mouvement
+        activeMove = {
+          startU: segment.from.u,
+          endU: segment.to.u,
+          direction: segment.to.u > segment.from.u ? 1 : -1,
+          label: segment.label,
+          duration: segment.duration,
+          timeElapsed: 0,
+        };
+        currentState = segment.state;
+        setStatus(segment.label);
+        hideNarration();
+        focusTarget = null;
+      }
+
+      // ============================================================
+      // SEQUENCE CONTROL - NARRATION LAUNCHER (LOGIQUE TIMEOUT AJOUTÉE)
+      // ============================================================
+      let narrationCompleted = false;
+
+      function launchNarration(segment) {
+        currentState = State.NARRATING;
+        setStatus(segment.label);
+        focusTarget = segment.stop.focus || new THREE.Vector3(0, 1, -5);
+        narrationCompleted = false;
+
+        const hasQuestions =
+          segment.stop.artwork && segment.stop.artwork.questions;
+        setNarration(segment.stop.narration, hasQuestions);
+
+        if (hasQuestions) {
+          displayChatQuestions(segment.stop.artwork);
+        }
+
+        speak(segment.stop.narration, () => {
+          narrationCompleted = true;
+          if (hasQuestions) {
+            startInactivityTimer(segment.label); // Démarre le minuteur avec libellé
+          } else {
+            // Avance auto-next si pas d'interaction demandée
+            sequenceIndex += 1;
+            setTimeout(() => advanceSequence(), 800);
+          }
+        });
+      }
+
+      // ============================================================
+      // SEQUENCE CONTROL - CONTINUE BUTTON
+      // ============================================================
+      function createContinueButton() {
+        const btn = document.createElement("button");
+        btn.id = "continueBtn";
+        btn.className = "chat-question-btn";
+        btn.textContent = "→ Continuer la visite";
+        btn.style.marginTop = "0.5rem";
+        btn.style.background =
+          "linear-gradient(135deg, rgba(143, 211, 255, 0.2), rgba(184, 230, 255, 0.2))";
+        btn.style.borderColor = "rgba(143, 211, 255, 0.5)";
+        btn.style.fontWeight = "600";
+
+        btn.addEventListener("click", () => {
+          clearInactivityTimer(); // Arrêter le minuteur si l'utilisateur interagit
+          sequenceIndex += 1;
+          advanceSequence();
+        });
+
+        return btn;
+      }
+
+      // SEQUENCE CONTROL - ADVANCE TO NEXT STEP
+      function advanceSequence() {
+        if (sequenceIndex >= sequence.length) {
+          finishTour();
+          return;
+        }
+        const segment = sequence[sequenceIndex];
+        if (segment.type === "MOVE") {
+          launchMove(segment);
+        } else {
+          launchNarration(segment);
+        }
+      }
+
+      // TOUR CONTROL - FINISH HANDLER
+      function finishTour() {
+        clearInactivityTimer();
+        currentState = State.IDLE;
+        activeMove = null;
+        focusTarget = null;
+        startButton.disabled = false;
+        startButton.textContent = "Rejouer la visite guidée";
+        setStatus("Visite terminée. Musia attend vos prochaines questions.");
+        setTimeout(hideNarration, 3000);
+      }
+
+      // TOUR CONTROL - RESET HANDLER
+      function resetTour() {
+        if (speechSupport) speechSupport.cancel();
+        clearInactivityTimer();
+        sequenceIndex = 0;
+        activeMove = null;
+        currentState = State.IDLE;
+        focusTarget = null;
+        currentArtwork = null;
+        uProgress = stops[0].u;
+        setRobotPose(uProgress, false);
+        setNarration("En attente du lancement de la visite.");
+        setStatus("Musia est prêt pour la visite.");
+        setTimeout(hideNarration, 2000);
+      }
+
+      resetTour();
+
+      // EVENT LISTENERS - START BUTTON
+      startButton.addEventListener("click", () => {
+        if (currentState !== State.IDLE) return;
+        startButton.disabled = true;
+        startButton.textContent = "Visite en cours…";
+        setStatus("Musia initialise la trajectoire...");
+        sequenceIndex = 0;
+        setTimeout(() => advanceSequence(), 800);
+      });
+
+      // ============================================================
+      // ANIMATION LOOP - UPDATE LOGIC
+      // ============================================================
+      let lastTime = 0;
+
+      function update(deltaTime) {
+        if (!activeMove) return;
+
+        activeMove.timeElapsed += deltaTime;
+
+        const ratio = activeMove.timeElapsed / activeMove.duration;
+
+        const uRange = activeMove.endU - activeMove.startU;
+        let newU = activeMove.startU + uRange * ratio;
+
+        if (ratio >= 1.0) {
+          newU = activeMove.endU;
+          setRobotPose(newU);
+          activeMove = null;
+          sequenceIndex += 1;
+          setTimeout(() => advanceSequence(), 600);
+        } else {
+          uProgress = THREE.MathUtils.clamp(newU, 0, 1);
+          setRobotPose(uProgress);
+        }
+      }
+
+      // ============================================================
+      // EVENT LISTENERS - WINDOW RESIZE
+      // ============================================================
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+      window.addEventListener("resize", onWindowResize);
+
+      // ============================================================
+      // ANIMATION LOOP - MAIN RENDER LOOP
+      // ============================================================
+      function renderLoop(time) {
+        requestAnimationFrame(renderLoop);
+        const delta = lastTime ? Math.min((time - lastTime) / 1000, 0.1) : 0;
+        lastTime = time;
+
+        update(delta);
+        updateCamera();
+        renderer.render(scene, camera);
+      }
+
+      requestAnimationFrame(renderLoop);
+    </script>
+  </body>
+</html>
