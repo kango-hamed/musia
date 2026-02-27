@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: musia-backend
+    env: docker
+    region: frankfurt
+    plan: free
+    branch: main
+    dockerCommand: sh -c "python -m uvicorn backend-app.app.main:sio_app --host 0.0.0.0 --port ${PORT:-8000}"
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        value: "YOUR_OPENAI_API_KEY"
+      - key: ELEVENLABS_API_KEY
+        value: ""
+      - key: GROQ_API_KEY
+        value: "YOUR_GROQ_API_KEY"
+      - key: WHISPER_API_KEY
+        value: ""
+      - key: REDIS_URL
+        value: ""
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: CORS_ORIGINS
+        value: "*"
