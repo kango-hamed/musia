@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from musia_msgs/msg/TourState.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module musia_msgs {
+  module msg {
+    module TourState_Constants {
+      const uint8 VEILLE = 0;
+      const uint8 ACCUEIL = 1;
+      const uint8 TRAITEMENT = 2;
+      const uint8 GUIDAGE = 3;
+      const uint8 PRESENTATION = 4;
+      const uint8 DEGRADE = 5;
+      const uint8 RETOUR = 6;
+    };
+    struct TourState {
+      std_msgs::msg::Header header;
+
+      uint8 state;
+
+      string state_label;
+
+      string current_zone;
+
+      uint8 current_waypoint;
+
+      boolean network_available;
+    };
+  };
+};

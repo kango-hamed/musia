@@ -1,0 +1,23 @@
+[1.069s] Invoking command in '/home/kango/musia_ws/src/musia_navigation/build/musia_navigation': PYTHONPATH=/home/kango/musia_ws/src/musia_navigation/build/musia_navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/src/musia_navigation/install/musia_navigation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/src/musia_navigation/build/musia_navigation/build --no-deps symlink_data
+[1.471s] running develop
+[1.695s] running egg_info
+[1.695s] creating musia_navigation.egg-info
+[1.717s] writing musia_navigation.egg-info/PKG-INFO
+[1.717s] writing dependency_links to musia_navigation.egg-info/dependency_links.txt
+[1.717s] writing entry points to musia_navigation.egg-info/entry_points.txt
+[1.718s] writing requirements to musia_navigation.egg-info/requires.txt
+[1.718s] writing top-level names to musia_navigation.egg-info/top_level.txt
+[1.718s] writing manifest file 'musia_navigation.egg-info/SOURCES.txt'
+[1.763s] reading manifest file 'musia_navigation.egg-info/SOURCES.txt'
+[1.763s] writing manifest file 'musia_navigation.egg-info/SOURCES.txt'
+[1.828s] running build_ext
+[1.828s] Creating /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/lib/python3.12/site-packages/musia-navigation.egg-link (link to .)
+[1.829s] Installing navigation_node script to /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/bin
+[1.830s] 
+[1.830s] Installed /home/kango/musia_ws/src/musia_navigation/build/musia_navigation
+[1.830s] running symlink_data
+[1.830s] creating /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/share/ament_index
+[1.830s] creating /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/share/ament_index/resource_index
+[1.830s] creating /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/share/ament_index/resource_index/packages
+[1.830s] error: can't copy '/home/kango/musia_ws/src/musia_navigation/build/musia_navigation/resource/musia_navigation': doesn't exist or not a regular file
+[1.913s] Invoked command in '/home/kango/musia_ws/src/musia_navigation/build/musia_navigation' returned '1': PYTHONPATH=/home/kango/musia_ws/src/musia_navigation/build/musia_navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/src/musia_navigation/install/musia_navigation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/src/musia_navigation/build/musia_navigation/build --no-deps symlink_data

@@ -1,0 +1,21 @@
+[1.114s] Invoking command in '/home/kango/musia_ws/src/musia_tour_manager': PYTHONPATH=/home/kango/musia_ws/build/musia_tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/build/musia_tour_manager:/home/kango/musia_ws/build/musia_bringup:/home/kango/musia_ws/build/musia_arduino_bridge:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/musia_tour_manager build --build-base /home/kango/musia_ws/build/musia_tour_manager/build install --record /home/kango/musia_ws/build/musia_tour_manager/install.log --single-version-externally-managed install_data
+[1.440s] running egg_info
+[1.461s] writing ../../build/musia_tour_manager/musia_tour_manager.egg-info/PKG-INFO
+[1.461s] writing dependency_links to ../../build/musia_tour_manager/musia_tour_manager.egg-info/dependency_links.txt
+[1.462s] writing entry points to ../../build/musia_tour_manager/musia_tour_manager.egg-info/entry_points.txt
+[1.463s] writing requirements to ../../build/musia_tour_manager/musia_tour_manager.egg-info/requires.txt
+[1.463s] writing top-level names to ../../build/musia_tour_manager/musia_tour_manager.egg-info/top_level.txt
+[1.509s] reading manifest file '../../build/musia_tour_manager/musia_tour_manager.egg-info/SOURCES.txt'
+[1.510s] writing manifest file '../../build/musia_tour_manager/musia_tour_manager.egg-info/SOURCES.txt'
+[1.510s] running build
+[1.510s] running build_py
+[1.511s] running install
+[1.520s] running install_lib
+[1.543s] running install_data
+[1.543s] running install_egg_info
+[1.566s] removing '/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages/musia_tour_manager-0.1.0-py3.12.egg-info' (and everything under it)
+[1.567s] Copying ../../build/musia_tour_manager/musia_tour_manager.egg-info to /home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages/musia_tour_manager-0.1.0-py3.12.egg-info
+[1.568s] running install_scripts
+[1.725s] Installing tour_manager_node script to /home/kango/musia_ws/install/musia_tour_manager/bin
+[1.726s] writing list of installed files to '/home/kango/musia_ws/build/musia_tour_manager/install.log'
+[1.814s] Invoked command in '/home/kango/musia_ws/src/musia_tour_manager' returned '0': PYTHONPATH=/home/kango/musia_ws/build/musia_tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/build/musia_tour_manager:/home/kango/musia_ws/build/musia_bringup:/home/kango/musia_ws/build/musia_arduino_bridge:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/musia_tour_manager build --build-base /home/kango/musia_ws/build/musia_tour_manager/build install --record /home/kango/musia_ws/build/musia_tour_manager/install.log --single-version-externally-managed install_data

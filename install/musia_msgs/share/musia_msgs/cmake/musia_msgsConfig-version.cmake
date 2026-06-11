@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_msgs/ament_cmake_core/musia_msgsConfig-version.cmake

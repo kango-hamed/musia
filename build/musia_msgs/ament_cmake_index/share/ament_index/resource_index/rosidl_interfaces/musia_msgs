@@ -1,0 +1,16 @@
+msg/AudioCommand.idl
+msg/AudioCommand.msg
+msg/PersonDetection.idl
+msg/PersonDetection.msg
+msg/TourState.idl
+msg/TourState.msg
+srv/DetectPerson.idl
+srv/DetectPerson.srv
+srv/GetCurrentZone.idl
+srv/GetCurrentZone.srv
+srv/NavigateToPOI.idl
+srv/NavigateToPOI.srv
+srv/PlayAudio.idl
+srv/PlayAudio.srv
+srv/SetTourMode.idl
+srv/SetTourMode.srv

@@ -1,0 +1,348 @@
+[0.138s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.138s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffa0f8fb90>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffa1c960f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffa1c960f0>>)
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.194s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.194s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/kango/musia_ws'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extension 'ignore'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extension 'ignore_ament_install'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extensions ['colcon_pkg']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extension 'colcon_pkg'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extensions ['colcon_meta']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extension 'colcon_meta'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extensions ['ros']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_arduino_bridge) by extension 'ros'
+[0.238s] DEBUG:colcon.colcon_core.package_identification:Package 'src/musia_arduino_bridge' with type 'ros.ament_python' and name 'musia_arduino_bridge'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extension 'ignore'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extension 'ignore_ament_install'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extensions ['colcon_pkg']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extension 'colcon_pkg'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extensions ['colcon_meta']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extension 'colcon_meta'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extensions ['ros']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_bringup) by extension 'ros'
+[0.239s] DEBUG:colcon.colcon_core.package_identification:Package 'src/musia_bringup' with type 'ros.ament_python' and name 'musia_bringup'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extension 'ignore'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extension 'ignore_ament_install'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extensions ['colcon_pkg']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extension 'colcon_pkg'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extensions ['colcon_meta']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extension 'colcon_meta'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extensions ['ros']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_msgs) by extension 'ros'
+[0.240s] DEBUG:colcon.colcon_core.package_identification:Package 'src/musia_msgs' with type 'ros.ament_cmake' and name 'musia_msgs'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extensions ['ignore', 'ignore_ament_install']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extension 'ignore'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extension 'ignore_ament_install'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extensions ['colcon_pkg']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extension 'colcon_pkg'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extensions ['colcon_meta']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extension 'colcon_meta'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extensions ['ros']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(src/musia_tour_manager) by extension 'ros'
+[0.242s] DEBUG:colcon.colcon_core.package_identification:Package 'src/musia_tour_manager' with type 'ros.ament_python' and name 'musia_tour_manager'
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.266s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.266s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.267s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/kango/musia_ws/install/musia_msgs' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.267s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/kango/musia_ws/install/musia_msgs' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.268s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/kango/musia_ws/install
+[0.271s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 313 installed packages in /opt/ros/jazzy
+[0.272s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'cmake_target' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_arduino_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.330s] DEBUG:colcon.colcon_core.verb:Building package 'musia_arduino_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kango/musia_ws/build/musia_arduino_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kango/musia_ws/install/musia_arduino_bridge', 'merge_install': False, 'path': '/home/kango/musia_ws/src/musia_arduino_bridge', 'symlink_install': True, 'test_result_base': None}
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'cmake_target' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'musia_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.330s] DEBUG:colcon.colcon_core.verb:Building package 'musia_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kango/musia_ws/build/musia_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kango/musia_ws/install/musia_msgs', 'merge_install': False, 'path': '/home/kango/musia_ws/src/musia_msgs', 'symlink_install': True, 'test_result_base': None}
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'cmake_target' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.331s] DEBUG:colcon.colcon_core.verb:Building package 'musia_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kango/musia_ws/build/musia_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kango/musia_ws/install/musia_bringup', 'merge_install': False, 'path': '/home/kango/musia_ws/src/musia_bringup', 'symlink_install': True, 'test_result_base': None}
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'cmake_target' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'cmake_clean_cache' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'cmake_clean_first' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'cmake_force_configure' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'ament_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'catkin_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'musia_tour_manager' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.331s] DEBUG:colcon.colcon_core.verb:Building package 'musia_tour_manager' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kango/musia_ws/build/musia_tour_manager', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kango/musia_ws/install/musia_tour_manager', 'merge_install': False, 'path': '/home/kango/musia_ws/src/musia_tour_manager', 'symlink_install': True, 'test_result_base': None}
+[0.331s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.333s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.333s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/kango/musia_ws/src/musia_msgs' with build type 'ament_cmake'
+[0.333s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kango/musia_ws/src/musia_msgs'
+[0.335s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.336s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.336s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.340s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kango/musia_ws/src/musia_arduino_bridge' with build type 'ament_python'
+[0.340s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_arduino_bridge', 'ament_prefix_path')
+[0.341s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/ament_prefix_path.ps1'
+[0.342s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/ament_prefix_path.dsv'
+[0.343s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/ament_prefix_path.sh'
+[0.344s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.344s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.351s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake /home/kango/musia_ws/src/musia_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kango/musia_ws/install/musia_msgs
+[0.655s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kango/musia_ws/src/musia_arduino_bridge'
+[0.655s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.655s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.493s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kango/musia_ws/build/musia_arduino_bridge': PYTHONPATH=/home/kango/musia_ws/build/musia_arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/build/musia_arduino_bridge/build --no-deps symlink_data
+[2.348s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_arduino_bridge', 'pythonpath_develop')
+[2.349s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/build/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonpath_develop.ps1'
+[2.349s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kango/musia_ws/build/musia_arduino_bridge' returned '0': PYTHONPATH=/home/kango/musia_ws/build/musia_arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/build/musia_arduino_bridge/build --no-deps symlink_data
+[2.350s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/build/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonpath_develop.dsv'
+[2.350s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/build/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonpath_develop.sh'
+[2.353s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_arduino_bridge' for CMake module files
+[2.354s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_arduino_bridge' for CMake config files
+[2.355s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_arduino_bridge/lib'
+[2.355s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_arduino_bridge/bin'
+[2.355s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_arduino_bridge', 'path')
+[2.355s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/path.ps1'
+[2.356s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/path.dsv'
+[2.357s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/path.sh'
+[2.357s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_arduino_bridge/lib/pkgconfig/musia_arduino_bridge.pc'
+[2.358s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages'
+[2.358s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_arduino_bridge', 'pythonpath')
+[2.358s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonpath.ps1'
+[2.359s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonpath.dsv'
+[2.359s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonpath.sh'
+[2.361s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_arduino_bridge/bin'
+[2.361s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_arduino_bridge', 'pythonscriptspath')
+[2.361s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonscriptspath.ps1'
+[2.362s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonscriptspath.dsv'
+[2.362s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/hook/pythonscriptspath.sh'
+[2.363s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(musia_arduino_bridge)
+[2.363s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/package.ps1'
+[2.365s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/package.dsv'
+[2.366s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/package.sh'
+[2.367s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/package.bash'
+[2.367s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge/package.zsh'
+[2.368s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kango/musia_ws/install/musia_arduino_bridge/share/colcon-core/packages/musia_arduino_bridge)
+[6.401s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake /home/kango/musia_ws/src/musia_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kango/musia_ws/install/musia_msgs
+[6.403s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake --build /home/kango/musia_ws/build/musia_msgs -- -j4 -l4
+[25.439s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake --build /home/kango/musia_ws/build/musia_msgs -- -j4 -l4
+[25.459s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake --install /home/kango/musia_ws/build/musia_msgs
+[29.180s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(musia_msgs)
+[29.180s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs' for CMake module files
+[29.181s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake --install /home/kango/musia_ws/build/musia_msgs
+[29.182s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs' for CMake config files
+[29.184s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_msgs', 'cmake_prefix_path')
+[29.184s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/cmake_prefix_path.ps1'
+[29.185s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/cmake_prefix_path.dsv'
+[29.185s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/cmake_prefix_path.sh'
+[29.186s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/lib'
+[29.186s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_msgs', 'ld_library_path_lib')
+[29.186s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/ld_library_path_lib.ps1'
+[29.187s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/ld_library_path_lib.dsv'
+[29.187s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/ld_library_path_lib.sh'
+[29.188s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/bin'
+[29.188s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/lib/pkgconfig/musia_msgs.pc'
+[29.188s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages'
+[29.188s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_msgs', 'pythonpath')
+[29.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/pythonpath.ps1'
+[29.189s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/pythonpath.dsv'
+[29.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/pythonpath.sh'
+[29.190s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/bin'
+[29.191s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.ps1'
+[29.191s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.dsv'
+[29.192s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.sh'
+[29.193s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.bash'
+[29.193s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.zsh'
+[29.193s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kango/musia_ws/install/musia_msgs/share/colcon-core/packages/musia_msgs)
+[29.194s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(musia_msgs)
+[29.194s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs' for CMake module files
+[29.195s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs' for CMake config files
+[29.198s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_msgs', 'cmake_prefix_path')
+[29.198s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/cmake_prefix_path.ps1'
+[29.199s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/cmake_prefix_path.dsv'
+[29.200s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/cmake_prefix_path.sh'
+[29.201s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/lib'
+[29.201s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_msgs', 'ld_library_path_lib')
+[29.201s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/ld_library_path_lib.ps1'
+[29.201s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/ld_library_path_lib.dsv'
+[29.202s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/ld_library_path_lib.sh'
+[29.203s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/bin'
+[29.203s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/lib/pkgconfig/musia_msgs.pc'
+[29.203s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages'
+[29.203s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_msgs', 'pythonpath')
+[29.203s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/pythonpath.ps1'
+[29.204s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/pythonpath.dsv'
+[29.205s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/hook/pythonpath.sh'
+[29.206s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_msgs/bin'
+[29.206s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.ps1'
+[29.207s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.dsv'
+[29.208s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.sh'
+[29.208s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.bash'
+[29.209s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.zsh'
+[29.210s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kango/musia_ws/install/musia_msgs/share/colcon-core/packages/musia_msgs)
+[29.211s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kango/musia_ws/src/musia_bringup' with build type 'ament_python'
+[29.211s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_bringup', 'ament_prefix_path')
+[29.211s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/hook/ament_prefix_path.ps1'
+[29.212s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/hook/ament_prefix_path.dsv'
+[29.213s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/hook/ament_prefix_path.sh'
+[29.213s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[29.213s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[29.218s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kango/musia_ws/src/musia_tour_manager' with build type 'ament_python'
+[29.218s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_tour_manager', 'ament_prefix_path')
+[29.219s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/ament_prefix_path.ps1'
+[29.219s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/ament_prefix_path.dsv'
+[29.220s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/ament_prefix_path.sh'
+[29.221s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[29.221s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[29.526s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kango/musia_ws/src/musia_bringup'
+[29.527s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[29.527s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[29.835s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kango/musia_ws/src/musia_tour_manager'
+[29.835s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[29.835s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[30.743s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_tour_manager/share/ament_index/resource_index/packages/musia_tour_manager
+[30.743s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/package.xml
+[30.744s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_tour_manager/bin/tour_manager_node
+[30.745s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kango/musia_ws/build/musia_tour_manager': PYTHONPATH=/home/kango/musia_ws/build/musia_tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/build/musia_tour_manager/build --no-deps symlink_data --force
+[30.746s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/ament_index/resource_index/packages/musia_bringup
+[30.747s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/package.xml
+[30.747s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch/navigation.launch.py
+[30.747s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch/demo.launch.py
+[30.747s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch/musia.launch.py
+[30.747s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/config/musia_params.yaml
+[30.747s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/config/nav2_params.yaml
+[30.747s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/maps/famienkro.pgm
+[30.747s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/maps/famienkro.yaml
+[30.750s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kango/musia_ws/build/musia_bringup': PYTHONPATH=/home/kango/musia_ws/build/musia_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/build/musia_bringup/build --no-deps symlink_data --force
+[31.653s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_bringup', 'pythonpath_develop')
+[31.654s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/build/musia_bringup/share/musia_bringup/hook/pythonpath_develop.ps1'
+[31.654s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kango/musia_ws/build/musia_bringup' returned '0': PYTHONPATH=/home/kango/musia_ws/build/musia_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/build/musia_bringup/build --no-deps symlink_data --force
+[31.655s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/build/musia_bringup/share/musia_bringup/hook/pythonpath_develop.dsv'
+[31.656s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/build/musia_bringup/share/musia_bringup/hook/pythonpath_develop.sh'
+[31.657s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_bringup' for CMake module files
+[31.657s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_bringup' for CMake config files
+[31.658s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_bringup/lib'
+[31.658s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_bringup/bin'
+[31.658s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_bringup/lib/pkgconfig/musia_bringup.pc'
+[31.659s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages'
+[31.659s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_bringup', 'pythonpath')
+[31.659s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/hook/pythonpath.ps1'
+[31.660s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/hook/pythonpath.dsv'
+[31.660s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/hook/pythonpath.sh'
+[31.661s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_bringup/bin'
+[31.661s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(musia_bringup)
+[31.662s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/package.ps1'
+[31.663s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/package.dsv'
+[31.663s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/package.sh'
+[31.664s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/package.bash'
+[31.665s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_bringup/share/musia_bringup/package.zsh'
+[31.665s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kango/musia_ws/install/musia_bringup/share/colcon-core/packages/musia_bringup)
+[31.667s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_tour_manager', 'pythonpath_develop')
+[31.667s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/build/musia_tour_manager/share/musia_tour_manager/hook/pythonpath_develop.ps1'
+[31.668s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kango/musia_ws/build/musia_tour_manager' returned '0': PYTHONPATH=/home/kango/musia_ws/build/musia_tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/build/musia_tour_manager/build --no-deps symlink_data --force
+[31.668s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/build/musia_tour_manager/share/musia_tour_manager/hook/pythonpath_develop.dsv'
+[31.668s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/build/musia_tour_manager/share/musia_tour_manager/hook/pythonpath_develop.sh'
+[31.669s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_tour_manager' for CMake module files
+[31.670s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_tour_manager' for CMake config files
+[31.670s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_tour_manager/lib'
+[31.670s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_tour_manager/bin'
+[31.670s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_tour_manager', 'path')
+[31.671s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/path.ps1'
+[31.671s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/path.dsv'
+[31.672s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/path.sh'
+[31.672s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_tour_manager/lib/pkgconfig/musia_tour_manager.pc'
+[31.673s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages'
+[31.673s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_tour_manager', 'pythonpath')
+[31.673s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/pythonpath.ps1'
+[31.674s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/pythonpath.dsv'
+[31.674s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/pythonpath.sh'
+[31.676s] Level 1:colcon.colcon_core.environment:checking '/home/kango/musia_ws/install/musia_tour_manager/bin'
+[31.676s] Level 1:colcon.colcon_core.shell:create_environment_hook('musia_tour_manager', 'pythonscriptspath')
+[31.676s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/pythonscriptspath.ps1'
+[31.677s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/pythonscriptspath.dsv'
+[31.677s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/hook/pythonscriptspath.sh'
+[31.678s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(musia_tour_manager)
+[31.678s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/package.ps1'
+[31.679s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/package.dsv'
+[31.680s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/package.sh'
+[31.680s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/package.bash'
+[31.681s] INFO:colcon.colcon_core.shell:Creating package script '/home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager/package.zsh'
+[31.682s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kango/musia_ws/install/musia_tour_manager/share/colcon-core/packages/musia_tour_manager)
+[31.683s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[31.683s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[31.683s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[31.683s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[31.684s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[31.684s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kango/musia_ws/install/local_setup.ps1'
+[31.685s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kango/musia_ws/install/_local_setup_util_ps1.py'
+[31.687s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kango/musia_ws/install/setup.ps1'
+[31.688s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kango/musia_ws/install/local_setup.sh'
+[31.689s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kango/musia_ws/install/_local_setup_util_sh.py'
+[31.690s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kango/musia_ws/install/setup.sh'
+[31.691s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kango/musia_ws/install/local_setup.bash'
+[31.692s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kango/musia_ws/install/setup.bash'
+[31.693s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kango/musia_ws/install/local_setup.zsh'
+[31.694s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kango/musia_ws/install/setup.zsh'

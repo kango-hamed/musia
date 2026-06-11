@@ -1,0 +1,32 @@
+[1.493s] Invoking command in '/home/kango/musia_ws/build/musia_arduino_bridge': PYTHONPATH=/home/kango/musia_ws/build/musia_arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kango/musia_ws/build/musia_arduino_bridge/build
+[1.885s] running develop
+[2.113s] Removing /home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages/musia-arduino-bridge.egg-link (link to .)
+[2.242s] Invoked command in '/home/kango/musia_ws/build/musia_arduino_bridge' returned '0': PYTHONPATH=/home/kango/musia_ws/build/musia_arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kango/musia_ws/build/musia_arduino_bridge/build
+[2.245s] Invoking command in '/home/kango/musia_ws/src/musia_arduino_bridge': PYTHONPATH=/home/kango/musia_ws/build/musia_arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/musia_arduino_bridge build --build-base /home/kango/musia_ws/build/musia_arduino_bridge/build install --record /home/kango/musia_ws/build/musia_arduino_bridge/install.log --single-version-externally-managed install_data --force
+[2.571s] running egg_info
+[2.592s] writing ../../build/musia_arduino_bridge/musia_arduino_bridge.egg-info/PKG-INFO
+[2.593s] writing dependency_links to ../../build/musia_arduino_bridge/musia_arduino_bridge.egg-info/dependency_links.txt
+[2.593s] writing entry points to ../../build/musia_arduino_bridge/musia_arduino_bridge.egg-info/entry_points.txt
+[2.594s] writing requirements to ../../build/musia_arduino_bridge/musia_arduino_bridge.egg-info/requires.txt
+[2.595s] writing top-level names to ../../build/musia_arduino_bridge/musia_arduino_bridge.egg-info/top_level.txt
+[2.640s] reading manifest file '../../build/musia_arduino_bridge/musia_arduino_bridge.egg-info/SOURCES.txt'
+[2.641s] writing manifest file '../../build/musia_arduino_bridge/musia_arduino_bridge.egg-info/SOURCES.txt'
+[2.641s] running build
+[2.642s] running build_py
+[2.642s] copying musia_arduino_bridge/arduino_bridge_node.py -> /home/kango/musia_ws/build/musia_arduino_bridge/build/lib/musia_arduino_bridge
+[2.642s] running install
+[2.651s] running install_lib
+[2.673s] creating /home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages/musia_arduino_bridge
+[2.673s] copying /home/kango/musia_ws/build/musia_arduino_bridge/build/lib/musia_arduino_bridge/__init__.py -> /home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages/musia_arduino_bridge
+[2.674s] copying /home/kango/musia_ws/build/musia_arduino_bridge/build/lib/musia_arduino_bridge/arduino_bridge_node.py -> /home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages/musia_arduino_bridge
+[2.674s] byte-compiling /home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages/musia_arduino_bridge/__init__.py to __init__.cpython-312.pyc
+[2.675s] byte-compiling /home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages/musia_arduino_bridge/arduino_bridge_node.py to arduino_bridge_node.cpython-312.pyc
+[2.677s] running install_data
+[2.677s] copying resource/musia_arduino_bridge -> /home/kango/musia_ws/install/musia_arduino_bridge/share/ament_index/resource_index/packages
+[2.677s] copying package.xml -> /home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge
+[2.677s] running install_egg_info
+[2.701s] Copying ../../build/musia_arduino_bridge/musia_arduino_bridge.egg-info to /home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages/musia_arduino_bridge-0.1.0-py3.12.egg-info
+[2.702s] running install_scripts
+[2.857s] Installing arduino_bridge_node script to /home/kango/musia_ws/install/musia_arduino_bridge/lib/musia_arduino_bridge
+[2.858s] writing list of installed files to '/home/kango/musia_ws/build/musia_arduino_bridge/install.log'
+[2.939s] Invoked command in '/home/kango/musia_ws/src/musia_arduino_bridge' returned '0': PYTHONPATH=/home/kango/musia_ws/build/musia_arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/musia_arduino_bridge build --build-base /home/kango/musia_ws/build/musia_arduino_bridge/build install --record /home/kango/musia_ws/build/musia_arduino_bridge/install.log --single-version-externally-managed install_data --force

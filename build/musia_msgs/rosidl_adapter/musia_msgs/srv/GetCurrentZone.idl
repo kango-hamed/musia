@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from musia_msgs/srv/GetCurrentZone.srv
+// generated code does not contain a copyright notice
+
+
+module musia_msgs {
+  module srv {
+    struct GetCurrentZone_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct GetCurrentZone_Response {
+      string zone_name;
+
+      uint8 current_waypoint;
+
+      boolean success;
+    };
+  };
+};

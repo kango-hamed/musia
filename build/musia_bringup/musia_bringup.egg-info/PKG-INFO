@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: musia-bringup
+Version: 0.1.0
+Summary: Launch files and configuration for MUSIA
+Maintainer: Hamed
+Maintainer-email: hamed@esatic.ci
+License: MIT

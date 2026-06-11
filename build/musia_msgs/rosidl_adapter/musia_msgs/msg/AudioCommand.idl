@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from musia_msgs/msg/AudioCommand.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module musia_msgs {
+  module msg {
+    module AudioCommand_Constants {
+      const uint8 MODE_FILE = 0;
+      const uint8 MODE_TTS_OFFLINE = 1;
+      const uint8 MODE_TTS_ONLINE = 2;
+    };
+    struct AudioCommand {
+      std_msgs::msg::Header header;
+
+      uint8 mode;
+
+      string payload;
+
+      string language;
+
+      float volume;
+    };
+  };
+};

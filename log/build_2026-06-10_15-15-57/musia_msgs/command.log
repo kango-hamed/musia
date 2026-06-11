@@ -1,0 +1,6 @@
+Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/kango/musia_ws/src/musia_msgs -DCMAKE_INSTALL_PREFIX=/home/kango/musia_ws/install/musia_msgs
+Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/kango/musia_ws/src/musia_msgs -DCMAKE_INSTALL_PREFIX=/home/kango/musia_ws/install/musia_msgs
+Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/kango/musia_ws/build/musia_msgs -- -j4 -l4
+Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/kango/musia_ws/build/musia_msgs -- -j4 -l4
+Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/kango/musia_ws/build/musia_msgs
+Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/kango/musia_ws/build/musia_msgs

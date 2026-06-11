@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from musia_msgs/srv/SetTourMode.srv
+// generated code does not contain a copyright notice
+
+
+module musia_msgs {
+  module srv {
+    struct SetTourMode_Request {
+      uint8 target_state;
+    };
+    struct SetTourMode_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

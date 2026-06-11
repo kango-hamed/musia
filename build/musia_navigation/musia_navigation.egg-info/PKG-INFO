@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: musia-navigation
+Version: 0.1.0
+Summary: MUSIA Navigation — Relay NAV_TO:WPx → Nav2 NavigateToPose
+Maintainer: Hamed
+Maintainer-email: hamed@esatic.ci
+License: MIT

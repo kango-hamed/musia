@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "musia_msgs/srv/NavigateToPOI_Request",
+      "fields": [
+        {
+          "name": "waypoint_id",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "cancel",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "musia_msgs/srv/NavigateToPOI_Request",
+      "hash_string": "RIHS01_1416b5f8410bce978b0d5a19b1fe2a7500a844b152f9043237419ba95f3c2977"
+    }
+  ]
+}

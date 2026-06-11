@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_msgs/rosidl_generator_c/musia_msgs/msg/audio_command.h

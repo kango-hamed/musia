@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/musia_bringup/musia_bringup.egg-info
+writing ../../build/musia_bringup/musia_bringup.egg-info/PKG-INFO
+writing dependency_links to ../../build/musia_bringup/musia_bringup.egg-info/dependency_links.txt
+writing requirements to ../../build/musia_bringup/musia_bringup.egg-info/requires.txt
+writing top-level names to ../../build/musia_bringup/musia_bringup.egg-info/top_level.txt
+writing manifest file '../../build/musia_bringup/musia_bringup.egg-info/SOURCES.txt'
+reading manifest file '../../build/musia_bringup/musia_bringup.egg-info/SOURCES.txt'
+writing manifest file '../../build/musia_bringup/musia_bringup.egg-info/SOURCES.txt'
+running build
+running install
+running install_data
+creating /home/kango/musia_ws/install/musia_bringup/share/ament_index
+creating /home/kango/musia_ws/install/musia_bringup/share/ament_index/resource_index
+creating /home/kango/musia_ws/install/musia_bringup/share/ament_index/resource_index/packages
+copying resource/musia_bringup -> /home/kango/musia_ws/install/musia_bringup/share/ament_index/resource_index/packages
+copying package.xml -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup
+creating /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch
+copying launch/navigation.launch.py -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch
+copying launch/demo.launch.py -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch
+copying launch/musia.launch.py -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch
+creating /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/config
+copying config/musia_params.yaml -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/config
+copying config/nav2_params.yaml -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/config
+creating /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/maps
+copying maps/famienkro.pgm -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/maps
+copying maps/famienkro.yaml -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/maps
+running install_egg_info
+Copying ../../build/musia_bringup/musia_bringup.egg-info to /home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages/musia_bringup-0.1.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/kango/musia_ws/build/musia_bringup/install.log'

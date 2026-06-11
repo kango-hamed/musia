@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_msgs/rosidl_generator_c/musia_msgs/srv/detail/set_tour_mode__type_support.h

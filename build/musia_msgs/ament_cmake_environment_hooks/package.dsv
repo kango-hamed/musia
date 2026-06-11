@@ -1,0 +1,4 @@
+source;share/musia_msgs/local_setup.bash
+source;share/musia_msgs/local_setup.dsv
+source;share/musia_msgs/local_setup.sh
+source;share/musia_msgs/local_setup.zsh

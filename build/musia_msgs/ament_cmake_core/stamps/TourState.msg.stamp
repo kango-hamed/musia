@@ -1,0 +1,13 @@
+uint8 VEILLE=0
+uint8 ACCUEIL=1
+uint8 TRAITEMENT=2
+uint8 GUIDAGE=3
+uint8 PRESENTATION=4
+uint8 DEGRADE=5
+uint8 RETOUR=6
+std_msgs/Header header
+uint8 state
+string state_label
+string current_zone
+uint8 current_waypoint
+bool network_available

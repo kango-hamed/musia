@@ -1,0 +1,100 @@
+###############################################################################
+# musia_params.yaml — Paramètres globaux MUSIA
+# Musée Famienkro — Robot guide autonome
+# Tous les nœuds chargent ce fichier via le launch
+###############################################################################
+
+# ---------------------------------------------------------------------------
+# tour_manager_node
+# ---------------------------------------------------------------------------
+tour_manager_node:
+  ros__parameters:
+
+    # Seuils de détection visiteur
+    person_distance_threshold_m: 1.5    # Distance max pour confirmer présence (m)
+    person_confidence_threshold: 0.5    # Confiance min PersonDetection
+
+    # Timeouts
+    vps_timeout_s: 2.0                  # Délai avant basculement DÉGRADÉ
+    accueil_tts_duration_s: 6.0        # Durée estimée du TTS d'accueil
+
+    # Mode démo (9 minutes, parcours prédéfini)
+    demo_mode: true
+    current_waypoint_index: 0
+
+    # Parcours de visite — noms des waypoints dans l'ordre
+    waypoint_names:
+      - "WP0"   # Entrée / veille
+      - "WP1"   # Salle Baoulé — entrée
+      - "WP2"   # Salle Baoulé — Masque Goli
+      - "WP3"   # Salle Baoulé — Pagne Kita
+      - "WP4"   # Couloir
+      - "WP5"   # Salle Dan — entrée
+      - "WP6"   # Salle Dan — Masque Gunye Ge
+      - "WP7"   # Salle Sénoufo — entrée
+      - "WP8"   # Salle Sénoufo — Masque Kpelié
+
+    # Coordonnées des waypoints dans la carte famienkro
+    # Repère : frame = map, origine = entrée principale
+    # x = profondeur (mètres depuis l'entrée), y = latéral, yaw = orientation (rad)
+    waypoints:
+      WP0: {x:  0.00, y:  0.00, yaw: 0.000}   # Entrée — position de veille
+      WP1: {x:  2.50, y:  0.30, yaw: 0.000}   # Salle Baoulé — seuil
+      WP2: {x:  4.20, y:  0.80, yaw: 1.571}   # Masque Goli — face à l'œuvre
+      WP3: {x:  4.20, y: -0.80, yaw: -1.571}  # Pagne Kita — face à l'œuvre
+      WP4: {x:  6.50, y:  0.00, yaw: 0.000}   # Couloir central
+      WP5: {x:  9.00, y:  0.20, yaw: 0.000}   # Salle Dan — seuil
+      WP6: {x: 10.80, y:  0.70, yaw: 1.571}   # Masque Gunye Ge — face à l'œuvre
+      WP7: {x: 13.50, y:  0.10, yaw: 0.000}   # Salle Sénoufo — seuil
+      WP8: {x: 15.20, y:  0.60, yaw: 1.571}   # Masque Kpelié — face à l'œuvre
+
+    # Zones associées aux indices de waypoints
+    zone_map:
+      0: "entrée"
+      1: "salle_baoule"
+      2: "salle_baoule"
+      3: "salle_baoule"
+      4: "couloir"
+      5: "salle_dan"
+      6: "salle_dan"
+      7: "salle_senoufou"
+      8: "salle_senoufou"
+
+
+# ---------------------------------------------------------------------------
+# arduino_bridge_node
+# ---------------------------------------------------------------------------
+arduino_bridge_node:
+  ros__parameters:
+    port: "/dev/arduino"
+    baud_rate: 115200
+    ultrasonic_threshold_cm: 150.0      # = 1.5m — cohérent avec tour_manager
+    read_timeout_s: 1.0
+    reconnect_delay_s: 3.0
+    publish_rate_hz: 10.0
+
+
+# ---------------------------------------------------------------------------
+# nav2_goal_relay_node  (petit nœud qui traduit /goal_pose → Nav2 action)
+# ---------------------------------------------------------------------------
+nav2_goal_relay_node:
+  ros__parameters:
+    nav2_action_server: "navigate_to_pose"
+    goal_tolerance_m: 0.25              # Rayon d'acceptation autour du waypoint
+    nav2_feedback_topic: "/nav2/feedback"
+
+
+# ---------------------------------------------------------------------------
+# Paramètres démo
+# ---------------------------------------------------------------------------
+demo:
+  total_duration_s: 540       # 9 minutes
+  phases:
+    veille_detection_s: 60    # Phase 1
+    accueil_s: 60             # Phase 2
+    nav_salle1_s: 60          # Phase 3
+    presentation_goli_s: 120  # Phase 4
+    question_hors_sujet_s: 60 # Phase 5
+    nav_salle2_s: 60          # Phase 6
+    presentation_dan_s: 60    # Phase 7
+    fin_visite_s: 60          # Phase 8

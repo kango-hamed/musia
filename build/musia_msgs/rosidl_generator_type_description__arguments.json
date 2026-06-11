@@ -1,0 +1,20 @@
+{
+  "package_name": "musia_msgs",
+  "output_dir": "/home/kango/musia_ws/build/musia_msgs/rosidl_generator_type_description/musia_msgs",
+  "idl_tuples": [
+    "/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:msg/TourState.idl",
+    "/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:msg/PersonDetection.idl",
+    "/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:msg/AudioCommand.idl",
+    "/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/SetTourMode.idl",
+    "/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/GetCurrentZone.idl",
+    "/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/NavigateToPOI.idl",
+    "/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/PlayAudio.idl",
+    "/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/DetectPerson.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "geometry_msgs:/opt/ros/jazzy/share/geometry_msgs",
+    "service_msgs:/opt/ros/jazzy/share/service_msgs"
+  ]
+}

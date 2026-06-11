@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""
+navigation.launch.py — Nav2 + EKF MUSIA
+Nœuds : map_server, amcl, controller_server, planner_server,
+        bt_navigator, waypoint_follower, smoother_server,
+        behavior_server, velocity_smoother, lifecycle_manager x2,
+        ekf_node (robot_localization — IMU → odom)
+
+Usage :
+  ros2 launch musia_bringup navigation.launch.py
+  ros2 launch musia_bringup navigation.launch.py map:=/chemin/carte.yaml
+"""
+import os
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument, LogInfo
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+
+
+def generate_launch_description():
+
+    bringup_dir = get_package_share_directory('musia_bringup')
+
+    # ── Arguments ─────────────────────────────────────────────────────────────
+    declare_map = DeclareLaunchArgument(
+        'map',
+        default_value=os.path.join(bringup_dir, 'maps', 'famienkro.yaml'))
+    declare_params = DeclareLaunchArgument(
+        'nav2_params_file',
+        default_value=os.path.join(bringup_dir, 'config', 'nav2_params.yaml'))
+    declare_ekf_params = DeclareLaunchArgument(
+        'ekf_params_file',
+        default_value=os.path.join(bringup_dir, 'config', 'ekf.yaml'))
+    declare_sim = DeclareLaunchArgument(
+        'use_sim_time', default_value='false')
+
+    map_yaml        = LaunchConfiguration('map')
+    params_file     = LaunchConfiguration('nav2_params_file')
+    ekf_params_file = LaunchConfiguration('ekf_params_file')
+    use_sim_time    = LaunchConfiguration('use_sim_time')
+
+    # ── Transforms statiques ──────────────────────────────────────────────────
+    # map → odom et odom → base_link sont gérés par AMCL et EKF
+    # On publie uniquement base_link → laser et base_link → imu_link
+
+    tf_base_laser = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='static_tf_base_laser',
+        arguments=[
+            '--x', '0.10', '--y', '0', '--z', '0.15',
+            '--roll', '0', '--pitch', '0', '--yaw', '0',
+            '--frame-id', 'base_link', '--child-frame-id', 'laser'
+        ]
+    )
+
+    # MPU-6050 monté au centre du robot, orienté axe X = avant
+    tf_base_imu = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='static_tf_base_imu',
+        arguments=[
+            '--x', '0', '--y', '0', '--z', '0.05',
+            '--roll', '0', '--pitch', '0', '--yaw', '0',
+            '--frame-id', 'base_link', '--child-frame-id', 'imu_link'
+        ]
+    )
+
+    # ── EKF — robot_localization ───────────────────────────────────────────────
+    # Fusionne /imu → /odom (odométrie IMU-only, sans encodeurs)
+    ekf_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_node',
+        output='screen',
+        parameters=[ekf_params_file, {'use_sim_time': use_sim_time}],
+        remappings=[
+            ('odometry/filtered', '/odom'),  # EKF publie sur /odom standard
+        ]
+    )
+
+    # ── Nav2 ──────────────────────────────────────────────────────────────────
+    map_server = Node(
+        package='nav2_map_server', executable='map_server',
+        name='map_server', output='screen',
+        parameters=[params_file, {
+            'yaml_filename': map_yaml,
+            'use_sim_time': use_sim_time
+        }]
+    )
+
+    amcl = Node(
+        package='nav2_amcl', executable='amcl',
+        name='amcl', output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}]
+    )
+
+    controller_server = Node(
+        package='nav2_controller', executable='controller_server',
+        name='controller_server', output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}]
+    )
+
+    planner_server = Node(
+        package='nav2_planner', executable='planner_server',
+        name='planner_server', output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}]
+    )
+
+    smoother_server = Node(
+        package='nav2_smoother', executable='smoother_server',
+        name='smoother_server', output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}]
+    )
+
+    behavior_server = Node(
+        package='nav2_behaviors', executable='behavior_server',
+        name='behavior_server', output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}]
+    )
+
+    bt_navigator = Node(
+        package='nav2_bt_navigator', executable='bt_navigator',
+        name='bt_navigator', output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}]
+    )
+
+    waypoint_follower = Node(
+        package='nav2_waypoint_follower', executable='waypoint_follower',
+        name='waypoint_follower', output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}]
+    )
+
+    velocity_smoother = Node(
+        package='nav2_velocity_smoother', executable='velocity_smoother',
+        name='velocity_smoother', output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}]
+    )
+
+    # ── Lifecycle managers ────────────────────────────────────────────────────
+    lifecycle_localization = Node(
+        package='nav2_lifecycle_manager',
+        executable='lifecycle_manager',
+        name='lifecycle_manager_localization',
+        output='screen',
+        parameters=[{
+            'use_sim_time': use_sim_time,
+            'autostart': True,
+            'node_names': ['map_server', 'amcl']
+        }]
+    )
+
+    lifecycle_navigation = Node(
+        package='nav2_lifecycle_manager',
+        executable='lifecycle_manager',
+        name='lifecycle_manager_navigation',
+        output='screen',
+        parameters=[{
+            'use_sim_time': use_sim_time,
+            'autostart': True,
+            'node_names': [
+                'controller_server',
+                'smoother_server',
+                'planner_server',
+                'behavior_server',
+                'bt_navigator',
+                'waypoint_follower',
+                'velocity_smoother',
+            ]
+        }]
+    )
+
+    return LaunchDescription([
+        # Arguments
+        declare_map, declare_params, declare_ekf_params, declare_sim,
+
+        LogInfo(msg='[navigation.launch] Démarrage Nav2 + EKF MUSIA'),
+
+        # TF statiques
+        tf_base_laser,
+        tf_base_imu,
+
+        # EKF — doit démarrer avant Nav2 pour que /odom soit disponible
+        ekf_node,
+
+        # Nav2
+        map_server, amcl,
+        controller_server, planner_server, smoother_server,
+        behavior_server, bt_navigator, waypoint_follower, velocity_smoother,
+
+        # Lifecycle
+        lifecycle_localization,
+        lifecycle_navigation,
+
+        LogInfo(msg='[navigation.launch] Prêt — /imu → EKF → /odom → Nav2'),
+    ])

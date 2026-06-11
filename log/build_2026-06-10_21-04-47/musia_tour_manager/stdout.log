@@ -1,0 +1,21 @@
+running egg_info
+writing ../../build/musia_tour_manager/musia_tour_manager.egg-info/PKG-INFO
+writing dependency_links to ../../build/musia_tour_manager/musia_tour_manager.egg-info/dependency_links.txt
+writing entry points to ../../build/musia_tour_manager/musia_tour_manager.egg-info/entry_points.txt
+writing requirements to ../../build/musia_tour_manager/musia_tour_manager.egg-info/requires.txt
+writing top-level names to ../../build/musia_tour_manager/musia_tour_manager.egg-info/top_level.txt
+reading manifest file '../../build/musia_tour_manager/musia_tour_manager.egg-info/SOURCES.txt'
+writing manifest file '../../build/musia_tour_manager/musia_tour_manager.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+creating /home/kango/musia_ws/install/musia_tour_manager/lib/musia_tour_manager
+copying scripts/tour_manager_node -> /home/kango/musia_ws/install/musia_tour_manager/lib/musia_tour_manager
+running install_egg_info
+removing '/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages/musia_tour_manager-0.1.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/musia_tour_manager/musia_tour_manager.egg-info to /home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages/musia_tour_manager-0.1.0-py3.12.egg-info
+running install_scripts
+Installing tour_manager_node script to /home/kango/musia_ws/install/musia_tour_manager/bin
+writing list of installed files to '/home/kango/musia_ws/build/musia_tour_manager/install.log'

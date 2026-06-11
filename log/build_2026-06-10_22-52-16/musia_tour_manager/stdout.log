@@ -1,0 +1,18 @@
+running develop
+running egg_info
+writing musia_tour_manager.egg-info/PKG-INFO
+writing dependency_links to musia_tour_manager.egg-info/dependency_links.txt
+writing entry points to musia_tour_manager.egg-info/entry_points.txt
+writing requirements to musia_tour_manager.egg-info/requires.txt
+writing top-level names to musia_tour_manager.egg-info/top_level.txt
+reading manifest file 'musia_tour_manager.egg-info/SOURCES.txt'
+writing manifest file 'musia_tour_manager.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages/musia-tour-manager.egg-link (link to .)
+Installing tour_manager_node script to /home/kango/musia_ws/install/musia_tour_manager/bin
+
+Installed /home/kango/musia_ws/build/musia_tour_manager
+running symlink_data
+symbolically linking /home/kango/musia_ws/build/musia_tour_manager/resource/musia_tour_manager -> /home/kango/musia_ws/install/musia_tour_manager/share/ament_index/resource_index/packages
+symbolically linking /home/kango/musia_ws/build/musia_tour_manager/package.xml -> /home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager
+symbolically linking /home/kango/musia_ws/build/musia_tour_manager/scripts/tour_manager_node -> /home/kango/musia_ws/install/musia_tour_manager/lib/musia_tour_manager

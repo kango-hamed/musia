@@ -1,0 +1,19 @@
+[1.527s] Invoking command in '/home/kango/musia_ws/build/musia_tour_manager': PYTHONPATH=/home/kango/musia_ws/build/musia_tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/build/musia_tour_manager/build --no-deps symlink_data --force
+[1.955s] running develop
+[2.178s] running egg_info
+[2.200s] writing musia_tour_manager.egg-info/PKG-INFO
+[2.202s] writing dependency_links to musia_tour_manager.egg-info/dependency_links.txt
+[2.203s] writing entry points to musia_tour_manager.egg-info/entry_points.txt
+[2.204s] writing requirements to musia_tour_manager.egg-info/requires.txt
+[2.205s] writing top-level names to musia_tour_manager.egg-info/top_level.txt
+[2.252s] reading manifest file 'musia_tour_manager.egg-info/SOURCES.txt'
+[2.254s] writing manifest file 'musia_tour_manager.egg-info/SOURCES.txt'
+[2.278s] running build_ext
+[2.278s] Creating /home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages/musia-tour-manager.egg-link (link to .)
+[2.279s] Installing tour_manager_node script to /home/kango/musia_ws/install/musia_tour_manager/bin
+[2.279s] 
+[2.279s] Installed /home/kango/musia_ws/build/musia_tour_manager
+[2.280s] running symlink_data
+[2.280s] symbolically linking /home/kango/musia_ws/build/musia_tour_manager/resource/musia_tour_manager -> /home/kango/musia_ws/install/musia_tour_manager/share/ament_index/resource_index/packages
+[2.280s] symbolically linking /home/kango/musia_ws/build/musia_tour_manager/package.xml -> /home/kango/musia_ws/install/musia_tour_manager/share/musia_tour_manager
+[2.450s] Invoked command in '/home/kango/musia_ws/build/musia_tour_manager' returned '0': PYTHONPATH=/home/kango/musia_ws/build/musia_tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kango/musia_ws/build/musia_tour_manager/build --no-deps symlink_data --force

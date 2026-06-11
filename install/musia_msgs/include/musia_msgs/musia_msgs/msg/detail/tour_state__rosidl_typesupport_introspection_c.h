@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_msgs/rosidl_typesupport_introspection_c/musia_msgs/msg/detail/tour_state__rosidl_typesupport_introspection_c.h

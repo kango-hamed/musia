@@ -1,0 +1,204 @@
+[0.000000] (-) TimerEvent: {}
+[0.000395] (-) JobUnselected: {'identifier': 'musia_arduino_bridge'}
+[0.000671] (-) JobUnselected: {'identifier': 'musia_bringup'}
+[0.000695] (-) JobUnselected: {'identifier': 'musia_msgs'}
+[0.000713] (-) JobUnselected: {'identifier': 'musia_navigation'}
+[0.000731] (-) JobUnselected: {'identifier': 'musia_tour_manager'}
+[0.000748] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.000767] (ldlidar_stl_ros2) JobQueued: {'identifier': 'ldlidar_stl_ros2', 'dependencies': OrderedDict()}
+[0.000789] (ldlidar_stl_ros2) JobStarted: {'identifier': 'ldlidar_stl_ros2'}
+[0.017072] (ldlidar_stl_ros2) JobProgress: {'identifier': 'ldlidar_stl_ros2', 'progress': 'cmake'}
+[0.017792] (ldlidar_stl_ros2) Command: {'cmd': ['/usr/bin/cmake', '/home/kango/musia_ws/src/ldlidar_stl_ros2', '-DCMAKE_INSTALL_PREFIX=/home/kango/musia_ws/install/ldlidar_stl_ros2'], 'cwd': '/home/kango/musia_ws/build/ldlidar_stl_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'kango', 'SSH_CLIENT': '2001:42d8:390f:d700:808b:3a3d:b2ef:708d 64868 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/kango/musia_ws/install/musia_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/kango', 'OLDPWD': '/home/kango/musia_ws/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/kango/musia_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'kango', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm', 'XDG_SESSION_ID': '1', 'PATH': '/home/kango/musia_ws/install/musia_tour_manager/bin:/home/kango/musia_ws/install/musia_navigation/bin:/home/kango/musia_ws/install/musia_arduino_bridge/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.utf8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/kango/musia_ws/install/sllidar_ros2:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_navigation:/home/kango/musia_ws/install/musia_msgs:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/kango/musia_ws/build/ldlidar_stl_ros2', 'LC_ALL': 'en_US.utf8', 'SSH_CONNECTION': '2001:42d8:390f:d700:808b:3a3d:b2ef:708d 64868 2001:42d8:390f:d700:2ecf:67ff:fe72:5b72 22', 'PYTHONPATH': '/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/build/musia_tour_manager:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/build/musia_navigation:/home/kango/musia_ws/install/musia_navigation/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/build/musia_arduino_bridge:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/kango/musia_ws/install/sllidar_ros2:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_msgs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_navigation:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy'}), 'shell': False}
+[0.099638] (-) TimerEvent: {}
+[0.200032] (-) TimerEvent: {}
+[0.300401] (-) TimerEvent: {}
+[0.400758] (-) TimerEvent: {}
+[0.501169] (-) TimerEvent: {}
+[0.586463] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.601262] (-) TimerEvent: {}
+[0.701607] (-) TimerEvent: {}
+[0.801977] (-) TimerEvent: {}
+[0.902312] (-) TimerEvent: {}
+[0.954570] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.993978] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.002400] (-) TimerEvent: {}
+[1.102774] (-) TimerEvent: {}
+[1.193691] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.202830] (-) TimerEvent: {}
+[1.209175] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.210447] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.211333] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.227384] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.302974] (-) TimerEvent: {}
+[1.403393] (-) TimerEvent: {}
+[1.418053] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.433394] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.433888] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.434615] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.452766] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.503474] (-) TimerEvent: {}
+[1.603758] (-) TimerEvent: {}
+[1.704090] (-) TimerEvent: {}
+[1.717635] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.804175] (-) TimerEvent: {}
+[1.904471] (-) TimerEvent: {}
+[1.963029] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rclcpp: 28.1.18 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[2.004551] (-) TimerEvent: {}
+[2.074956] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[2.104637] (-) TimerEvent: {}
+[2.112380] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.157580] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.203386] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.204702] (-) TimerEvent: {}
+[2.304915] (-) TimerEvent: {}
+[2.379557] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.390045] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.404988] (-) TimerEvent: {}
+[2.505256] (-) TimerEvent: {}
+[2.601943] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[2.605323] (-) TimerEvent: {}
+[2.632985] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[2.669813] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.705427] (-) TimerEvent: {}
+[2.805685] (-) TimerEvent: {}
+[2.827138] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.7 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[2.905791] (-) TimerEvent: {}
+[2.941956] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.005865] (-) TimerEvent: {}
+[3.106128] (-) TimerEvent: {}
+[3.177513] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[3.186349] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.187388] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/kango/musia_ws/src/ldlidar_stl_ros2/include;/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/core;/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/dataprocess;/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/filter;/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/logger;/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/networkcom;/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/serialcom\n'}
+[3.187514] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.195440] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[3.195615] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[3.197767] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[3.197885] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[3.200821] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.203129] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[3.206187] (-) TimerEvent: {}
+[3.210586] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.210732] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.212947] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.216702] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configuring done (3.1s)\n'}
+[3.236455] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[3.242474] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/kango/musia_ws/build/ldlidar_stl_ros2\n'}
+[3.265411] (ldlidar_stl_ros2) CommandEnded: {'returncode': 0}
+[3.266130] (ldlidar_stl_ros2) JobProgress: {'identifier': 'ldlidar_stl_ros2', 'progress': 'build'}
+[3.266899] (ldlidar_stl_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kango/musia_ws/build/ldlidar_stl_ros2', '--', '-j4', '-l4'], 'cwd': '/home/kango/musia_ws/build/ldlidar_stl_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'kango', 'SSH_CLIENT': '2001:42d8:390f:d700:808b:3a3d:b2ef:708d 64868 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/kango/musia_ws/install/musia_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/kango', 'OLDPWD': '/home/kango/musia_ws/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/kango/musia_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'kango', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm', 'XDG_SESSION_ID': '1', 'PATH': '/home/kango/musia_ws/install/musia_tour_manager/bin:/home/kango/musia_ws/install/musia_navigation/bin:/home/kango/musia_ws/install/musia_arduino_bridge/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.utf8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/kango/musia_ws/install/sllidar_ros2:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_navigation:/home/kango/musia_ws/install/musia_msgs:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/kango/musia_ws/build/ldlidar_stl_ros2', 'LC_ALL': 'en_US.utf8', 'SSH_CONNECTION': '2001:42d8:390f:d700:808b:3a3d:b2ef:708d 64868 2001:42d8:390f:d700:2ecf:67ff:fe72:5b72 22', 'PYTHONPATH': '/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:/home/kango/musia_ws/build/musia_tour_manager:/home/kango/musia_ws/install/musia_tour_manager/lib/python3.12/site-packages:/home/kango/musia_ws/build/musia_navigation:/home/kango/musia_ws/install/musia_navigation/lib/python3.12/site-packages:/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages:/home/kango/musia_ws/build/musia_arduino_bridge:/home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/kango/musia_ws/install/sllidar_ros2:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_msgs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_navigation:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy'}), 'shell': False}
+[3.306316] (-) TimerEvent: {}
+[3.368926] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/src/demo.cpp.o\x1b[0m\n'}
+[3.369304] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/core/ldlidar_driver.cpp.o\x1b[0m\n'}
+[3.371227] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/dataprocess/lipkg.cpp.o\x1b[0m\n'}
+[3.371604] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/filter/tofbf.cpp.o\x1b[0m\n'}
+[3.406430] (-) TimerEvent: {}
+[3.507069] (-) TimerEvent: {}
+[3.609232] (-) TimerEvent: {}
+[3.709683] (-) TimerEvent: {}
+[3.810192] (-) TimerEvent: {}
+[3.910660] (-) TimerEvent: {}
+[4.011132] (-) TimerEvent: {}
+[4.112684] (-) TimerEvent: {}
+[4.213794] (-) TimerEvent: {}
+[4.316738] (-) TimerEvent: {}
+[4.417310] (-) TimerEvent: {}
+[4.517796] (-) TimerEvent: {}
+[4.618405] (-) TimerEvent: {}
+[4.719695] (-) TimerEvent: {}
+[4.821728] (-) TimerEvent: {}
+[4.922269] (-) TimerEvent: {}
+[5.009274] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/logger/log_module.cpp.o\x1b[0m\n'}
+[5.023519] (-) TimerEvent: {}
+[5.124330] (-) TimerEvent: {}
+[5.177664] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/networkcom/network_socket_interface_linux.cpp.o\x1b[0m\n'}
+[5.224470] (-) TimerEvent: {}
+[5.325194] (-) TimerEvent: {}
+[5.426074] (-) TimerEvent: {}
+[5.527676] (-) TimerEvent: {}
+[5.596647] (ldlidar_stl_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LogModule::\x1b[01;32m\x1b[KInitLock\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.597119] (ldlidar_stl_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:172:3:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpthread_mutex_init\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpthread_mutex_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.597329] (ldlidar_stl_ros2) StderrLine: {'line': b'  172 |   \x1b[01;31m\x1b[Kpthread_mutex_init\x1b[m\x1b[K(&mutex_lock_,NULL);\n'}
+[5.597567] (ldlidar_stl_ros2) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.597723] (ldlidar_stl_ros2) StderrLine: {'line': b'      |   \x1b[32m\x1b[Kpthread_mutex_t\x1b[m\x1b[K\n'}
+[5.605399] (ldlidar_stl_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LogModule::\x1b[01;32m\x1b[KRealseLock\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.606087] (ldlidar_stl_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:180:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpthread_mutex_unlock\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpthread_mutex_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.606516] (ldlidar_stl_ros2) StderrLine: {'line': b'  180 |         \x1b[01;31m\x1b[Kpthread_mutex_unlock\x1b[m\x1b[K(&mutex_lock_);\n'}
+[5.606883] (ldlidar_stl_ros2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.607232] (ldlidar_stl_ros2) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kpthread_mutex_t\x1b[m\x1b[K\n'}
+[5.609310] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/serialcom/serial_interface_linux.cpp.o\x1b[0m\n'}
+[5.615745] (ldlidar_stl_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LogModule::\x1b[01;32m\x1b[KLock\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.618466] (ldlidar_stl_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:188:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpthread_mutex_lock\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpthread_mutex_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.618853] (ldlidar_stl_ros2) StderrLine: {'line': b'  188 |         \x1b[01;31m\x1b[Kpthread_mutex_lock\x1b[m\x1b[K(&mutex_lock_);\n'}
+[5.619007] (ldlidar_stl_ros2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.619135] (ldlidar_stl_ros2) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kpthread_mutex_t\x1b[m\x1b[K\n'}
+[5.626603] (ldlidar_stl_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LogModule::\x1b[01;32m\x1b[KUnLock\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.626991] (ldlidar_stl_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/kango/musia_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:196:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpthread_mutex_unlock\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpthread_mutex_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.627180] (ldlidar_stl_ros2) StderrLine: {'line': b'  196 |         \x1b[01;31m\x1b[Kpthread_mutex_unlock\x1b[m\x1b[K(&mutex_lock_);\n'}
+[5.627297] (ldlidar_stl_ros2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.627514] (ldlidar_stl_ros2) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kpthread_mutex_t\x1b[m\x1b[K\n'}
+[5.627681] (-) TimerEvent: {}
+[5.701552] (ldlidar_stl_ros2) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/ldlidar_stl_ros2_node.dir/build.make:132: CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/logger/log_module.cpp.o] Error 1\n'}
+[5.701970] (ldlidar_stl_ros2) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[5.727818] (-) TimerEvent: {}
+[5.828443] (-) TimerEvent: {}
+[5.928940] (-) TimerEvent: {}
+[6.029653] (-) TimerEvent: {}
+[6.130365] (-) TimerEvent: {}
+[6.230758] (-) TimerEvent: {}
+[6.331441] (-) TimerEvent: {}
+[6.431838] (-) TimerEvent: {}
+[6.532494] (-) TimerEvent: {}
+[6.632877] (-) TimerEvent: {}
+[6.733251] (-) TimerEvent: {}
+[6.833593] (-) TimerEvent: {}
+[6.933857] (-) TimerEvent: {}
+[7.034126] (-) TimerEvent: {}
+[7.134395] (-) TimerEvent: {}
+[7.234645] (-) TimerEvent: {}
+[7.334918] (-) TimerEvent: {}
+[7.435197] (-) TimerEvent: {}
+[7.535436] (-) TimerEvent: {}
+[7.635690] (-) TimerEvent: {}
+[7.735954] (-) TimerEvent: {}
+[7.836212] (-) TimerEvent: {}
+[7.936472] (-) TimerEvent: {}
+[8.036707] (-) TimerEvent: {}
+[8.136948] (-) TimerEvent: {}
+[8.237186] (-) TimerEvent: {}
+[8.337408] (-) TimerEvent: {}
+[8.437644] (-) TimerEvent: {}
+[8.537880] (-) TimerEvent: {}
+[8.638117] (-) TimerEvent: {}
+[8.738389] (-) TimerEvent: {}
+[8.838644] (-) TimerEvent: {}
+[8.938895] (-) TimerEvent: {}
+[9.039159] (-) TimerEvent: {}
+[9.139395] (-) TimerEvent: {}
+[9.239617] (-) TimerEvent: {}
+[9.339839] (-) TimerEvent: {}
+[9.440137] (-) TimerEvent: {}
+[9.540386] (-) TimerEvent: {}
+[9.640618] (-) TimerEvent: {}
+[9.740851] (-) TimerEvent: {}
+[9.841148] (-) TimerEvent: {}
+[9.941421] (-) TimerEvent: {}
+[10.041657] (-) TimerEvent: {}
+[10.141948] (-) TimerEvent: {}
+[10.242165] (-) TimerEvent: {}
+[10.342381] (-) TimerEvent: {}
+[10.442614] (-) TimerEvent: {}
+[10.542855] (-) TimerEvent: {}
+[10.643087] (-) TimerEvent: {}
+[10.743317] (-) TimerEvent: {}
+[10.843578] (-) TimerEvent: {}
+[10.943826] (-) TimerEvent: {}
+[11.044100] (-) TimerEvent: {}
+[11.144376] (-) TimerEvent: {}
+[11.244715] (-) TimerEvent: {}
+[11.345141] (-) TimerEvent: {}
+[11.445438] (-) TimerEvent: {}
+[11.453011] (ldlidar_stl_ros2) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ldlidar_stl_ros2_node.dir/all] Error 2\n'}
+[11.453321] (ldlidar_stl_ros2) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[11.456548] (ldlidar_stl_ros2) CommandEnded: {'returncode': 2}
+[11.477077] (ldlidar_stl_ros2) JobEnded: {'identifier': 'ldlidar_stl_ros2', 'rc': 2}
+[11.487643] (-) EventReactorShutdown: {}

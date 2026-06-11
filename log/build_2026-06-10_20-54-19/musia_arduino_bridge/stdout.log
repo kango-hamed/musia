@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing musia_arduino_bridge.egg-info/PKG-INFO
+writing dependency_links to musia_arduino_bridge.egg-info/dependency_links.txt
+writing entry points to musia_arduino_bridge.egg-info/entry_points.txt
+writing requirements to musia_arduino_bridge.egg-info/requires.txt
+writing top-level names to musia_arduino_bridge.egg-info/top_level.txt
+reading manifest file 'musia_arduino_bridge.egg-info/SOURCES.txt'
+writing manifest file 'musia_arduino_bridge.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/kango/musia_ws/install/musia_arduino_bridge/lib/python3.12/site-packages/musia-arduino-bridge.egg-link (link to .)
+Installing arduino_bridge_node script to /home/kango/musia_ws/install/musia_arduino_bridge/lib/musia_arduino_bridge
+
+Installed /home/kango/musia_ws/build/musia_arduino_bridge
+running symlink_data
+symbolically linking /home/kango/musia_ws/build/musia_arduino_bridge/resource/musia_arduino_bridge -> /home/kango/musia_ws/install/musia_arduino_bridge/share/ament_index/resource_index/packages
+symbolically linking /home/kango/musia_ws/build/musia_arduino_bridge/package.xml -> /home/kango/musia_ws/install/musia_arduino_bridge/share/musia_arduino_bridge

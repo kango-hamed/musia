@@ -1,0 +1,5 @@
+
+---
+string zone_name
+uint8 current_waypoint
+bool success

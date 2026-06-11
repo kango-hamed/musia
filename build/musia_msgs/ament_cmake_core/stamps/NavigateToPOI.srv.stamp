@@ -1,0 +1,5 @@
+uint8 waypoint_id
+bool cancel
+---
+bool success
+string message

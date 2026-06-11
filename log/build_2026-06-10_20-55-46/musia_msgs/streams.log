@@ -1,0 +1,419 @@
+[0.017s] Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake /home/kango/musia_ws/src/musia_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kango/musia_ws/install/musia_msgs
+[0.445s] -- The C compiler identification is GNU 13.3.0
+[0.800s] -- The CXX compiler identification is GNU 13.3.0
+[0.829s] -- Detecting C compiler ABI info
+[0.995s] -- Detecting C compiler ABI info - done
+[1.010s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.011s] -- Detecting C compile features
+[1.012s] -- Detecting C compile features - done
+[1.027s] -- Detecting CXX compiler ABI info
+[1.222s] -- Detecting CXX compiler ABI info - done
+[1.237s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.237s] -- Detecting CXX compile features
+[1.238s] -- Detecting CXX compile features - done
+[1.251s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.497s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.621s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.707s] -- Found std_msgs: 5.3.7 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.785s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.815s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.849s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.885s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.946s] -- Found geometry_msgs: 5.3.7 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[1.973s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[2.036s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[3.060s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[4.336s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.836s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.844s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[5.051s] -- Found PythonExtra: /usr/bin/python3  
+[5.749s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[5.930s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[5.949s] -- Configuring done (5.9s)
+[6.027s] -- Generating done (0.1s)
+[6.045s] -- Build files have been written to: /home/kango/musia_ws/build/musia_msgs
+[6.068s] Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake /home/kango/musia_ws/src/musia_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kango/musia_ws/install/musia_msgs
+[6.069s] Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake --build /home/kango/musia_ws/build/musia_msgs -- -j4 -l4
+[6.170s] [  2%] Generating type hashes for ROS interfaces
+[6.171s] [  2%] Generating Rust code for ROS interfaces
+[6.188s] [  2%] Built target ament_cmake_python_symlink_musia_msgs
+[6.506s] running egg_info
+[6.508s] creating musia_msgs.egg-info
+[6.531s] writing musia_msgs.egg-info/PKG-INFO
+[6.532s] writing dependency_links to musia_msgs.egg-info/dependency_links.txt
+[6.532s] writing top-level names to musia_msgs.egg-info/top_level.txt
+[6.533s] writing manifest file 'musia_msgs.egg-info/SOURCES.txt'
+[6.605s] reading manifest file 'musia_msgs.egg-info/SOURCES.txt'
+[6.605s] writing manifest file 'musia_msgs.egg-info/SOURCES.txt'
+[6.724s] [  2%] Built target ament_cmake_python_build_musia_msgs_egg
+[6.761s] [  2%] Built target musia_msgs__rosidl_generator_type_description
+[6.787s] [  3%] Generating C code for ROS interfaces
+[6.801s] [  3%] Built target musia_msgs__rs
+[6.825s] [  3%] Generating C++ code for ROS interfaces
+[8.069s] [  3%] Built target musia_msgs__cpp
+[8.319s] [  7%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/tour_state__type_support.c.o
+[8.319s] [  7%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/tour_state__description.c.o
+[8.319s] [  7%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/tour_state__functions.c.o
+[8.319s] [  7%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/person_detection__description.c.o
+[8.429s] [  8%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/person_detection__functions.c.o
+[8.458s] [ 10%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/audio_command__description.c.o
+[8.458s] [ 10%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/person_detection__type_support.c.o
+[8.506s] [ 11%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/audio_command__functions.c.o
+[8.533s] [ 12%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/msg/detail/audio_command__type_support.c.o
+[8.546s] [ 13%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/set_tour_mode__description.c.o
+[8.551s] [ 14%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/set_tour_mode__functions.c.o
+[8.611s] [ 15%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/set_tour_mode__type_support.c.o
+[8.631s] [ 16%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/get_current_zone__description.c.o
+[8.665s] [ 17%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/get_current_zone__functions.c.o
+[8.700s] [ 18%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/get_current_zone__type_support.c.o
+[8.723s] [ 19%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/navigate_to_poi__description.c.o
+[8.745s] [ 20%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/navigate_to_poi__functions.c.o
+[8.793s] [ 21%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/navigate_to_poi__type_support.c.o
+[8.833s] [ 22%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/play_audio__description.c.o
+[8.833s] [ 22%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/play_audio__functions.c.o
+[8.882s] [ 23%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/play_audio__type_support.c.o
+[8.919s] [ 24%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/detect_person__description.c.o
+[8.951s] [ 25%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/detect_person__functions.c.o
+[8.980s] [ 26%] Building C object CMakeFiles/musia_msgs__rosidl_generator_c.dir/rosidl_generator_c/musia_msgs/srv/detail/detect_person__type_support.c.o
+[9.084s] [ 27%] Linking C shared library libmusia_msgs__rosidl_generator_c.so
+[9.185s] [ 27%] Built target musia_msgs__rosidl_generator_c
+[9.212s] [ 29%] Generating C++ type support for eProsima Fast-RTPS
+[9.212s] [ 29%] Generating C type support dispatch for ROS interfaces
+[9.213s] [ 31%] Generating C introspection for ROS interfaces
+[9.213s] [ 31%] Generating C type support for eProsima Fast-RTPS
+[10.101s] [ 32%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/musia_msgs/msg/tour_state__type_support.cpp.o
+[10.216s] [ 33%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/musia_msgs/msg/person_detection__type_support.cpp.o
+[10.304s] [ 34%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/musia_msgs/msg/audio_command__type_support.cpp.o
+[10.389s] [ 34%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/musia_msgs/srv/set_tour_mode__type_support.cpp.o
+[10.493s] [ 35%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/musia_msgs/srv/get_current_zone__type_support.cpp.o
+[10.494s] [ 36%] Building C object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/musia_msgs/msg/detail/tour_state__type_support.c.o
+[10.588s] [ 37%] Building C object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/musia_msgs/msg/detail/person_detection__type_support.c.o
+[10.603s] [ 38%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/musia_msgs/srv/navigate_to_poi__type_support.cpp.o
+[10.677s] [ 39%] Building C object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/musia_msgs/msg/detail/audio_command__type_support.c.o
+[10.711s] [ 40%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/musia_msgs/srv/play_audio__type_support.cpp.o
+[10.759s] [ 41%] Building C object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/musia_msgs/srv/detail/set_tour_mode__type_support.c.o
+[10.819s] [ 42%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/musia_msgs/srv/detect_person__type_support.cpp.o
+[10.866s] [ 43%] Building C object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/musia_msgs/srv/detail/get_current_zone__type_support.c.o
+[10.884s] [ 44%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/musia_msgs/msg/detail/dds_fastrtps/tour_state__type_support.cpp.o
+[10.919s] [ 45%] Linking CXX shared library libmusia_msgs__rosidl_typesupport_c.so
+[10.968s] [ 45%] Building C object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/musia_msgs/srv/detail/navigate_to_poi__type_support.c.o
+[10.993s] [ 46%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/tour_state__type_support_c.cpp.o
+[11.019s] [ 46%] Built target musia_msgs__rosidl_typesupport_c
+[11.053s] [ 47%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/person_detection__type_support_c.cpp.o
+[11.071s] [ 48%] Building C object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/musia_msgs/srv/detail/play_audio__type_support.c.o
+[11.185s] [ 49%] Building C object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/musia_msgs/srv/detail/detect_person__type_support.c.o
+[11.305s] [ 50%] Linking C shared library libmusia_msgs__rosidl_typesupport_introspection_c.so
+[11.409s] [ 50%] Built target musia_msgs__rosidl_typesupport_introspection_c
+[11.439s] [ 51%] Generating C++ introspection for ROS interfaces
+[12.158s] [ 52%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/audio_command__type_support_c.cpp.o
+[12.179s] [ 53%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/musia_msgs/msg/detail/dds_fastrtps/person_detection__type_support.cpp.o
+[12.228s] [ 54%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/set_tour_mode__type_support_c.cpp.o
+[13.041s] [ 55%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/musia_msgs/msg/detail/tour_state__type_support.cpp.o
+[13.295s] [ 56%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/musia_msgs/msg/detail/person_detection__type_support.cpp.o
+[13.327s] [ 57%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/musia_msgs/msg/detail/dds_fastrtps/audio_command__type_support.cpp.o
+[13.468s] [ 57%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/get_current_zone__type_support_c.cpp.o
+[13.862s] [ 58%] Generating C++ type support dispatch for ROS interfaces
+[14.093s] [ 59%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/musia_msgs/msg/detail/audio_command__type_support.cpp.o
+[14.507s] [ 60%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/musia_msgs/srv/detail/dds_fastrtps/set_tour_mode__type_support.cpp.o
+[14.687s] [ 61%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/navigate_to_poi__type_support_c.cpp.o
+[14.845s] [ 62%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/musia_msgs/srv/detail/set_tour_mode__type_support.cpp.o
+[15.085s] [ 63%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/musia_msgs/msg/tour_state__type_support.cpp.o
+[15.954s] [ 64%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/musia_msgs/srv/detail/get_current_zone__type_support.cpp.o
+[16.000s] [ 65%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/play_audio__type_support_c.cpp.o
+[16.014s] [ 66%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/musia_msgs/msg/person_detection__type_support.cpp.o
+[16.062s] [ 67%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/musia_msgs/srv/detail/dds_fastrtps/get_current_zone__type_support.cpp.o
+[16.813s] [ 68%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/musia_msgs/msg/audio_command__type_support.cpp.o
+[17.023s] [ 69%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/musia_msgs/srv/detail/navigate_to_poi__type_support.cpp.o
+[17.300s] [ 70%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/detect_person__type_support_c.cpp.o
+[17.654s] [ 71%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/musia_msgs/srv/set_tour_mode__type_support.cpp.o
+[17.693s] [ 72%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/musia_msgs/srv/detail/dds_fastrtps/navigate_to_poi__type_support.cpp.o
+[18.130s] [ 73%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/musia_msgs/srv/detail/play_audio__type_support.cpp.o
+[18.573s] [ 74%] Linking CXX shared library libmusia_msgs__rosidl_typesupport_fastrtps_c.so
+[18.718s] [ 75%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/musia_msgs/srv/get_current_zone__type_support.cpp.o
+[18.848s] [ 75%] Built target musia_msgs__rosidl_typesupport_fastrtps_c
+[18.871s] [ 76%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/musia_msgs/srv/navigate_to_poi__type_support.cpp.o
+[19.306s] [ 77%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/musia_msgs/srv/detail/detect_person__type_support.cpp.o
+[19.380s] [ 78%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/musia_msgs/srv/detail/dds_fastrtps/play_audio__type_support.cpp.o
+[19.800s] [ 79%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/musia_msgs/srv/play_audio__type_support.cpp.o
+[19.927s] [ 80%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/musia_msgs/srv/detect_person__type_support.cpp.o
+[20.391s] [ 81%] Linking CXX shared library libmusia_msgs__rosidl_typesupport_introspection_cpp.so
+[20.714s] [ 81%] Built target musia_msgs__rosidl_typesupport_introspection_cpp
+[20.738s] [ 82%] Building CXX object CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/musia_msgs/srv/detail/dds_fastrtps/detect_person__type_support.cpp.o
+[20.979s] [ 83%] Linking CXX shared library libmusia_msgs__rosidl_typesupport_cpp.so
+[21.194s] [ 83%] Built target musia_msgs__rosidl_typesupport_cpp
+[21.734s] [ 84%] Linking CXX shared library libmusia_msgs__rosidl_typesupport_fastrtps_cpp.so
+[21.939s] [ 84%] Built target musia_msgs__rosidl_typesupport_fastrtps_cpp
+[21.979s] [ 84%] Built target musia_msgs
+[22.020s] [ 85%] Generating Python code for ROS interfaces
+[23.783s] [ 85%] Built target musia_msgs__py
+[23.825s] [ 89%] Building C object CMakeFiles/musia_msgs__rosidl_generator_py.dir/rosidl_generator_py/musia_msgs/msg/_tour_state_s.c.o
+[23.825s] [ 89%] Building C object CMakeFiles/musia_msgs__rosidl_generator_py.dir/rosidl_generator_py/musia_msgs/srv/_set_tour_mode_s.c.o
+[23.825s] [ 89%] Building C object CMakeFiles/musia_msgs__rosidl_generator_py.dir/rosidl_generator_py/musia_msgs/msg/_audio_command_s.c.o
+[23.829s] [ 89%] Building C object CMakeFiles/musia_msgs__rosidl_generator_py.dir/rosidl_generator_py/musia_msgs/msg/_person_detection_s.c.o
+[24.182s] [ 90%] Building C object CMakeFiles/musia_msgs__rosidl_generator_py.dir/rosidl_generator_py/musia_msgs/srv/_get_current_zone_s.c.o
+[24.189s] [ 92%] Building C object CMakeFiles/musia_msgs__rosidl_generator_py.dir/rosidl_generator_py/musia_msgs/srv/_navigate_to_poi_s.c.o
+[24.189s] [ 92%] Building C object CMakeFiles/musia_msgs__rosidl_generator_py.dir/rosidl_generator_py/musia_msgs/srv/_play_audio_s.c.o
+[24.234s] [ 93%] Building C object CMakeFiles/musia_msgs__rosidl_generator_py.dir/rosidl_generator_py/musia_msgs/srv/_detect_person_s.c.o
+[24.567s] [ 94%] Linking C shared library libmusia_msgs__rosidl_generator_py.so
+[24.664s] [ 94%] Built target musia_msgs__rosidl_generator_py
+[24.706s] [ 97%] Building C object CMakeFiles/musia_msgs_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/musia_msgs/_musia_msgs_s.ep.rosidl_typesupport_introspection_c.c.o
+[24.706s] [ 97%] Building C object CMakeFiles/musia_msgs_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/musia_msgs/_musia_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o
+[24.706s] [ 97%] Building C object CMakeFiles/musia_msgs_s__rosidl_typesupport_c.dir/rosidl_generator_py/musia_msgs/_musia_msgs_s.ep.rosidl_typesupport_c.c.o
+[25.001s] [ 98%] Linking C shared module rosidl_generator_py/musia_msgs/musia_msgs_s__rosidl_typesupport_c.so
+[25.005s] [ 99%] Linking C shared module rosidl_generator_py/musia_msgs/musia_msgs_s__rosidl_typesupport_introspection_c.so
+[25.012s] [100%] Linking C shared module rosidl_generator_py/musia_msgs/musia_msgs_s__rosidl_typesupport_fastrtps_c.so
+[25.070s] [100%] Built target musia_msgs_s__rosidl_typesupport_c
+[25.076s] [100%] Built target musia_msgs_s__rosidl_typesupport_introspection_c
+[25.082s] [100%] Built target musia_msgs_s__rosidl_typesupport_fastrtps_c
+[25.106s] Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake --build /home/kango/musia_ws/build/musia_msgs -- -j4 -l4
+[25.125s] Invoking command in '/home/kango/musia_ws/build/musia_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake --install /home/kango/musia_ws/build/musia_msgs
+[25.141s] -- Install configuration: ""
+[25.142s] -- Execute custom install script
+[25.142s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/ament_index/resource_index/rosidl_interfaces/musia_msgs
+[25.160s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/TourState.json
+[25.178s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/PersonDetection.json
+[25.195s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/AudioCommand.json
+[25.213s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/SetTourMode.json
+[25.231s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/GetCurrentZone.json
+[25.249s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/NavigateToPOI.json
+[25.267s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/PlayAudio.json
+[25.286s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/DetectPerson.json
+[25.304s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/audio_command.h
+[25.322s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__functions.h
+[25.340s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__struct.h
+[25.357s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__type_support.h
+[25.375s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__functions.h
+[25.394s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__struct.h
+[25.412s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__type_support.h
+[25.431s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__functions.h
+[25.448s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__struct.h
+[25.467s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__type_support.h
+[25.486s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/person_detection.h
+[25.504s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/rosidl_generator_c__visibility_control.h
+[25.521s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/tour_state.h
+[25.539s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__functions.h
+[25.557s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__struct.h
+[25.575s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__type_support.h
+[25.593s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__functions.h
+[25.611s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__struct.h
+[25.629s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__type_support.h
+[25.647s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__functions.h
+[25.666s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__struct.h
+[25.684s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__type_support.h
+[25.701s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__functions.h
+[25.719s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__struct.h
+[25.738s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__type_support.h
+[25.756s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__functions.h
+[25.774s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__struct.h
+[25.792s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__type_support.h
+[25.811s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detect_person.h
+[25.828s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/get_current_zone.h
+[25.846s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/navigate_to_poi.h
+[25.865s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/play_audio.h
+[25.883s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/set_tour_mode.h
+[25.900s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/environment/library_path.sh
+[25.920s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/environment/library_path.dsv
+[25.938s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__rosidl_typesupport_fastrtps_c.h
+[25.957s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__rosidl_typesupport_fastrtps_c.h
+[25.974s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__rosidl_typesupport_fastrtps_c.h
+[25.992s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[26.011s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__rosidl_typesupport_fastrtps_c.h
+[26.030s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__rosidl_typesupport_fastrtps_c.h
+[26.047s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__rosidl_typesupport_fastrtps_c.h
+[26.065s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__rosidl_typesupport_fastrtps_c.h
+[26.084s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__rosidl_typesupport_fastrtps_c.h
+[26.104s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/audio_command.hpp
+[26.121s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__builder.hpp
+[26.139s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__struct.hpp
+[26.158s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__traits.hpp
+[26.177s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__type_support.hpp
+[26.195s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__builder.hpp
+[26.213s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__struct.hpp
+[26.232s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__traits.hpp
+[26.249s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__type_support.hpp
+[26.267s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__builder.hpp
+[26.284s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__struct.hpp
+[26.303s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__traits.hpp
+[26.322s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__type_support.hpp
+[26.340s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/person_detection.hpp
+[26.358s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[26.376s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/tour_state.hpp
+[26.395s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__builder.hpp
+[26.413s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__struct.hpp
+[26.431s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__traits.hpp
+[26.450s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__type_support.hpp
+[26.468s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__builder.hpp
+[26.487s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__struct.hpp
+[26.504s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__traits.hpp
+[26.523s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__type_support.hpp
+[26.542s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__builder.hpp
+[26.560s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__struct.hpp
+[26.577s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__traits.hpp
+[26.595s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__type_support.hpp
+[26.614s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__builder.hpp
+[26.633s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__struct.hpp
+[26.651s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__traits.hpp
+[26.669s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__type_support.hpp
+[26.688s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__builder.hpp
+[26.705s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__struct.hpp
+[26.723s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__traits.hpp
+[26.741s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__type_support.hpp
+[26.759s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detect_person.hpp
+[26.776s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/get_current_zone.hpp
+[26.795s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/navigate_to_poi.hpp
+[26.813s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/play_audio.hpp
+[26.831s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/set_tour_mode.hpp
+[26.850s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__rosidl_typesupport_fastrtps_cpp.hpp
+[26.868s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__rosidl_typesupport_fastrtps_cpp.hpp
+[26.887s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__rosidl_typesupport_fastrtps_cpp.hpp
+[26.905s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[26.923s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__rosidl_typesupport_fastrtps_cpp.hpp
+[26.941s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__rosidl_typesupport_fastrtps_cpp.hpp
+[26.958s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__rosidl_typesupport_fastrtps_cpp.hpp
+[26.976s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__rosidl_typesupport_fastrtps_cpp.hpp
+[26.994s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__rosidl_typesupport_fastrtps_cpp.hpp
+[27.013s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__rosidl_typesupport_introspection_c.h
+[27.032s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__rosidl_typesupport_introspection_c.h
+[27.049s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__rosidl_typesupport_introspection_c.h
+[27.067s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[27.085s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__rosidl_typesupport_introspection_c.h
+[27.104s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__rosidl_typesupport_introspection_c.h
+[27.122s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__rosidl_typesupport_introspection_c.h
+[27.139s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__rosidl_typesupport_introspection_c.h
+[27.157s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__rosidl_typesupport_introspection_c.h
+[27.176s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/audio_command__rosidl_typesupport_introspection_cpp.hpp
+[27.194s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/person_detection__rosidl_typesupport_introspection_cpp.hpp
+[27.212s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/msg/detail/tour_state__rosidl_typesupport_introspection_cpp.hpp
+[27.231s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/detect_person__rosidl_typesupport_introspection_cpp.hpp
+[27.249s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/get_current_zone__rosidl_typesupport_introspection_cpp.hpp
+[27.267s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/navigate_to_poi__rosidl_typesupport_introspection_cpp.hpp
+[27.285s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/play_audio__rosidl_typesupport_introspection_cpp.hpp
+[27.304s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/include/musia_msgs/musia_msgs/srv/detail/set_tour_mode__rosidl_typesupport_introspection_cpp.hpp
+[27.323s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/environment/pythonpath.sh
+[27.340s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/environment/pythonpath.dsv
+[27.359s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs-0.1.0-py3.12.egg-info/PKG-INFO
+[27.378s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs-0.1.0-py3.12.egg-info/SOURCES.txt
+[27.396s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs-0.1.0-py3.12.egg-info/dependency_links.txt
+[27.414s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs-0.1.0-py3.12.egg-info/top_level.txt
+[27.433s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/__init__.py
+[27.451s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/_musia_msgs_s.ep.rosidl_typesupport_c.c
+[27.469s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/_musia_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[27.488s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/_musia_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[27.506s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/__init__.py
+[27.524s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_audio_command.py
+[27.543s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_audio_command_s.c
+[27.561s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_person_detection.py
+[27.579s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_person_detection_s.c
+[27.597s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_tour_state.py
+[27.615s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_tour_state_s.c
+[27.633s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/musia_msgs_s__rosidl_typesupport_c.so
+[27.651s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/musia_msgs_s__rosidl_typesupport_fastrtps_c.so
+[27.669s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/musia_msgs_s__rosidl_typesupport_introspection_c.so
+[27.687s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/__init__.py
+[27.705s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_detect_person.py
+[27.723s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_detect_person_s.c
+[27.742s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_get_current_zone.py
+[27.760s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_get_current_zone_s.c
+[27.779s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_navigate_to_poi.py
+[27.797s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_navigate_to_poi_s.c
+[27.815s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_play_audio.py
+[27.834s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_play_audio_s.c
+[27.852s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_set_tour_mode.py
+[27.871s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_set_tour_mode_s.c
+[27.890s] -- Up-to-date symlink: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/musia_msgs_s__rosidl_typesupport_fastrtps_c.so
+[27.890s] -- Up-to-date symlink: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/musia_msgs_s__rosidl_typesupport_introspection_c.so
+[27.891s] -- Up-to-date symlink: /home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/musia_msgs_s__rosidl_typesupport_c.so
+[27.891s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/ament_index/resource_index/rust_packages/musia_msgs
+[27.910s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/rust/Cargo.toml
+[27.928s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/rust/build.rs
+[27.947s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/rust/src/lib.rs
+[27.965s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/rust/src/msg.rs
+[27.983s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/rust/src/msg/rmw.rs
+[28.001s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/rust/src/srv.rs
+[28.019s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/rust/src/srv/rmw.rs
+[28.038s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/TourState.idl
+[28.056s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/PersonDetection.idl
+[28.074s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/AudioCommand.idl
+[28.092s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/SetTourMode.idl
+[28.111s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/GetCurrentZone.idl
+[28.129s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/NavigateToPOI.idl
+[28.147s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/PlayAudio.idl
+[28.165s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/DetectPerson.idl
+[28.184s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/TourState.msg
+[28.202s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/PersonDetection.msg
+[28.220s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/msg/AudioCommand.msg
+[28.238s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/SetTourMode.srv
+[28.256s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/GetCurrentZone.srv
+[28.274s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/NavigateToPOI.srv
+[28.292s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/PlayAudio.srv
+[28.311s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/srv/DetectPerson.srv
+[28.329s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/ament_index/resource_index/package_run_dependencies/musia_msgs
+[28.347s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/ament_index/resource_index/parent_prefix_path/musia_msgs
+[28.365s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/environment/ament_prefix_path.sh
+[28.384s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/environment/ament_prefix_path.dsv
+[28.401s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/environment/path.sh
+[28.419s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/environment/path.dsv
+[28.438s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/local_setup.bash
+[28.457s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/local_setup.sh
+[28.475s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/local_setup.zsh
+[28.493s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/local_setup.dsv
+[28.512s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.dsv
+[28.530s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/ament_index/resource_index/packages/musia_msgs
+[28.548s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/rosidl_cmake-extras.cmake
+[28.566s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[28.584s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[28.603s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[28.621s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[28.640s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[28.658s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[28.677s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgsConfig.cmake
+[28.696s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgsConfig-version.cmake
+[28.714s] -- Symlinking: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/package.xml
+[28.732s] -- Installing: /home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_generator_c.so
+[28.733s] -- Set non-toolchain portion of runtime path of "/home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_generator_c.so" to ""
+[28.733s] -- Installing: /home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_fastrtps_c.so
+[28.734s] -- Set non-toolchain portion of runtime path of "/home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[28.734s] -- Installing: /home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_fastrtps_cpp.so
+[28.735s] -- Set non-toolchain portion of runtime path of "/home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[28.736s] -- Installing: /home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_introspection_c.so
+[28.736s] -- Set non-toolchain portion of runtime path of "/home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_introspection_c.so" to ""
+[28.736s] -- Installing: /home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_c.so
+[28.737s] -- Set non-toolchain portion of runtime path of "/home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_c.so" to ""
+[28.737s] -- Installing: /home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_introspection_cpp.so
+[28.738s] -- Set non-toolchain portion of runtime path of "/home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[28.738s] -- Installing: /home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_cpp.so
+[28.740s] -- Set non-toolchain portion of runtime path of "/home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_typesupport_cpp.so" to ""
+[28.826s] Listing '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/__init__.py'...
+[28.827s] Listing '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/__init__.py'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_audio_command.py'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_person_detection.py'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/msg/_tour_state.py'...
+[28.827s] Listing '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/__init__.py'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_detect_person.py'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_get_current_zone.py'...
+[28.827s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_navigate_to_poi.py'...
+[28.828s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_play_audio.py'...
+[28.828s] Compiling '/home/kango/musia_ws/install/musia_msgs/lib/python3.12/site-packages/musia_msgs/srv/_set_tour_mode.py'...
+[28.840s] -- Installing: /home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_generator_py.so
+[28.840s] -- Set non-toolchain portion of runtime path of "/home/kango/musia_ws/install/musia_msgs/lib/libmusia_msgs__rosidl_generator_py.so" to ""
+[28.841s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_generator_cExport.cmake
+[28.841s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_generator_cExport-noconfig.cmake
+[28.841s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[28.841s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[28.841s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_generator_cppExport.cmake
+[28.842s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[28.842s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[28.842s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgs__rosidl_typesupport_introspection_cExport.cmake
+[28.842s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[28.842s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgs__rosidl_typesupport_cExport.cmake
+[28.842s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[28.843s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[28.843s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[28.843s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgs__rosidl_typesupport_cppExport.cmake
+[28.843s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/musia_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[28.843s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_generator_pyExport.cmake
+[28.844s] -- Installing: /home/kango/musia_ws/install/musia_msgs/share/musia_msgs/cmake/export_musia_msgs__rosidl_generator_pyExport-noconfig.cmake
+[28.847s] Invoked command in '/home/kango/musia_ws/build/musia_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kango/musia_ws/install/musia_tour_manager:/home/kango/musia_ws/install/musia_bringup:/home/kango/musia_ws/install/musia_arduino_bridge:/opt/ros/jazzy /usr/bin/cmake --install /home/kango/musia_ws/build/musia_msgs

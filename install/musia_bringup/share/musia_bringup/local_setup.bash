@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_bringup/ament_cmake_environment_hooks/local_setup.bash

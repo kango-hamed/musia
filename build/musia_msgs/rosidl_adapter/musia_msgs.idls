@@ -1,0 +1,8 @@
+/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:msg/TourState.idl
+/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:msg/PersonDetection.idl
+/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:msg/AudioCommand.idl
+/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/SetTourMode.idl
+/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/GetCurrentZone.idl
+/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/NavigateToPOI.idl
+/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/PlayAudio.idl
+/home/kango/musia_ws/build/musia_msgs/rosidl_adapter/musia_msgs:srv/DetectPerson.idl

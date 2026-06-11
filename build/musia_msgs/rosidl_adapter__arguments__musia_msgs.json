@@ -1,0 +1,13 @@
+{
+  "package_name": "musia_msgs",
+  "non_idl_tuples": [
+    "/home/kango/musia_ws/src/musia_msgs:msg/TourState.msg",
+    "/home/kango/musia_ws/src/musia_msgs:msg/PersonDetection.msg",
+    "/home/kango/musia_ws/src/musia_msgs:msg/AudioCommand.msg",
+    "/home/kango/musia_ws/src/musia_msgs:srv/SetTourMode.srv",
+    "/home/kango/musia_ws/src/musia_msgs:srv/GetCurrentZone.srv",
+    "/home/kango/musia_ws/src/musia_msgs:srv/NavigateToPOI.srv",
+    "/home/kango/musia_ws/src/musia_msgs:srv/PlayAudio.srv",
+    "/home/kango/musia_ws/src/musia_msgs:srv/DetectPerson.srv"
+  ]
+}

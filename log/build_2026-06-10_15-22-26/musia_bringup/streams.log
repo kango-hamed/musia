@@ -1,0 +1,33 @@
+[1.378s] Invoking command in '/home/kango/musia_ws/src/musia_bringup': PYTHONPATH=/home/kango/musia_ws/build/musia_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/musia_bringup build --build-base /home/kango/musia_ws/build/musia_bringup/build install --record /home/kango/musia_ws/build/musia_bringup/install.log --single-version-externally-managed install_data
+[1.694s] running egg_info
+[1.694s] creating ../../build/musia_bringup/musia_bringup.egg-info
+[1.715s] writing ../../build/musia_bringup/musia_bringup.egg-info/PKG-INFO
+[1.715s] writing dependency_links to ../../build/musia_bringup/musia_bringup.egg-info/dependency_links.txt
+[1.716s] writing requirements to ../../build/musia_bringup/musia_bringup.egg-info/requires.txt
+[1.716s] writing top-level names to ../../build/musia_bringup/musia_bringup.egg-info/top_level.txt
+[1.716s] writing manifest file '../../build/musia_bringup/musia_bringup.egg-info/SOURCES.txt'
+[1.737s] reading manifest file '../../build/musia_bringup/musia_bringup.egg-info/SOURCES.txt'
+[1.738s] writing manifest file '../../build/musia_bringup/musia_bringup.egg-info/SOURCES.txt'
+[1.738s] running build
+[1.738s] running install
+[1.747s] running install_data
+[1.748s] creating /home/kango/musia_ws/install/musia_bringup/share/ament_index
+[1.748s] creating /home/kango/musia_ws/install/musia_bringup/share/ament_index/resource_index
+[1.748s] creating /home/kango/musia_ws/install/musia_bringup/share/ament_index/resource_index/packages
+[1.748s] copying resource/musia_bringup -> /home/kango/musia_ws/install/musia_bringup/share/ament_index/resource_index/packages
+[1.748s] copying package.xml -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup
+[1.748s] creating /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch
+[1.748s] copying launch/navigation.launch.py -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch
+[1.749s] copying launch/demo.launch.py -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch
+[1.749s] copying launch/musia.launch.py -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/launch
+[1.749s] creating /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/config
+[1.749s] copying config/musia_params.yaml -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/config
+[1.749s] copying config/nav2_params.yaml -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/config
+[1.749s] creating /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/maps
+[1.749s] copying maps/famienkro.pgm -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/maps
+[1.749s] copying maps/famienkro.yaml -> /home/kango/musia_ws/install/musia_bringup/share/musia_bringup/maps
+[1.750s] running install_egg_info
+[1.794s] Copying ../../build/musia_bringup/musia_bringup.egg-info to /home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages/musia_bringup-0.1.0-py3.12.egg-info
+[1.796s] running install_scripts
+[1.949s] writing list of installed files to '/home/kango/musia_ws/build/musia_bringup/install.log'
+[2.024s] Invoked command in '/home/kango/musia_ws/src/musia_bringup' returned '0': PYTHONPATH=/home/kango/musia_ws/build/musia_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kango/musia_ws/install/musia_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/musia_bringup build --build-base /home/kango/musia_ws/build/musia_bringup/build install --record /home/kango/musia_ws/build/musia_bringup/install.log --single-version-externally-managed install_data

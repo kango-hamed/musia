@@ -1,0 +1,19 @@
+# famienkro.yaml — Carte statique du Musée Famienkro
+# Générée par SLAM Toolbox, utilisée par AMCL + Nav2 map_server
+#
+# Pour regénérer la carte avec SLAM :
+#   ros2 launch slam_toolbox online_async_launch.py
+#   ros2 run nav2_map_server map_saver_cli -f ~/musia_ws/src/musia_bringup/maps/famienkro
+#
+# Paramètres image :
+#   Résolution : 0.05 m/pixel
+#   Origine : entrée principale du musée
+#   Carte PGM : famienkro.pgm (à placer dans le même répertoire)
+
+image: famienkro.pgm
+mode: trinary
+resolution: 0.05          # 5 cm par pixel
+origin: [0.0, 0.0, 0.0]  # x, y, yaw — origine = WP0 entrée principale
+negate: 0
+occupied_thresh: 0.65     # Pixel < 0.65 → obstacle
+free_thresh: 0.25         # Pixel > 0.25 → libre

@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_msgs/rosidl_generator_cpp/musia_msgs/msg/detail/tour_state__struct.hpp

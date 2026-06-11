@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_msgs/rosidl_generator_rs/musia_msgs/rust/src/msg.rs

@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_msgs/rosidl_typesupport_fastrtps_cpp/musia_msgs/srv/detail/detect_person__rosidl_typesupport_fastrtps_cpp.hpp

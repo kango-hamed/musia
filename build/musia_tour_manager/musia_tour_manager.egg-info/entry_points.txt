@@ -1,0 +1,2 @@
+[console_scripts]
+tour_manager_node = musia_tour_manager.tour_manager_node:main

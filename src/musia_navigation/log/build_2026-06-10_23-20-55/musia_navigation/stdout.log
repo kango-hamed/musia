@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing musia_navigation.egg-info/PKG-INFO
+writing dependency_links to musia_navigation.egg-info/dependency_links.txt
+writing entry points to musia_navigation.egg-info/entry_points.txt
+writing requirements to musia_navigation.egg-info/requires.txt
+writing top-level names to musia_navigation.egg-info/top_level.txt
+reading manifest file 'musia_navigation.egg-info/SOURCES.txt'
+writing manifest file 'musia_navigation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/lib/python3.12/site-packages/musia-navigation.egg-link (link to .)
+Installing navigation_node script to /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/bin
+
+Installed /home/kango/musia_ws/src/musia_navigation/build/musia_navigation
+running symlink_data
+symbolically linking /home/kango/musia_ws/src/musia_navigation/build/musia_navigation/resource/musia_navigation -> /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/share/ament_index/resource_index/packages
+symbolically linking /home/kango/musia_ws/src/musia_navigation/build/musia_navigation/package.xml -> /home/kango/musia_ws/src/musia_navigation/install/musia_navigation/share/musia_navigation

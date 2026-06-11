@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from musia_msgs/srv/NavigateToPOI.srv
+// generated code does not contain a copyright notice
+
+
+module musia_msgs {
+  module srv {
+    struct NavigateToPOI_Request {
+      uint8 waypoint_id;
+
+      boolean cancel;
+    };
+    struct NavigateToPOI_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

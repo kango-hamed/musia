@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/audio_command__type_support_c.cpp.o"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/audio_command__type_support_c.cpp.o.d"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/person_detection__type_support_c.cpp.o"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/person_detection__type_support_c.cpp.o.d"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/tour_state__type_support_c.cpp.o"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/tour_state__type_support_c.cpp.o.d"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/detect_person__type_support_c.cpp.o"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/detect_person__type_support_c.cpp.o.d"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/get_current_zone__type_support_c.cpp.o"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/get_current_zone__type_support_c.cpp.o.d"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/navigate_to_poi__type_support_c.cpp.o"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/navigate_to_poi__type_support_c.cpp.o.d"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/play_audio__type_support_c.cpp.o"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/play_audio__type_support_c.cpp.o.d"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/set_tour_mode__type_support_c.cpp.o"
+  "CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/set_tour_mode__type_support_c.cpp.o.d"
+  "libmusia_msgs__rosidl_typesupport_fastrtps_c.pdb"
+  "libmusia_msgs__rosidl_typesupport_fastrtps_c.so"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/audio_command__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/audio_command__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/person_detection__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/person_detection__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/tour_state__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/msg/detail/tour_state__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/detect_person__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/detect_person__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/get_current_zone__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/get_current_zone__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/navigate_to_poi__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/navigate_to_poi__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/play_audio__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/play_audio__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/set_tour_mode__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/musia_msgs/srv/detail/set_tour_mode__type_support_c.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/musia_msgs__rosidl_typesupport_fastrtps_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -1,0 +1,13 @@
+package.xml
+setup.py
+musia_navigation/__init__.py
+musia_navigation/navigation_node.py
+musia_navigation/waypoints.py
+musia_navigation.egg-info/PKG-INFO
+musia_navigation.egg-info/SOURCES.txt
+musia_navigation.egg-info/dependency_links.txt
+musia_navigation.egg-info/entry_points.txt
+musia_navigation.egg-info/requires.txt
+musia_navigation.egg-info/top_level.txt
+musia_navigation.egg-info/zip-safe
+resource/musia_navigation

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "musia_msgs__py",
+		"source" : "/home/kango/musia_ws/build/musia_msgs/musia_msgs__py"
+	}
+}

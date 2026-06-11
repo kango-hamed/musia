@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "musia_msgs/srv/SetTourMode_Request",
+      "fields": [
+        {
+          "name": "target_state",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "musia_msgs/srv/SetTourMode_Request",
+      "hash_string": "RIHS01_3b54441fac097f861c336b61ee07c08fb5a4b0d37c5933cdeebba864045d185f"
+    }
+  ]
+}

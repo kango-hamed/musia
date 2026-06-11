@@ -1,0 +1,87 @@
+###############################################################################
+# ekf.yaml — robot_localization EKF
+# MUSIA — odométrie IMU-only (MPU-6050, sans encodeurs)
+#
+# Fusionne /imu → /odom
+# AMCL corrige la dérive du gyroscope via le LiDAR en continu.
+#
+# Repère :
+#   x      = avant du robot
+#   y      = gauche du robot
+#   z      = haut
+#   roll   = rotation autour de x
+#   pitch  = rotation autour de y
+#   yaw    = rotation autour de z  ← seul état utile en 2D
+###############################################################################
+
+ekf_node:
+  ros__parameters:
+
+    # Fréquence de publication de /odom
+    frequency: 30.0
+
+    # Temps simulé
+    use_sim_time: false
+
+    # Frames
+    map_frame:      map
+    odom_frame:     odom
+    base_link_frame: base_link
+    world_frame:    odom        # EKF publie odom → base_link
+
+    # ── Source IMU ──────────────────────────────────────────────────────────
+    # imu0 = /imu (sensor_msgs/Imu depuis arduino_bridge_node)
+    imu0: /imu
+    imu0_config:
+      #          x      y      z
+      #      roll  pitch  yaw
+      #      vx     vy     vz
+      #      vroll vpitch vyaw
+      #      ax     ay     az
+      - [false, false, false]   # position x y z        — non mesurée
+      - [false, false, true]    # orientation r p y      — yaw utilisé
+      - [false, false, false]   # vitesse linéaire       — non mesurée
+      - [false, false, true]    # vitesse angulaire      — gz utilisé
+      - [true,  false, false]   # accélération linéaire  — ax utilisé
+
+    imu0_differential:    false  # utiliser valeurs absolues (pas d'incréments)
+    imu0_relative:        true   # orientation relative au démarrage (pas absolu)
+    imu0_remove_gravitational_acceleration: true  # soustraire g de az
+
+    # ── Paramètres du filtre ────────────────────────────────────────────────
+    # Bruit de processus Q — plus grand = suit mieux les accélérations brusques
+    process_noise_covariance:
+      # x    y    z    roll  pitch  yaw   vx    vy    vz    vroll vpitch vyaw  ax    ay    az
+      - [0.05, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0.05, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0.06, 0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0.03,  0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0.03,  0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0.06, 0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0.025,0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0.025,0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0.04, 0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0.01, 0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0.01, 0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0.02, 0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0.01, 0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0.01, 0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0.015]
+
+    # Bruit d'estimation initial P0
+    initial_estimate_covariance:
+      - [1e-9, 0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    1e-9, 0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    1e-9, 0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    1e-9,  0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     1e-9,  0,    0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     1e-9, 0,    0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    1e-9, 0,    0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    1e-9, 0,    0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    1e-9, 0,    0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    1e-9, 0,    0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    1e-9, 0,    0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    1e-9, 0,    0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    1e-9, 0,    0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    1e-9, 0   ]
+      - [0,    0,    0,    0,     0,     0,    0,    0,    0,    0,    0,    0,    0,    0,    1e-9]

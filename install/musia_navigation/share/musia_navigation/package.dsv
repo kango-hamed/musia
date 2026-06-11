@@ -1,0 +1,15 @@
+source;share/musia_navigation/hook/path.ps1
+source;share/musia_navigation/hook/path.dsv
+source;share/musia_navigation/hook/path.sh
+source;share/musia_navigation/hook/pythonpath.ps1
+source;share/musia_navigation/hook/pythonpath.dsv
+source;share/musia_navigation/hook/pythonpath.sh
+source;share/musia_navigation/hook/pythonscriptspath.ps1
+source;share/musia_navigation/hook/pythonscriptspath.dsv
+source;share/musia_navigation/hook/pythonscriptspath.sh
+source;share/musia_navigation/hook/ament_prefix_path.ps1
+source;share/musia_navigation/hook/ament_prefix_path.dsv
+source;share/musia_navigation/hook/ament_prefix_path.sh
+source;../../build/musia_navigation/share/musia_navigation/hook/pythonpath_develop.ps1
+source;../../build/musia_navigation/share/musia_navigation/hook/pythonpath_develop.dsv
+source;../../build/musia_navigation/share/musia_navigation/hook/pythonpath_develop.sh

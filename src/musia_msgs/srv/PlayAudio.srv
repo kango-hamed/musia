@@ -1,0 +1,7 @@
+uint8 mode
+string payload
+string language
+float32 volume
+---
+bool success
+float32 duration_s

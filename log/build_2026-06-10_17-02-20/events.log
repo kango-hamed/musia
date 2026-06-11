@@ -1,0 +1,6 @@
+[0.000000] (-) TimerEvent: {}
+[0.000239] (-) JobUnselected: {'identifier': 'musia_arduino_bridge'}
+[0.000412] (-) JobUnselected: {'identifier': 'musia_bringup'}
+[0.000435] (-) JobUnselected: {'identifier': 'musia_msgs'}
+[0.000453] (-) JobUnselected: {'identifier': 'musia_tour_manager'}
+[0.000821] (-) EventReactorShutdown: {}

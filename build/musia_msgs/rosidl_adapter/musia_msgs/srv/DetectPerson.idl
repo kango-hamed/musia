@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from musia_msgs/srv/DetectPerson.srv
+// generated code does not contain a copyright notice
+
+
+module musia_msgs {
+  module srv {
+    struct DetectPerson_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct DetectPerson_Response {
+      boolean person_detected;
+
+      float distance_m;
+
+      float confidence;
+    };
+  };
+};

@@ -1,0 +1,1 @@
+/home/kango/musia_ws/build/musia_msgs/rosidl_generator_cpp/musia_msgs/srv/navigate_to_poi.hpp

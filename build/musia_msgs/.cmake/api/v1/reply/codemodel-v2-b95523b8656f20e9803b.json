@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-89d63e1e6f9575a8fd7b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "musia_msgs__py",
+					"jsonFile" : "directory-musia_msgs__py-d4e088e3ce58c0b7872c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/kango/musia_ws/build/musia_msgs/musia_msgs__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "musia_msgs__rs",
+					"jsonFile" : "directory-musia_msgs__rs-400d7f8bbb29e919221e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/kango/musia_ws/build/musia_msgs/musia_msgs__rs",
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "musia_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_musia_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_musia_msgs_egg-76666259425945c1ab7e.json",
+					"name" : "ament_cmake_python_build_musia_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_musia_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_musia_msgs-a286fa8cb41bf333236a.json",
+					"name" : "ament_cmake_python_symlink_musia_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs-2727a125358c4b758a21.json",
+					"name" : "musia_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__cpp-8b5eacc76eef3a381e9b.json",
+					"name" : "musia_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "musia_msgs__py::@f14a443ba01caf01052f",
+					"jsonFile" : "target-musia_msgs__py-d753646eb84fb296c4dc.json",
+					"name" : "musia_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_generator_c-183bd1fe4e94ca6cd5da.json",
+					"name" : "musia_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_generator_py-e8eebd3e4bebab6d97c6.json",
+					"name" : "musia_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_generator_type_description-767af927d028f12680ad.json",
+					"name" : "musia_msgs__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_typesupport_c-a0bd93aa64f0a92b8324.json",
+					"name" : "musia_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_typesupport_cpp-d8dfa2800b0a4fe78c80.json",
+					"name" : "musia_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_typesupport_fastrtps_c-9e90c2a7860badfad56a.json",
+					"name" : "musia_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_typesupport_fastrtps_cpp-0eeff557db91d1368030.json",
+					"name" : "musia_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_typesupport_introspection_c-3c1aceeb13fa17b68e22.json",
+					"name" : "musia_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs__rosidl_typesupport_introspection_cpp-dc8008e9ec7147175705.json",
+					"name" : "musia_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "musia_msgs__rs::@b0c411a912f0adc5cb88",
+					"jsonFile" : "target-musia_msgs__rs-e19c706bacbf34f6dc2c.json",
+					"name" : "musia_msgs__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs_s__rosidl_typesupport_c-24b90977e440327d0b09.json",
+					"name" : "musia_msgs_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs_s__rosidl_typesupport_fastrtps_c-a652e12e6d5cde3e0ed4.json",
+					"name" : "musia_msgs_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs_s__rosidl_typesupport_introspection_c-55b58d715c7c6b588e8f.json",
+					"name" : "musia_msgs_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "musia_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-musia_msgs_uninstall-42751f102f749056e63f.json",
+					"name" : "musia_msgs_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-dd162c64a2f34a176cf4.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kango/musia_ws/build/musia_msgs",
+		"source" : "/home/kango/musia_ws/src/musia_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
